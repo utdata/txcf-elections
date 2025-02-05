@@ -1,0 +1,98 @@
+I am compiling the Texas House election return data.
+
+```{r}
+#| label: setup
+#| message: FALSE
+
+library(tidyverse)
+library(janitor)
+```
+
+I am creating a list of the general election results.
+
+```{r}
+general_returns <- list.files(
+  "data-raw/house election returns",
+  pattern = "General",
+  full.names = TRUE)
+```
+
+I am importing the general election return files.
+
+```{r}
+general_raw <- general_returns |> 
+  set_names(basename) |> 
+  map(read_csv) |> 
+  list_rbind(names_to = "year") |>
+  clean_names()
+
+general_raw
+```
+
+I am cleaning the general returns file to include just Texas House results.
+
+```{r}
+general_clean <- general_raw |> 
+  mutate(year = str_remove(year, "_General_Election_Returns.csv")) |> 
+  filter(grepl("State Rep", office, ignore.case = TRUE)) |> 
+  mutate(district = str_remove(office, "State Rep")) |>
+  select(year, cntyvtd, district, name, party, incumbent, votes) |> 
+  group_by(year, district, name) |> 
+  summarize(votes = sum(votes)) |> 
+  mutate(district = as.numeric(district)) |> 
+  arrange(district)
+
+general_clean
+```
+
+I am exporting the general returns.
+
+```{r}
+general_clean |> 
+  write_rds("data-clean/01-general-clean.rds")
+```
+
+
+I am creating a list of the primary election results, not including runoffs.
+
+```{r}
+primary_returns <- list.files(
+  "data-raw/house election returns",
+  pattern = "Primary",
+  full.names = TRUE)
+```
+
+I am importing the primary election return files.
+
+```{r}
+primary_raw <- primary_returns |> 
+  set_names(basename) |> 
+  map(read_csv) |> 
+  list_rbind(names_to = "year") |>
+  clean_names()
+```
+
+I am cleaning the primary return files and filtering to just State House races.
+
+```{r}
+primary_clean <- primary_raw |> 
+  mutate(year = str_remove(year, "_Democratic_Primary_Election_Returns.csv")) |> 
+  mutate(year = str_remove(year, "_Republican_Primary_Election_Returns.csv")) |> 
+  filter(grepl("State Rep", office, ignore.case = TRUE)) |> 
+  mutate(district = str_remove(office, "State Rep")) |> 
+  select(year, cntyvtd, district, name, party, incumbent, votes) |> 
+  group_by(year, district, name) |> 
+  summarize(votes = sum(votes)) |> 
+  mutate(district = as.numeric(district)) |> 
+  arrange(district)
+
+primary_clean
+```
+
+I am exporting the primary returns.
+
+```{r}
+primary_clean |> 
+  write_rds("data-clean/01-primary-clean.rds")
+```
+

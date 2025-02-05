@@ -1,0 +1,54 @@
+"0","general_raw <- general_returns |> "
+"0","  set_names(basename) |> "
+"0","  map(read_csv) |> "
+"0","  list_rbind(names_to = ""year"") |>"
+"0","  clean_names()"
+"2","[1mRows: [22m[34m539045[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"2","[1mRows: [22m[34m828123[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"2","[1mRows: [22m[34m506516[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"2","[1mRows: [22m[34m723523[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"2","[1mRows: [22m[34m495823[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"2","[1mRows: [22m[34m679908[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): County, VTD, cntyvtd, Office, Name, Party, Incumbent
+[32mdbl[39m (3): FIPS, vtdkeyvalue, Votes"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","general_raw"

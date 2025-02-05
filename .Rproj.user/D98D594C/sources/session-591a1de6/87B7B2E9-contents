@@ -1,0 +1,34 @@
+---
+title: "02-analysis"
+---
+
+questions:
+
+- Which races and districts were within a 5-point margin in the general election?
+- Which races and districts were within a 10-point margin in the general election?
+- 
+
+setup/downloading libraries
+
+```{r}
+#| label: setup
+#| message: FALSE
+
+library(tidyverse)
+library(janitor)
+```
+
+importing data
+
+```{r}
+general <- read_rds("data-clean/01-general-clean.rds")
+
+general
+```
+
+```{r}
+primary <- read_rds("data-clean/01-primary-clean.rds")
+
+primary
+```
+
