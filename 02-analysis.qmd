@@ -6,7 +6,8 @@ questions:
 
 - Which races and districts were within a 5-point margin in the general election?
 - Which races and districts were within a 10-point margin in the general election?
-- 
+- Which races and districts were within a 5-point margin in the primaries?
+- Which races and districts were within a 10-point margin in the primaries?
 
 setup/downloading libraries
 
@@ -30,5 +31,165 @@ general
 primary <- read_rds("data-clean/01-primary-clean.rds")
 
 primary
+```
+
+Analyzing general returns: Here I am calculating the margins of victory. I created a new column for the winner of each race. I'm not sure if I will be using that or not but it might come in handy. I then created three new columns, with the winner's vote share, loser's vote share and the margin of victory.
+
+```{r}
+general_margins <- general |> 
+  group_by(year, district) |> 
+  mutate(winner = name[which.max(candvotes)],
+         winner_perc = (candvotes[which.max(candvotes)]/sum(candvotes))*100,
+         loser_perc = (candvotes[which.min(candvotes)]/sum(candvotes))*100) |> 
+  mutate(winning_margin = winner_perc - loser_perc) |> 
+  mutate(winning_margin = round_half_up(winning_margin, 2))
+```
+
+Margin of victory of 10 points or less: I will find the races that had a margin of victory of 10 points or less.
+
+```{r}
+general_10 <- general_margins |> 
+  filter(winning_margin <= 10) |> 
+  select(year, district, name, party, winner, winning_margin)
+```
+
+I am going to filter the 10-margin and export.
+
+```{r}
+clean_general_10 <- general_10 |> 
+  pivot_wider(names_from = party, values_from = name)
+
+clean_general_10
+```
+
+I am exporting the filtered table of races with a MOV of 10 or less.
+
+```{r}
+write.table(clean_general_10, file = "data-export/general_mov_10.txt", col.names = TRUE, row.names = FALSE, sep = "\t")
+```
+
+Margin of victory of 5 points or less: I will find the races that had a margin of victory of 5 points or less.
+
+```{r}
+general_five <- general_margins |> 
+  filter(winning_margin <= 5) |> 
+  select(year, district, name, party, winner, winning_margin)
+```
+
+I am going to filter the 5-margin and export.
+
+```{r}
+clean_general_five <- general_five |> 
+  pivot_wider(names_from = party, values_from = name)
+
+clean_general_five
+```
+
+I am exporting the filtered table of races with a MOV of 5 or less.
+
+```{r}
+write.table(clean_general_five, file = "data-export/general_mov_5.txt", col.names = TRUE, row.names = FALSE, sep = "\t")
+```
+
+I am going to analyze the primary data.
+  
+```{r}
+primary_margins <- primary |> 
+  group_by(year, district, party) |> 
+  mutate(winner = name[which.max(candvotes)],
+         winner_perc = (candvotes[which.max(candvotes)]/sum(candvotes))) |> 
+  arrange(desc(candvotes), .by_group = TRUE) |> 
+  mutate(second_perc = nth(candvotes, n = 2)/sum(candvotes)) |> 
+  mutate(winning_margin = (winner_perc - second_perc)*100) |> 
+  mutate(winning_margin = round_half_up(winning_margin, 2)) |> 
+  mutate(winner_flag = if_else(winner == name, "W", "L"))
+
+primary_margins
+```
+
+I am going to find the primary races with margins of victory of 10 or less.
+
+```{r}
+primary_10 <- primary_margins |> 
+  filter(winning_margin <= 10) |> 
+  select(year, district, name, party, winning_margin, winner_flag) |> 
+  arrange(district)
+
+primary_10
+```
+
+I am going to export the list of 10 points or less.
+
+```{r}
+write.table(primary_10, file = "data-export/primary_mov_10.txt", col.names = TRUE, row.names = FALSE, sep = "\t")
+```
+
+I am going to find the primary margins of 5 or less.
+
+```{r}
+primary_five <- primary_margins |> 
+  filter(winning_margin <= 5) |> 
+  select(year, district, name, party, winning_margin, winner_flag) |> 
+  arrange(district)
+```
+
+I am going to export the list of 5 points or less.
+
+```{r}
+write.table(primary_five, file = "data-export/primary_mov_5.txt", col.names = TRUE, row.names = FALSE, sep = "\t")
+```
+
+I'm going to find out which districts have had the most primary races with a margin of 5 points.
+
+```{r}
+primary_five |> 
+  filter(winner_flag == "W") |> 
+  group_by(district) |> 
+  summarize(comp_races = n()) |> 
+  arrange(desc(comp_races))
+```
+
+I'm going to find out which districts have had the most primary races with a margin of 10 points.
+
+```{r}
+primary_10_count <- primary_10 |> 
+  filter(winner_flag == "W") |> 
+  group_by(district) |> 
+  summarize(comp_races = n()) |> 
+  arrange(desc(comp_races))
+
+primary_10_count
+```
+
+I'm going to find out which districts have had the most general races with a margin of 5 points.
+
+```{r}
+general_five |> 
+  group_by(district) |> 
+  summarize(comp_races = n()) |> 
+  arrange(desc(comp_races))
+```
+
+I'm going to find out which districts have had the most general races with a margin of 10 points.
+
+```{r}
+general_10_count <- general_10 |> 
+  group_by(district) |> 
+  summarize(comp_races = n()) |> 
+  arrange(desc(comp_races))
+
+general_10_count
+```
+
+I am going to merge the datasets for the number of races within 10 points.
+
+```{r}
+general_10_count |> 
+  full_join(primary_10_count, by = "district") |> 
+  mutate(comp_races.y = replace_na(comp_races.y, 0)) |> 
+  mutate(comp_races.x = replace_na(comp_races.x, 0)) |> 
+  mutate(all_comp_races = comp_races.x + comp_races.y) |> 
+  select(district, all_comp_races) |> 
+  arrange(desc(all_comp_races))
 ```
 
