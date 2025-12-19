@@ -1,0 +1,146 @@
+---
+title: "Calculate margins"
+author: "Media Innovation Group"
+code-fold: true
+code-summary: "Expand this to see code"
+---
+
+## Our goal
+
+To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.
+
+## Updates Dec. 2025
+
+The first attempt at this compared the highest votes received to the lowest votes received. What we needed was the difference between the percentage of total vote of those finishing 1st and 2nd in each race, which this now does. It's a complete refactoring.
+
+## Setup and import
+
+```{r}
+#| label: setup
+#| message: FALSE
+
+library(tidyverse)
+library(janitor)
+
+# general <- read_rds("data-processed/01-general-results-rep.rds")
+# primary <- read_rds("data-processed/01-primary-results-rep.rds")
+reps <- read_rds("data-processed/01-rep-totals.rds")
+```
+
+
+## Calculate win margin
+
+This summarise method was developed with the help of chatGPT. It's [explained here](resources/margin_chat.qmd).
+
+```{r}
+reps_calcs <- reps |> 
+  group_by(year, election, district) |>
+  mutate(
+    total_votes = sum(candvotes),
+    pct = (candvotes / total_votes * 100) |> round(2)
+  ) |>
+  arrange(desc(candvotes), .by_group = TRUE)  |> 
+  summarise(
+    winner = first(name),
+    winner_party = first(party),
+    winner_inc = first(incumbent),
+    winner_pct = first(pct),
+    runner_up = nth(name, 2),
+    runner_up_party = nth(party, 2),
+    runner_up_inc = nth(incumbent, 2),
+    runner_up_pct = nth(pct, 2),
+    winning_margin = (winner_pct - runner_up_pct) |> round_half_up(2),
+    .groups = "drop"
+  ) |> 
+  arrange(year, election, district)
+
+reps_calcs |> head()
+```
+
+### Add flags
+
+Here we add flags if the race is competitive within 5 or 10 points.
+
+Just showing the margin and flags to check.
+
+```{r}
+reps_flags <- reps_calcs |> 
+  mutate(flg_5 = if_else(winning_margin <= 5, T, F),
+         flg_10 = if_else(winning_margin <= 10, T, F))
+
+# peek at flags
+reps_flags |>
+  head(20) |> 
+  select(winning_margin:flg_10)
+```
+
+## Test results
+
+### 2-candidate race
+
+Doing some manual calculations to compare with prepared data.
+
+```{r}
+reps |> 
+  filter(year == "2012", election == "General", district == 1) |> 
+  adorn_totals()
+
+reps_flags |> filter(year == "2012", election == "General", district == 1)
+
+```
+
+- Lavander: (42063 / 50896) * 100 = 82.64500157
+- Eason: (8833 / 50896) * 100 = 17.35499843
+- Diff: 82.64500157 - 17.35499843 = 65.29000314
+
+### Multi-candidate race
+
+A test for 3+ candidate race
+
+```{r}
+reps |> 
+  filter(year == "2019", election == "House District 148", district == 148) |> 
+  adorn_totals()
+
+reps_flags |> filter(year == "2019", election == "House District 148", district == 148)
+```
+
+- Eastman: (4212 / 20711) * 100 = 20.33701898
+- LaRotta: (3282 / 20711) * 100 = 15.84665154
+- Diff: 20.33701898 - 15.84665154 = 4.49036744
+
+### List of elections
+
+```{r}
+reps_flags |> 
+  count(election)
+```
+
+
+
+## Last look
+
+Glimpse
+
+```{r}
+reps_flags |> glimpse()
+```
+
+```{r}
+reps_flags |> slice_sample(n = 10)
+```
+
+## Exports
+
+Sends files for R to data-processed, and .csv to data-export.
+
+```{r}
+# last assignment
+reps_margins <- reps_flags
+
+reps_margins |> 
+  write_rds("data-processed/02-reps-margins.rds")
+
+reps_margins |> 
+  write_csv("data-export/02-reps-margins.csv")
+```

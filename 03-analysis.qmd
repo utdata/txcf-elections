@@ -1,0 +1,63 @@
+---
+title: "Analysis"
+author: "Christian McDonald"
+code-fold: true
+code-summary: "Expand this to see code"
+---
+
+This is a just a quick look at the Texas House of Representative districts that have the years with tight races based on 5 point and 10 point margins.
+
+## Setup and import
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+reps_margins <- read_rds("data-processed/02-reps-margins.rds")
+```
+
+
+## Districts with most competition
+
+We're finding how many elections there have been since 2012 in each district (primary and general) and then how many of those were competitive.
+
+```{r}
+close_counts <- reps_margins |> 
+  group_by(election, district) |> 
+  summarize(elec_cnt = n(),
+            elec_flg_5 = sum(flg_5 == F),
+            elec_flg_10 = sum(flg_10 == F),
+            .groups = "drop"
+            )
+
+close_counts
+```
+
+### General
+
+```{r}
+close_counts |> 
+  filter(election == "General") |> 
+  arrange(elec_flg_5 |> desc())
+```
+
+
+### Primaries
+
+```{r}
+close_counts |> 
+  filter(election == "Democratic Primary") |> 
+  arrange(elec_flg_5 |> desc())
+
+```
+
+```{r}
+close_counts |> 
+  filter(election == "Republican Primary") |> 
+  arrange(elec_flg_5 |> desc())
+```
+

@@ -1,0 +1,105 @@
+---
+title: "Combine results"
+author: "Media Innovation Group"
+code-fold: true
+code-summary: "Expand this to see code"
+---
+
+This notebook compiles Voting Tabulation Districts election returns from different years, processes them into state-wide results, then filters them for State Rep.
+
+Originally created by MIG data fellow Isabella Zeff, it has since been refactored by Christian McDonald.
+
+The data some from the Texas Legislative Council's [data portal](https://data.capitol.texas.gov/dataset/comprehensive-election-datasets-compressed-format). The [documentation is available here](https://data.capitol.texas.gov/dataset/vtds). We used the 2024 General VTDs Election Data CSV version that includes 2012 - 2024 election data reported by 2024 primary election VTDs.
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: FALSE
+
+library(tidyverse)
+library(janitor)
+```
+
+## Functions
+
+Function to create totals from the county-by-county results
+
+```{r}
+fun_totals_all <- function(.data){
+  .data |> 
+    group_by(year, election, office, name, party, incumbent) |> 
+    summarize(candvotes = sum(votes), .groups = "drop") |> 
+    arrange(year, office, candvotes |> desc())
+}
+```
+
+## Import and combine
+
+```{r}
+all_files <- list.files(
+  "data-original/vdt-returns",
+  pattern = ".csv",
+  full.names = TRUE)
+```
+
+```{r}
+#| message: false
+#| warning: false
+
+all_raw <- all_files |> 
+  set_names(basename) |> 
+  map(\(x) read_csv(x, col_types = cols(.default = col_character()))) |> 
+  list_rbind(names_to = "source") |>
+  clean_names()
+```
+
+## Clean source
+
+Here we use the name of the file to find the election year and name. We also turn votes into a number.
+
+```{r}
+all_returns <- all_raw |> 
+  mutate(
+    year = str_sub(source, 1, 4),
+    election = str_sub(source, 6, -22) |> str_replace_all("_", " "),
+    .before = county
+  ) |> 
+  mutate(votes = votes |> as.numeric()) |> 
+  select(-source)
+
+all_returns |> head()
+```
+
+## Tally votes
+
+```{r}
+all_totals <- all_returns |> 
+  fun_totals_all() |> 
+  arrange(year, election, office, candvotes |> desc())
+
+all_totals |> head()
+```
+
+### Filter for State Reps
+
+Find the state reps
+
+```{r}
+rep_totals <- all_totals |> 
+  filter(str_detect(office, "State Rep")) |> 
+  mutate(district = parse_number(office), .after = office)
+```
+
+## Export results
+
+I am exporting just the rep results at this point..
+
+```{r}
+all_totals |> 
+  write_rds("data-processed/01-all-totals.rds")
+
+rep_totals |> 
+  write_rds("data-processed/01-rep-totals.rds")
+```
+

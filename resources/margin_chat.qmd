@@ -1,0 +1,99 @@
+---
+title: "Margins prompt"
+author: "Christian McDonald and ChatGPT"
+---
+
+To figure out the top candidate and the runner up, I turned to ChatGPT. This is the prompt and return.
+
+## Prompt
+
+I have the following data in R: 
+
+```{r}
+tibble::tribble(
+  ~year, ~district, ~name, ~party, ~candvotes,
+  "2016", 46, "Dukes", "D", 37457, 
+  "2016", 46, "Greeley", "G", 2178,
+  "2016", 46, "Ludlow", "L", 3445,
+  "2016", 46, "Nila", "R", 10209 ) 
+```
+
+And I want new columns that do the following: 
+
+- the name of the winning candidate (highest candvotes value).
+- the percentage of the total vote that the winning candidate received
+- the name of the second highest candidate (using candvotes) 
+- the percentage of the total vote that second candidate got
+- the difference betwen the two percentages
+
+## The result
+
+You can do this cleanly with **dplyr** by working *within each year–district*, ranking candidates by votes, and then summarizing.
+
+Here’s a tidyverse solution that gives **one row per race** with all the fields you want.
+
+```r
+library(dplyr)
+
+df <- tibble::tribble(
+  ~year, ~district,     ~name, ~party, ~candvotes,
+  "2016",        46,   "Dukes",    "D",      37457,
+  "2016",        46, "Greeley",    "G",       2178,
+  "2016",        46,  "Ludlow",    "L",       3445,
+  "2016",        46,    "Nila",    "R",      10209
+)
+
+result <- df %>%
+  group_by(year, district) %>%
+  mutate(
+    total_votes = sum(candvotes),
+    pct = candvotes / total_votes * 100
+  ) %>%
+  arrange(desc(candvotes), .by_group = TRUE) %>%
+  summarise(
+    winner = first(name),
+    winner_pct = first(pct),
+    runner_up = nth(name, 2),
+    runner_up_pct = nth(pct, 2),
+    pct_diff = winner_pct - runner_up_pct,
+    .groups = "drop"
+  )
+
+result
+```
+
+### Output
+
+```
+# A tibble: 1 × 7
+  year  district winner winner_pct runner_up runner_up_pct pct_diff
+  <chr>    <dbl> <chr>       <dbl> <chr>            <dbl>    <dbl>
+1 2016        46 Dukes        70.2  Nila             19.2     51.0
+```
+
+### Why this works
+
+* `group_by(year, district)` → treats each race separately
+* `total_votes` → denominator for percentages
+* `arrange(desc(candvotes), .by_group = TRUE)` → ensures winners are first
+* `first()` and `nth(2)` → safely grab top two finishers
+* `pct_diff` → margin of victory in percentage points
+
+### Optional: keep party labels too
+
+If you want winner/runner-up **party** as well:
+
+```r
+summarise(
+  winner = first(name),
+  winner_party = first(party),
+  winner_pct = first(pct),
+  runner_up = nth(name, 2),
+  runner_up_party = nth(party, 2),
+  runner_up_pct = nth(pct, 2),
+  pct_diff = winner_pct - runner_up_pct,
+  .groups = "drop"
+)
+```
+
+If you want this to scale to **multi-year, multi-district election data**, this pattern will hold without modification.

@@ -9,13 +9,12 @@ website:
   sidebar:
     contents:
       - href: index.qmd
-        text: Home
+        text: Overview
       - auto: "*.qmd"
 
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
     df-print: paged
     code-overflow: wrap
