@@ -1,2 +1,0 @@
-"0","general_clean |> "
-"0","  write_rds(""data-clean/01-general-clean.rds"")"
