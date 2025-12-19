@@ -1,11 +1,33 @@
 ---
-title: "txcf-elections"
+title: "Overview"
 ---
 
-This is a Quarto website.
+The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+We start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: [Comprehensive Election Datasets (Compressed Format)](https://data.capitol.texas.gov/dataset/comprehensive-election-datasets-compressed-format) | [Docs](https://data.capitol.texas.gov/dataset/vtds).
 
-```{r}
-1 + 1
-```
+From that data we calculate statewide results, find the two candidates in each district that have the most votes, and then calculate a margin of victory.
+
+The processing of these results yields two files, an `02-reps-margins.rds` version that end up in data-processed folder, and a `02-reps-margins.csv` version end up in the data-export folder.
+
+The fields are as follows:
+
+- year: Election year
+- election: General, Democratic Primary, Republican Primary, as well was runoff and special eletions
+- district: State Rep district
+- winner: Last name of race winner
+- winner_party: Winner's party
+- winner_inc: `TRUE` if incumbent
+- winner_pct: Percentage of total vote
+- runner_up: Last name of runner up
+- runner_up_party: Runner up party
+- runner_up_inc: `TRUE` if incumbent
+- runner_up_pct: Percentage of total vote
+- winning_margin: Difference in percentage of total vote
+- flg_5: `TRUE` if margin is 5% or less
+- flg_10: `TRUE` if margin is 10% or less
+
+## Contributors:
+
+- Isabella Zeff, MIG data fellow 2024-2025
+- Christian McDonald, Associate Professor of Practice
