@@ -1,0 +1,235 @@
+[
+  {
+    "objectID": "resources/margin_chat.html",
+    "href": "resources/margin_chat.html",
+    "title": "Margins prompt",
+    "section": "",
+    "text": "To figure out the top candidate and the runner up, I turned to ChatGPT. This is the prompt and return.",
+    "crumbs": [
+      "Resources",
+      "Margins prompt"
+    ]
+  },
+  {
+    "objectID": "resources/margin_chat.html#prompt",
+    "href": "resources/margin_chat.html#prompt",
+    "title": "Margins prompt",
+    "section": "Prompt",
+    "text": "Prompt\nI have the following data in R:\n\ntibble::tribble(\n  ~year, ~district, ~name, ~party, ~candvotes,\n  \"2016\", 46, \"Dukes\", \"D\", 37457, \n  \"2016\", 46, \"Greeley\", \"G\", 2178,\n  \"2016\", 46, \"Ludlow\", \"L\", 3445,\n  \"2016\", 46, \"Nila\", \"R\", 10209 ) \n\n\n  \n\n\n\nAnd I want new columns that do the following:\n\nthe name of the winning candidate (highest candvotes value).\nthe percentage of the total vote that the winning candidate received\nthe name of the second highest candidate (using candvotes)\nthe percentage of the total vote that second candidate got\nthe difference betwen the two percentages",
+    "crumbs": [
+      "Resources",
+      "Margins prompt"
+    ]
+  },
+  {
+    "objectID": "resources/margin_chat.html#the-result",
+    "href": "resources/margin_chat.html#the-result",
+    "title": "Margins prompt",
+    "section": "The result",
+    "text": "The result\nYou can do this cleanly with dplyr by working within each year–district, ranking candidates by votes, and then summarizing.\nHere’s a tidyverse solution that gives one row per race with all the fields you want.\nlibrary(dplyr)\n\ndf &lt;- tibble::tribble(\n  ~year, ~district,     ~name, ~party, ~candvotes,\n  \"2016\",        46,   \"Dukes\",    \"D\",      37457,\n  \"2016\",        46, \"Greeley\",    \"G\",       2178,\n  \"2016\",        46,  \"Ludlow\",    \"L\",       3445,\n  \"2016\",        46,    \"Nila\",    \"R\",      10209\n)\n\nresult &lt;- df %&gt;%\n  group_by(year, district) %&gt;%\n  mutate(\n    total_votes = sum(candvotes),\n    pct = candvotes / total_votes * 100\n  ) %&gt;%\n  arrange(desc(candvotes), .by_group = TRUE) %&gt;%\n  summarise(\n    winner = first(name),\n    winner_pct = first(pct),\n    runner_up = nth(name, 2),\n    runner_up_pct = nth(pct, 2),\n    pct_diff = winner_pct - runner_up_pct,\n    .groups = \"drop\"\n  )\n\nresult\n\nOutput\n# A tibble: 1 × 7\n  year  district winner winner_pct runner_up runner_up_pct pct_diff\n  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt;\n1 2016        46 Dukes        70.2  Nila             19.2     51.0\n\n\nWhy this works\n\ngroup_by(year, district) → treats each race separately\ntotal_votes → denominator for percentages\narrange(desc(candvotes), .by_group = TRUE) → ensures winners are first\nfirst() and nth(2) → safely grab top two finishers\npct_diff → margin of victory in percentage points\n\n\n\nOptional: keep party labels too\nIf you want winner/runner-up party as well:\nsummarise(\n  winner = first(name),\n  winner_party = first(party),\n  winner_pct = first(pct),\n  runner_up = nth(name, 2),\n  runner_up_party = nth(party, 2),\n  runner_up_pct = nth(pct, 2),\n  pct_diff = winner_pct - runner_up_pct,\n  .groups = \"drop\"\n)\nIf you want this to scale to multi-year, multi-district election data, this pattern will hold without modification.",
+    "crumbs": [
+      "Resources",
+      "Margins prompt"
+    ]
+  },
+  {
+    "objectID": "03-analysis.html",
+    "href": "03-analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "This is a just a quick look at the Texas House of Representative districts that have the years with tight races based on 5 point and 10 point margins.",
+    "crumbs": [
+      "Analysis"
+    ]
+  },
+  {
+    "objectID": "03-analysis.html#setup-and-import",
+    "href": "03-analysis.html#setup-and-import",
+    "title": "Analysis",
+    "section": "Setup and import",
+    "text": "Setup and import\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)\n\nreps_margins &lt;- read_rds(\"data-processed/02-reps-margins.rds\")",
+    "crumbs": [
+      "Analysis"
+    ]
+  },
+  {
+    "objectID": "03-analysis.html#districts-with-most-competition",
+    "href": "03-analysis.html#districts-with-most-competition",
+    "title": "Analysis",
+    "section": "Districts with most competition",
+    "text": "Districts with most competition\nWe’re finding how many elections there have been since 2012 in each district (primary and general) and then how many of those were competitive.\n\n\nExpand this to see code\nclose_counts &lt;- reps_margins |&gt; \n  group_by(election, district) |&gt; \n  summarize(elec_cnt = n(),\n            elec_flg_5 = sum(flg_5 == F),\n            elec_flg_10 = sum(flg_10 == F),\n            .groups = \"drop\"\n            )\n\nclose_counts\n\n\n\n  \n\n\n\n\nGeneral\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"General\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())\n\n\n\n  \n\n\n\n\n\nPrimaries\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"Democratic Primary\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())\n\n\n\n  \n\n\n\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"Republican Primary\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())",
+    "crumbs": [
+      "Analysis"
+    ]
+  },
+  {
+    "objectID": "01-combine.html",
+    "href": "01-combine.html",
+    "title": "Combine results",
+    "section": "",
+    "text": "This notebook compiles Voting Tabulation Districts election returns from different years, processes them into state-wide results, then filters them for State Rep.\nOriginally created by MIG data fellow Isabella Zeff, it has since been refactored by Christian McDonald.\nThe data some from the Texas Legislative Council’s data portal. The documentation is available here. We used the 2024 General VTDs Election Data CSV version that includes 2012 - 2024 election data reported by 2024 primary election VTDs.",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#setup",
+    "href": "01-combine.html#setup",
+    "title": "Combine results",
+    "section": "Setup",
+    "text": "Setup\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#functions",
+    "href": "01-combine.html#functions",
+    "title": "Combine results",
+    "section": "Functions",
+    "text": "Functions\nFunction to create totals from the county-by-county results\n\n\nExpand this to see code\nfun_totals_all &lt;- function(.data){\n  .data |&gt; \n    group_by(year, election, office, name, party, incumbent) |&gt; \n    summarize(candvotes = sum(votes), .groups = \"drop\") |&gt; \n    arrange(year, office, candvotes |&gt; desc())\n}",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#import-and-combine",
+    "href": "01-combine.html#import-and-combine",
+    "title": "Combine results",
+    "section": "Import and combine",
+    "text": "Import and combine\n\n\nExpand this to see code\nall_files &lt;- list.files(\n  \"data-original/vdt-returns\",\n  pattern = \".csv\",\n  full.names = TRUE)\n\n\n\n\nExpand this to see code\nall_raw &lt;- all_files |&gt; \n  set_names(basename) |&gt; \n  map(\\(x) read_csv(x, col_types = cols(.default = col_character()))) |&gt; \n  list_rbind(names_to = \"source\") |&gt;\n  clean_names()",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#clean-source",
+    "href": "01-combine.html#clean-source",
+    "title": "Combine results",
+    "section": "Clean source",
+    "text": "Clean source\nHere we use the name of the file to find the election year and name. We also turn votes into a number.\n\n\nExpand this to see code\nall_returns &lt;- all_raw |&gt; \n  mutate(\n    year = str_sub(source, 1, 4),\n    election = str_sub(source, 6, -22) |&gt; str_replace_all(\"_\", \" \"),\n    .before = county\n  ) |&gt; \n  mutate(votes = votes |&gt; as.numeric()) |&gt; \n  select(-source)\n\nall_returns |&gt; head()",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#tally-votes",
+    "href": "01-combine.html#tally-votes",
+    "title": "Combine results",
+    "section": "Tally votes",
+    "text": "Tally votes\n\n\nExpand this to see code\nall_totals &lt;- all_returns |&gt; \n  fun_totals_all() |&gt; \n  arrange(year, election, office, candvotes |&gt; desc())\n\nall_totals |&gt; head()\n\n\n\n  \n\n\n\n\nFilter for State Reps\nFind the state reps\n\n\nExpand this to see code\nrep_totals &lt;- all_totals |&gt; \n  filter(str_detect(office, \"State Rep\")) |&gt; \n  mutate(district = parse_number(office), .after = office)",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "01-combine.html#export-results",
+    "href": "01-combine.html#export-results",
+    "title": "Combine results",
+    "section": "Export results",
+    "text": "Export results\nI am exporting just the rep results at this point..\n\n\nExpand this to see code\nall_totals |&gt; \n  write_rds(\"data-processed/01-all-totals.rds\")\n\nrep_totals |&gt; \n  write_rds(\"data-processed/01-rep-totals.rds\")",
+    "crumbs": [
+      "Combine results"
+    ]
+  },
+  {
+    "objectID": "02-margins.html",
+    "href": "02-margins.html",
+    "title": "Calculate margins",
+    "section": "",
+    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#our-goal",
+    "href": "02-margins.html#our-goal",
+    "title": "Calculate margins",
+    "section": "",
+    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#updates-dec.-2025",
+    "href": "02-margins.html#updates-dec.-2025",
+    "title": "Calculate margins",
+    "section": "Updates Dec. 2025",
+    "text": "Updates Dec. 2025\nThe first attempt at this compared the highest votes received to the lowest votes received. What we needed was the difference between the percentage of total vote of those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#setup-and-import",
+    "href": "02-margins.html#setup-and-import",
+    "title": "Calculate margins",
+    "section": "Setup and import",
+    "text": "Setup and import\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)\n\n# general &lt;- read_rds(\"data-processed/01-general-results-rep.rds\")\n# primary &lt;- read_rds(\"data-processed/01-primary-results-rep.rds\")\nreps &lt;- read_rds(\"data-processed/01-rep-totals.rds\")",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#calculate-win-margin",
+    "href": "02-margins.html#calculate-win-margin",
+    "title": "Calculate margins",
+    "section": "Calculate win margin",
+    "text": "Calculate win margin\nThis summarise method was developed with the help of chatGPT. It’s explained here.\n\n\nExpand this to see code\nreps_calcs &lt;- reps |&gt; \n  group_by(year, election, district) |&gt;\n  mutate(\n    total_votes = sum(candvotes),\n    pct = (candvotes / total_votes * 100) |&gt; round(2)\n  ) |&gt;\n  arrange(desc(candvotes), .by_group = TRUE)  |&gt; \n  summarise(\n    winner = first(name),\n    winner_party = first(party),\n    winner_inc = first(incumbent),\n    winner_pct = first(pct),\n    runner_up = nth(name, 2),\n    runner_up_party = nth(party, 2),\n    runner_up_inc = nth(incumbent, 2),\n    runner_up_pct = nth(pct, 2),\n    winning_margin = (winner_pct - runner_up_pct) |&gt; round_half_up(2),\n    .groups = \"drop\"\n  ) |&gt; \n  arrange(year, election, district)\n\nreps_calcs |&gt; head()\n\n\n\n  \n\n\n\n\nAdd flags\nHere we add flags if the race is competitive within 5 or 10 points.\nJust showing the margin and flags to check.\n\n\nExpand this to see code\nreps_flags &lt;- reps_calcs |&gt; \n  mutate(flg_5 = if_else(winning_margin &lt;= 5, T, F),\n         flg_10 = if_else(winning_margin &lt;= 10, T, F))\n\n# peek at flags\nreps_flags |&gt;\n  head(20) |&gt; \n  select(winning_margin:flg_10)",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#test-results",
+    "href": "02-margins.html#test-results",
+    "title": "Calculate margins",
+    "section": "Test results",
+    "text": "Test results\n\n2-candidate race\nDoing some manual calculations to compare with prepared data.\n\n\nExpand this to see code\nreps |&gt; \n  filter(year == \"2012\", election == \"General\", district == 1) |&gt; \n  adorn_totals()\n\n\n\n  \n\n\n\nExpand this to see code\nreps_flags |&gt; filter(year == \"2012\", election == \"General\", district == 1)\n\n\n\n  \n\n\n\n\nLavander: (42063 / 50896) * 100 = 82.64500157\nEason: (8833 / 50896) * 100 = 17.35499843\nDiff: 82.64500157 - 17.35499843 = 65.29000314\n\n\n\nMulti-candidate race\nA test for 3+ candidate race\n\n\nExpand this to see code\nreps |&gt; \n  filter(year == \"2019\", election == \"House District 148\", district == 148) |&gt; \n  adorn_totals()\n\n\n\n  \n\n\n\nExpand this to see code\nreps_flags |&gt; filter(year == \"2019\", election == \"House District 148\", district == 148)\n\n\n\n  \n\n\n\n\nEastman: (4212 / 20711) * 100 = 20.33701898\nLaRotta: (3282 / 20711) * 100 = 15.84665154\nDiff: 20.33701898 - 15.84665154 = 4.49036744\n\n\n\nList of elections\n\n\nExpand this to see code\nreps_flags |&gt; \n  count(election)",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#last-look",
+    "href": "02-margins.html#last-look",
+    "title": "Calculate margins",
+    "section": "Last look",
+    "text": "Last look\nGlimpse\n\n\nExpand this to see code\nreps_flags |&gt; glimpse()\n\n\nRows: 1,259\nColumns: 14\n$ year            &lt;chr&gt; \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"2012\"…\n$ election        &lt;chr&gt; \"Democratic Primary\", \"Democratic Primary\", \"Democrati…\n$ district        &lt;dbl&gt; 35, 37, 39, 40, 43, 74, 75, 77, 80, 90, 95, 101, 110, …\n$ winner          &lt;chr&gt; \"Longoria\", \"Oliveira\", \"Martinez\", \"Canales\", \"Gonzal…\n$ winner_party    &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\",…\n$ winner_inc      &lt;chr&gt; \"N\", \"Y\", \"Y\", \"N\", \"N\", \"N\", \"N\", \"Y\", \"Y\", \"Y\", \"N\",…\n$ winner_pct      &lt;dbl&gt; 55.15, 62.62, 83.88, 30.46, 70.59, 53.82, 52.07, 62.07…\n$ runner_up       &lt;chr&gt; \"Ruiz\", \"Dominguez\", \"Campos\", \"Hernandez\", \"Zamora\", …\n$ runner_up_party &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\",…\n$ runner_up_inc   &lt;chr&gt; \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\",…\n$ runner_up_pct   &lt;dbl&gt; 44.85, 37.38, 16.12, 26.21, 29.41, 28.28, 36.05, 37.93…\n$ winning_margin  &lt;dbl&gt; 10.30, 25.24, 67.76, 4.25, 41.18, 25.54, 16.02, 24.14,…\n$ flg_5           &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…\n$ flg_10          &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…\n\n\n\n\nExpand this to see code\nreps_flags |&gt; slice_sample(n = 10)",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "02-margins.html#exports",
+    "href": "02-margins.html#exports",
+    "title": "Calculate margins",
+    "section": "Exports",
+    "text": "Exports\nSends files for R to data-processed, and .csv to data-export.\n\n\nExpand this to see code\n# last assignment\nreps_margins &lt;- reps_flags\n\nreps_margins |&gt; \n  write_rds(\"data-processed/02-reps-margins.rds\")\n\nreps_margins |&gt; \n  write_csv(\"data-export/02-reps-margins.csv\")",
+    "crumbs": [
+      "Calculate margins"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.\nWe start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: Comprehensive Election Datasets (Compressed Format) | Docs.\nFrom that data we calculate statewide results, find the two candidates in each district that have the most votes, and then calculate a margin of victory.\nThe processing of these results yields two files, an 02-reps-margins.rds version that end up in data-processed folder, and a 02-reps-margins.csv version end up in the data-export folder.\nThe fields are as follows:",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Overview",
+    "section": "Contributors:",
+    "text": "Contributors:\n\nIsabella Zeff, MIG data fellow 2024-2025\nChristian McDonald, Associate Professor of Practice",
+    "crumbs": [
+      "Overview"
+    ]
+  }
+]
