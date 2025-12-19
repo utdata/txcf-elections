@@ -11,6 +11,11 @@ website:
       - href: index.qmd
         text: Overview
       - auto: "*.qmd"
+    tools:
+      - icon: github
+        href: https://github.com/utdata/txcf-elections
+      - icon: question-circle
+        href: https://journalism.utexas.edu/innovation/
 
 format:
   html:
