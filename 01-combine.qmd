@@ -126,7 +126,7 @@ If we look at results for this election on [ballotpedia](https://ballotpedia.org
 
 ### Republican primary
 
-And then if we look at the same for the Dem primary:
+And then if we look at the same for the Republica Primary:
 
 ```{r}
 rep_totals |> 
@@ -135,9 +135,8 @@ rep_totals |>
   filter(year == 2024, election == "Republican Primary")
 ```
 
-Here the first district missing is 3, which tracks with Cecil Bell Jr. being the only candidate.
+If we compare the list above with [ballotpedia's primary election list](https://ballotpedia.org/Texas_House_of_Representatives_elections,_2024#Primary), we see the first district missing is 3, which tracks with Cecil Bell Jr. being the only candidate. District 6 is also unopposed, etc.
 
-[ballotpedia list](https://ballotpedia.org/Texas_House_of_Representatives_elections,_2024#Primary)
 
 ### Democratic Primary
 
