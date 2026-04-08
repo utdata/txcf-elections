@@ -2,6 +2,17 @@
 title: "Overview"
 ---
 
+::: callout-warning
+
+## Known issue
+
+When I calculated the winner of primaries to make the margins data, I did not account for runoffs! This needs to be fixed before using that data.
+
+Also, if someone is unopposed in an election, they are not in the data at all.
+
+:::
+
+
 The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.
 
 We start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: [Comprehensive Election Datasets (Compressed Format)](https://data.capitol.texas.gov/dataset/comprehensive-election-datasets-compressed-format) | [Docs](https://data.capitol.texas.gov/dataset/vtds).

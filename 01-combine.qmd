@@ -81,6 +81,9 @@ all_totals <- all_returns |>
 all_totals |> head()
 ```
 
+
+
+
 ### Filter for State Reps
 
 Find the state reps
@@ -126,7 +129,7 @@ If we look at results for this election on [ballotpedia](https://ballotpedia.org
 
 ### Republican primary
 
-And then if we look at the same for the Republica Primary:
+And then if we look at the same for the Republican Primary:
 
 ```{r}
 rep_totals |> 
