@@ -5,6 +5,12 @@ code-fold: true
 code-summary: "Expand this to see code"
 ---
 
+::: callout-warning
+
+The most recent look did not account for runoffs. Hoping to solve that now.
+
+:::
+
 ## Our goal
 
 To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.
@@ -51,7 +57,12 @@ reps_calcs <- reps |>
     runner_up_pct = nth(pct, 2),
     winning_margin = (winner_pct - runner_up_pct) |> round_half_up(2),
     .groups = "drop"
-  ) |> 
+  ) |>
+  mutate(
+    runoff = winner_pct <= 50,
+    r1 = if_else(runoff, winner, NA_character_),
+    r2 = if_else(runoff, runner_up, NA_character_)
+  ) |>
   arrange(year, election, district)
 
 reps_calcs |> head()
