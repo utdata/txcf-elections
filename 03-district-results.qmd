@@ -1,9 +1,13 @@
 ---
-title: "03-district-results"
-format: html
+title: "Finding winners"
+author: "Christian McDonald"
 ---
 
-> A possible flaw in the original data is we don't account for runoffs in primaries (or general, but would there be? this is shown with 2016 Dist 27 Dem Primary.)
+::: callout-warning
+
+> The original margins data has been modified to find runoffs, but this notebook has not yet been reconfigured to deal with them.
+
+:::
 
 Beyond lack of filerID, the big difference in what we have now in our competitive races file vs what we need is the current data is by election .. .i.e., a different row for democratic primary vs gop primary, etc.
 
@@ -58,45 +62,45 @@ dp <- margins_reorder |>
   filter(election == "Democratic Primary") |> 
   select(
     year, district,
-    dp_win = winner,
-    dp_inc = winner_inc,
-    dp_mrg = winning_margin
+    dp_win = first_place,
+    dp_inc = first_place_inc,
+    dp_mrg = vote_margin
   )
 
 dr <- margins_reorder |> 
   filter(election == "Democratic Runoff") |> 
   select(
     year, district,
-    dr_win = winner,
-    dr_inc = winner_inc,
-    dr_mrg = winning_margin
+    dr_win = first_place,
+    dr_inc = first_place_inc,
+    dr_mrg = vote_margin
   )
 
 rp <- margins_reorder |> 
   filter(election == "Republican Primary") |> 
   select(
     year, district,
-    rp_win = winner,
-    rp_inc = winner_inc,
-    rp_mrg = winning_margin
+    rp_win = first_place,
+    rp_inc = first_place_inc,
+    rp_mrg = vote_margin
   )
 
 rr <- margins_reorder |> 
   filter(election == "Republican Runoff") |> 
   select(
     year, district,
-    rr_win = winner,
-    rr_inc = winner_inc,
-    rr_mrg = winning_margin
+    rr_win = first_place,
+    rr_inc = first_place_inc,
+    rr_mrg = vote_margin
   )
 
 gen <- margins_reorder |> 
   filter(election == "General") |> 
   select(
     year, district,
-    g_win = winner,
-    g_inc = winner_inc,
-    g_mrg = winning_margin
+    g_win = first_place,
+    g_inc = first_place_inc,
+    g_mrg = vote_margin
   )
 
 
