@@ -100,7 +100,7 @@ all_totals |>
   write_rds("data-processed/01-all-totals.rds")
 
 rep_totals |> 
-  write_rds("data-processed/01-rep-totals.rds")
+  write_rds("data-processed/01-house-totals.rds")
 ```
 
 

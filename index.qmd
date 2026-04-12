@@ -2,18 +2,19 @@
 title: "Overview"
 ---
 
-The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.
+This project explores using election results to gain insights into political spending. That analysis is in a different notebook and we only process results here.
 
 We start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: [Comprehensive Election Datasets (Compressed Format)](https://data.capitol.texas.gov/dataset/comprehensive-election-datasets-compressed-format) | [Docs](https://data.capitol.texas.gov/dataset/vtds).
 
-From that data we calculate statewide results, find the two candidates in each district that have the most votes, and then calculate a margin of victory.
+We've been looking at two different things
 
-The processing of these results yields two files, an `02-reps-margins.rds` version that end up in data-processed folder, and a `02-reps-margins.csv` version end up in the data-export folder. There's also a version wth 5% and 10% closeness flags.
+- To find the most competitive races ... to find the two candidates in each district that have the most votes, and then calculate a margin of victory.
+- To find simply who won each race. This is problematic as unopposed candidates are not present.
 
 The fields are as follows:
 
 - year: Election year
-- election: General, Democratic Primary, Republican Primary, as well was runoff and special eletions
+- election: General, Democratic Primary, Republican Primary, as well was runoff and special elections
 - district: State Rep district
 - first_place: Last name of race winner
 - first_place_party: Winner's party

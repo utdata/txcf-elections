@@ -17,7 +17,7 @@ This is a just a quick look at the Texas House of Representative districts that 
 library(tidyverse)
 library(janitor)
 
-reps_margins <- read_rds("data-processed/02-reps-margins-flags.rds")
+reps_margins <- read_rds("data-processed/02-house-margins-flags.rds")
 ```
 
 

@@ -1,0 +1,393 @@
+---
+title: "Finding winners"
+author: "Christian McDonald"
+code-fold: true
+code-summary: "Expand this to see code"
+---
+
+## Goal
+
+We are trying to make a list of all the Texas House candidates since 2016 and list if they won their elections.
+
+### Challenges
+
+- This election data only has a candidate last name. There are cases with two candidates with the same last name running in the same election.
+- If a candidate was unopposed in an election, they are not included.
+- Some candidates are listed as both an incumbent and not incumbent within the same election cycle. It seems to just be an error.
+
+### Notes
+
+- I might want to extrapolate this part about finding winners into a different notebook?
+
+## Setup & Import
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(janitor)
+
+totals_rep <- read_rds("data-processed/01-house-totals.rds")
+```
+
+
+## Missing candidates
+
+Something to know about these election results is it will NOT include candidates that were unopposed in an election. Let's look at some examples:
+
+We can look to  [Ballotpedia in 2024](https://ballotpedia.org/Texas_House_of_Representatives_elections,_2024#Primary) to see why
+
+### District 1
+
+- Democratic Primary: No candidates; no primary.
+- Republican Primary: Gary Vandeaver won.
+- General: Vandeaver was unopposed, so no results.
+
+### District 2
+
+- Democratic Primary: There was an unopposed Democrat, so no primary.
+- Republican Primary: Brent Money won.
+- General: Money was unopposed, so no results.
+
+### District 3
+
+_So there are NO results for District 3 in 2024_
+
+- Democratic Primary: No candidates; no primary.
+- Republican Primary: Cecil Bell was unopposed, so no results.
+- General: Cecil Bell was unopposed, so no results.
+
+### District 4
+
+- Democratic Primary: Alex Bar-Sela unopposed, so no results
+- Republican Primary: Keith Bell won primary.
+- General: Bell won the general.
+
+
+
+
+
+## Create winners
+
+Here we'll go through each election and we'll append the race totals and add a flag if the candidate won that race (based on >50% vote.)
+
+
+```{r}
+totals_win <- 
+  totals_rep |> 
+  group_by(year, office, district, election) |> 
+  mutate(
+    total_votes = sum(candvotes),
+    # winner = candidate has > 50% of vote AND the max votes
+    winner = candvotes == max(candvotes) & candvotes > total_votes / 2,
+  ) |> 
+  ungroup()
+
+totals_win |> nrow()
+totals_win |> head()
+```
+
+I should export that tibble.
+
+
+## Filter elections
+
+Here we start with our Texas House project specific tasks:
+
+- Filter for just the primaries, runoffs and general
+- Get only 2016 and later
+
+```{r}
+#| label: import
+
+elcts <- c(
+  "Democratic Primary",
+  "Democratic Runoff",
+  "Republican Primary",
+  "Republican Runoff",
+  "General"
+)
+
+totals_prg <-
+  totals_win |>
+  filter(election %in% elcts, year >= 2016) |> 
+  mutate(election = election |> fct(levels = elcts))
+
+print("Showing years")
+totals_prg |> count(year)
+
+print("Showing included elections")
+totals_prg |> count(election)
+```
+
+## Incumbents problem
+
+While working through this project I found that a candidate's incumbent flag can change during the same election cycle and there doesn't seem to be a pattern. Through research I found these to mostlyl be errors. If left along I would not be able to group on incumbent but that would create other problems as there are two candidates with the same last name in the same Republican Primary and incumbency is the only way to tell them apart.
+
+The only solution I can think of now is to make corrections to these records. We'll use the [Texas Secretary of State](https://www.sos.state.tx.us/elections/historical/elections-results-archive.shtml) results to make decisions. Here are the records in question:
+
+```{r}
+totals_prg |> 
+  group_by(year, office, district, name, party) |> 
+  summarise(n_inc = n_distinct(incumbent), .groups = "drop") |> # counts if different values
+  filter(n_inc > 1)
+```
+
+### Expore cases
+
+This block will be our exploratory block.
+
+```{r}
+totals_rep |> 
+  filter(year == 2020, district == 28, name == "Gates")
+```
+
+### Evidence
+
+- Ron Reynolds is listed as I in [2016 Democratic Primary results](https://elections.sos.state.tx.us/elchist317_state.htm). We will update to Y.
+- Doug Miller is listed as I in [2016 Republican Runnoff results](https://elections.sos.state.tx.us/elchist316_state.htm). We will update to Y.
+- Jonathan Stickland listed as I in [2016 Republican Primary results](https://elections.sos.state.tx.us/elchist273_state.htm). We will update to Y.
+- Ben Leman is NOT listed as I in [2018 General results](https://elections.sos.state.tx.us/elchist331_state.htm). We'll change that to N.
+- Kevin Simmons is NOT listed as I, but another candidate Ron Simmons is also same race according to [2018 Republican Primary results](https://elections.sos.state.tx.us/elchist325_state.htm). There is no change to be made here because they are different candidates.
+- Lorraine Birabil is listed as I in the official 2020 Democratic Primary results. (No easy way to share those results). We'll change to Y.
+- Ana Eastman is listed as I in the official 2020 Democratic Primary results. We'll change to Y.
+- Gary Gates is listed as I in the official 2020 General results. We'll change to Y.
+
+### Fix cases
+
+```{r}
+totals_inc_fix <- totals_prg |> 
+  mutate(
+    incumbent = case_when(
+      year == 2016 & district == 27 & incumbent == "N" & name == "Reynolds" ~ "Y",
+      year == 2016 & district == 73 & incumbent == "N" & name == "Miller" ~ "Y",
+      year == 2016 & district == 92 & incumbent == "N" & name == "Stickland" ~ "Y",
+      year == 2018 & district == 13 & incumbent == "Y" & name == "Leman" ~ "N",
+      year == 2020 & district == 100 & incumbent == "N" & name == "Birabil" ~ "Y",
+      year == 2020 & district == 148 & incumbent == "N" & name == "Eastman" ~ "Y",
+      year == 2020 & district == 28 & incumbent == "N" & name == "Gates" ~ "Y",
+      .default = incumbent
+    )
+  )
+
+totals_inc_fix |>
+  group_by(year, office, district, name, party) |> 
+  summarise(n_inc = n_distinct(incumbent), .groups = "drop") |> # counts if different values
+  filter(n_inc > 1)
+```
+
+We are now left with just the Simmons pair from District 65, which are two different people.
+
+## Process elections
+
+For each election (filtered) we need to:
+
+- Rename some columns as flags for the specific election. We save those results into an election set.
+- Then we full_join the election sets back together.
+
+I should probably write a function for the filter and renaming, but I don't want to expend the brain power at this time.
+
+### Democratic Primary
+
+```{r}
+dp_data <-
+  totals_inc_fix |> 
+  filter(election == "Democratic Primary") |> 
+  rename(dp_votes = candvotes,
+         dp_tvotes = total_votes,
+         dp_win = winner) |> 
+  select(-election)
+
+dp_data |> nrow()
+dp_data |> head()
+```
+
+### Democratic Runoff
+
+```{r}
+dr_data <-
+  totals_inc_fix |> 
+  filter(election == "Democratic Runoff") |> 
+  rename(# dr_inc = incumbent,
+         dr_votes = candvotes,
+         dr_tvotes = total_votes,
+         dr_win = winner) |> 
+  select(-election)
+
+dr_data |> nrow()
+dr_data |> head()
+```
+
+### Republican Primary
+
+```{r}
+rp_data <-
+  totals_inc_fix |> 
+  filter(election == "Republican Primary") |> 
+  rename(# rp_inc = incumbent,
+         rp_votes = candvotes,
+         rp_tvotes = total_votes,
+         rp_win = winner) |> 
+  select(-election)
+
+rp_data |> nrow()
+rp_data |> head()
+```
+
+### Republican Runoff
+
+```{r}
+rr_data <-
+  totals_inc_fix |> 
+  filter(election == "Republican Runoff") |> 
+  rename(# rr_inc = incumbent,
+         rr_votes = candvotes,
+         rr_tvotes = total_votes,
+         rr_win = winner) |> 
+  select(-election)
+
+rr_data |> nrow()
+rr_data |> head()
+```
+
+### General
+
+Now the general election
+
+```{r}
+g_data <-
+  totals_inc_fix |> 
+  filter(election == "General") |> 
+  rename(# g_inc = incumbent,
+         g_votes = candvotes,
+         g_tvotes = total_votes,
+         g_win = winner) |> 
+  select(-election)
+
+g_data |> head()
+```
+
+### Combine
+
+Let's try a join.
+
+```{r}
+totals_flags <- 
+  dp_data |> 
+  full_join(dr_data) |> 
+  full_join(rp_data) |> 
+  full_join(rr_data) |> 
+  full_join(g_data)
+  
+
+totals_flags |> nrow()
+totals_flags |> head()
+```
+
+## Remove votes
+
+```{r}
+totals_export <- totals_flags |> 
+  select(!ends_with("votes"))
+
+totals_export |> glimpse()
+```
+
+## Checks
+
+### Checking split & join
+
+Filtering by election and then joining all those back is pretty major. Let's make sure our result has what we expect.
+
+- We'll first look at the winners data (after incumbency fixes) to see how many distinct people there are.
+- Then we'll compare that to our split & join data. The should be the same.
+
+```{r}
+# Individuals before we split apart and rejoined
+totals_inc_fix |> distinct(year, office, district, name, office, party, incumbent) |> nrow()
+
+# number of rows in our flagged data
+totals_export |> nrow()
+```
+
+
+### Checking results to original data
+
+We'll pick one our districts where incumbency was wrong and compare our original data to when we created totals and to our final product.
+
+```{r}
+# our source data
+totals_rep |> 
+  filter(year == 2016, district == 27)
+
+# with winners
+totals_win |> 
+  filter(year == 2016, district == 27)
+
+# our processed data
+totals_export |> 
+  filter(year == 2016, district == 27)
+```
+
+And then we have our problem child (or children) with the [2018 District 65 Republican Primary](https://ballotpedia.org/Texas_House_of_Representatives_elections,_2018#Primary_candidates) race with two people named Simmons.
+
+```{r}
+# our source data
+totals_rep |> 
+  filter(year == 2018, district == 65)
+
+# with winners
+totals_win |> 
+  filter(year == 2018, district == 65)
+
+# our processed data
+totals_export |> 
+  filter(year == 2018, district == 65)
+```
+
+Beckley shows no `dp_win` because she was unopposed in that election and therefor not in our data.
+
+### More names?
+
+Could there be other potential issues if person of the same name ran in the same race.
+
+```{r}
+totals_prg |> 
+  count(year, election, office, district, name, sort = T) |> 
+  filter(n > 1)
+
+totals_prg |> 
+  filter(district == 41, name == "Guerra")
+```
+
+There is another case in District 41 where two people named Guerra ran against each other in the General elections of 2020, 2022 and 2024. They are in different parties.
+
+We'll peek at the 2022 results.
+
+```{r}
+# our source data
+totals_rep |> 
+  filter(year == 2022, district == 41)
+
+# with winners
+totals_win |> 
+  filter(year == 2022, district == 41)
+
+# our processed data
+totals_export |> 
+  filter(year == 2022, district == 41)
+```
+
+## Exports
+
+I think this is the best we can do for now. I'm still worried that we have only last names and that will prove a problem with Simmons and Guerra when we try to join with ballot and spending, but it is the best we have for right now.
+
+```{r}
+totals_export |> write_csv("data-export/02-house-winners.csv")
+totals_export |> write_rds("data-processed/02-house-winners.rds")
+
+```
+

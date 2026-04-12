@@ -25,7 +25,7 @@ library(janitor)
 
 # general <- read_rds("data-processed/01-general-results-rep.rds")
 # primary <- read_rds("data-processed/01-primary-results-rep.rds")
-reps <- read_rds("data-processed/01-rep-totals.rds")
+reps <- read_rds("data-processed/01-house-totals.rds")
 ```
 
 
@@ -134,7 +134,7 @@ reps_flags |> glimpse()
 ```{r}
 reps_flags |> slice_sample(n = 10)
 
-reps_flags |> names() |> clipr::write_clip()
+# reps_flags |> names() |> clipr::write_clip()
 ```
 
 ## Exports
@@ -147,13 +147,13 @@ reps_margins <- reps_calcs
 
 # just margins for analysis
 reps_margins |> 
-  write_rds("data-processed/02-reps-margins.rds")
+  write_rds("data-processed/02-house-margins.rds")
 
 # margins with flags for analysis
 reps_flags |> 
-  write_rds("data-processed/02-reps-margins-flags.rds")
+  write_rds("data-processed/02-house-margins-flags.rds")
 
 # just margins to use in other projects
 reps_margins |> 
-  write_csv("data-export/02-reps-margins.csv")
+  write_csv("data-export/02-house-margins.csv")
 ```
