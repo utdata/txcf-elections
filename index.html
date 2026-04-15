@@ -123,14 +123,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-margins.html" class="sidebar-item-text sidebar-link">
+  <a href="./02-house-margins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calculate margins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis</span></a>
+  <a href="./02-house-winners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finding winners</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -186,24 +186,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.</p>
+<p>This project explores using election results to gain insights into political spending. That analysis is in a different notebook and we only process results here.</p>
 <p>We start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: <a href="https://data.capitol.texas.gov/dataset/comprehensive-election-datasets-compressed-format">Comprehensive Election Datasets (Compressed Format)</a> | <a href="https://data.capitol.texas.gov/dataset/vtds">Docs</a>.</p>
-<p>From that data we calculate statewide results, find the two candidates in each district that have the most votes, and then calculate a margin of victory.</p>
-<p>The processing of these results yields two files, an <code>02-reps-margins.rds</code> version that end up in data-processed folder, and a <code>02-reps-margins.csv</code> version end up in the data-export folder.</p>
+<p>We’ve been looking at two different things</p>
+<ul>
+<li>To find the most competitive races … to find the two candidates in each district that have the most votes, and then calculate a margin of victory.</li>
+<li>To find simply who won each race. This is problematic as unopposed candidates are not present.</li>
+</ul>
 <p>The fields are as follows:</p>
 <ul>
 <li>year: Election year</li>
-<li>election: General, Democratic Primary, Republican Primary, as well was runoff and special eletions</li>
+<li>election: General, Democratic Primary, Republican Primary, as well was runoff and special elections</li>
 <li>district: State Rep district</li>
-<li>winner: Last name of race winner</li>
-<li>winner_party: Winner’s party</li>
-<li>winner_inc: <code>TRUE</code> if incumbent</li>
-<li>winner_pct: Percentage of total vote</li>
-<li>runner_up: Last name of runner up</li>
-<li>runner_up_party: Runner up party</li>
-<li>runner_up_inc: <code>TRUE</code> if incumbent</li>
-<li>runner_up_pct: Percentage of total vote</li>
-<li>winning_margin: Difference in percentage of total vote</li>
+<li>first_place: Last name of race winner</li>
+<li>first_place_party: Winner’s party</li>
+<li>first_place_inc: <code>TRUE</code> if incumbent</li>
+<li>first_place_pct: Percentage of total vote</li>
+<li>second_place: Last name of runner up</li>
+<li>second_place_party: Runner up party</li>
+<li>second_place_inc: <code>TRUE</code> if incumbent</li>
+<li>second_place_pct: Percentage of total vote</li>
+<li>vote_margin: Difference in percentage of total vote</li>
+<li>runoff: T/F value if there was a runoff</li>
+<li>winner: Winner’s last name, if no runoff.</li>
 <li>flg_5: <code>TRUE</code> if margin is 5% or less</li>
 <li>flg_10: <code>TRUE</code> if margin is 10% or less</li>
 </ul>

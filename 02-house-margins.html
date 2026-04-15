@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-margins.html">Calculate margins</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-house-margins.html">Calculate margins</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,14 +161,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-margins.html" class="sidebar-item-text sidebar-link active">
+  <a href="./02-house-margins.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Calculate margins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis</span></a>
+  <a href="./02-house-winners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finding winners</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -198,8 +198,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#our-goal" id="toc-our-goal" class="nav-link active" data-scroll-target="#our-goal">Our goal</a></li>
-  <li><a href="#updates-dec.-2025" id="toc-updates-dec.-2025" class="nav-link" data-scroll-target="#updates-dec.-2025">Updates Dec.&nbsp;2025</a></li>
+  <li><a href="#our-goal" id="toc-our-goal" class="nav-link active" data-scroll-target="#our-goal">Our goal</a>
+  <ul class="collapse">
+  <li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a></li>
+  </ul></li>
   <li><a href="#setup-and-import" id="toc-setup-and-import" class="nav-link" data-scroll-target="#setup-and-import">Setup and import</a></li>
   <li><a href="#calculate-win-margin" id="toc-calculate-win-margin" class="nav-link" data-scroll-target="#calculate-win-margin">Calculate win margin</a>
   <ul class="collapse">
@@ -247,10 +249,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="our-goal" class="level2">
 <h2 class="anchored" data-anchor-id="our-goal">Our goal</h2>
 <p>To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.</p>
+<section id="updates" class="level3">
+<h3 class="anchored" data-anchor-id="updates">Updates</h3>
+<ul>
+<li>April 2026: The previous calculations did not take runoffs into account. This has been remedied.</li>
+<li>December 2025: Updates from the first attempt which compared the highest votes received to the lowest votes received. What we needed was the difference between those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.</li>
+</ul>
 </section>
-<section id="updates-dec.-2025" class="level2">
-<h2 class="anchored" data-anchor-id="updates-dec.-2025">Updates Dec.&nbsp;2025</h2>
-<p>The first attempt at this compared the highest votes received to the lowest votes received. What we needed was the difference between the percentage of total vote of those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.</p>
 </section>
 <section id="setup-and-import" class="level2">
 <h2 class="anchored" data-anchor-id="setup-and-import">Setup and import</h2>
@@ -262,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># general &lt;- read_rds("data-processed/01-general-results-rep.rds")</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># primary &lt;- read_rds("data-processed/01-primary-results-rep.rds")</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed/01-rep-totals.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>reps <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed/01-house-totals.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -280,25 +285,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(candvotes), <span class="at">.by_group =</span> <span class="cn">TRUE</span>)  <span class="sc">|&gt;</span> </span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">winner =</span> <span class="fu">first</span>(name),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">winner_party =</span> <span class="fu">first</span>(party),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">winner_inc =</span> <span class="fu">first</span>(incumbent),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">winner_pct =</span> <span class="fu">first</span>(pct),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">runner_up =</span> <span class="fu">nth</span>(name, <span class="dv">2</span>),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">runner_up_party =</span> <span class="fu">nth</span>(party, <span class="dv">2</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">runner_up_inc =</span> <span class="fu">nth</span>(incumbent, <span class="dv">2</span>),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">runner_up_pct =</span> <span class="fu">nth</span>(pct, <span class="dv">2</span>),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">winning_margin =</span> (winner_pct <span class="sc">-</span> runner_up_pct) <span class="sc">|&gt;</span> <span class="fu">round_half_up</span>(<span class="dv">2</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_place =</span> <span class="fu">first</span>(name),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_place_party =</span> <span class="fu">first</span>(party),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_place_inc =</span> <span class="fu">first</span>(incumbent),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_place_pct =</span> <span class="fu">first</span>(pct),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">second_place =</span> <span class="fu">nth</span>(name, <span class="dv">2</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">second_place_party =</span> <span class="fu">nth</span>(party, <span class="dv">2</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">second_place_inc =</span> <span class="fu">nth</span>(incumbent, <span class="dv">2</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">second_place_pct =</span> <span class="fu">nth</span>(pct, <span class="dv">2</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">vote_margin =</span> (first_place_pct <span class="sc">-</span> second_place_pct) <span class="sc">|&gt;</span> <span class="fu">round_half_up</span>(<span class="dv">2</span>),</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year, election, district)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>reps_calcs <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">runoff =</span> first_place_pct <span class="sc">&lt;=</span> <span class="dv">50</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">winner =</span> <span class="fu">if_else</span>(<span class="sc">!</span>runoff, first_place, <span class="cn">NA_character_</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year, election, district)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>reps_calcs <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["winner"],"name":[4],"type":["chr"],"align":["left"]},{"label":["winner_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["winner_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["winner_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["runner_up"],"name":[8],"type":["chr"],"align":["left"]},{"label":["runner_up_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["runner_up_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["runner_up_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["winning_margin"],"name":[12],"type":["dbl"],"align":["right"]}],"data":[{"1":"2012","2":"Democratic Primary","3":"35","4":"Longoria","5":"D","6":"N","7":"55.15","8":"Ruiz","9":"D","10":"N","11":"44.85","12":"10.30"},{"1":"2012","2":"Democratic Primary","3":"37","4":"Oliveira","5":"D","6":"Y","7":"62.62","8":"Dominguez","9":"D","10":"N","11":"37.38","12":"25.24"},{"1":"2012","2":"Democratic Primary","3":"39","4":"Martinez","5":"D","6":"Y","7":"83.88","8":"Campos","9":"D","10":"N","11":"16.12","12":"67.76"},{"1":"2012","2":"Democratic Primary","3":"40","4":"Canales","5":"D","6":"N","7":"30.46","8":"Hernandez","9":"D","10":"N","11":"26.21","12":"4.25"},{"1":"2012","2":"Democratic Primary","3":"43","4":"Gonzalez Toureilles","5":"D","6":"N","7":"70.59","8":"Zamora","9":"D","10":"N","11":"29.41","12":"41.18"},{"1":"2012","2":"Democratic Primary","3":"74","4":"Nevarez","5":"D","6":"N","7":"53.82","8":"Garza","9":"D","10":"N","11":"28.28","12":"25.54"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["first_place"],"name":[4],"type":["chr"],"align":["left"]},{"label":["first_place_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["first_place_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["first_place_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["second_place"],"name":[8],"type":["chr"],"align":["left"]},{"label":["second_place_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["second_place_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["second_place_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["vote_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["runoff"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["winner"],"name":[14],"type":["chr"],"align":["left"]}],"data":[{"1":"2012","2":"Democratic Primary","3":"35","4":"Longoria","5":"D","6":"N","7":"55.15","8":"Ruiz","9":"D","10":"N","11":"44.85","12":"10.30","13":"FALSE","14":"Longoria"},{"1":"2012","2":"Democratic Primary","3":"37","4":"Oliveira","5":"D","6":"Y","7":"62.62","8":"Dominguez","9":"D","10":"N","11":"37.38","12":"25.24","13":"FALSE","14":"Oliveira"},{"1":"2012","2":"Democratic Primary","3":"39","4":"Martinez","5":"D","6":"Y","7":"83.88","8":"Campos","9":"D","10":"N","11":"16.12","12":"67.76","13":"FALSE","14":"Martinez"},{"1":"2012","2":"Democratic Primary","3":"40","4":"Canales","5":"D","6":"N","7":"30.46","8":"Hernandez","9":"D","10":"N","11":"26.21","12":"4.25","13":"TRUE","14":"NA"},{"1":"2012","2":"Democratic Primary","3":"43","4":"Gonzalez Toureilles","5":"D","6":"N","7":"70.59","8":"Zamora","9":"D","10":"N","11":"29.41","12":"41.18","13":"FALSE","14":"Gonzalez Toureilles"},{"1":"2012","2":"Democratic Primary","3":"74","4":"Nevarez","5":"D","6":"N","7":"53.82","8":"Garza","9":"D","10":"N","11":"28.28","12":"25.54","13":"FALSE","14":"Nevarez"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -311,18 +320,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details class="code-fold">
 <summary>Expand this to see code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reps_flags <span class="ot">&lt;-</span> reps_calcs <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flg_5 =</span> <span class="fu">if_else</span>(winning_margin <span class="sc">&lt;=</span> <span class="dv">5</span>, T, F),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">flg_10 =</span> <span class="fu">if_else</span>(winning_margin <span class="sc">&lt;=</span> <span class="dv">10</span>, T, F))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flg_5 =</span> <span class="fu">if_else</span>(vote_margin <span class="sc">&lt;=</span> <span class="dv">5</span>, T, F),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">flg_10 =</span> <span class="fu">if_else</span>(vote_margin <span class="sc">&lt;=</span> <span class="dv">10</span>, T, F))</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># peek at flags</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>reps_flags <span class="sc">|&gt;</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">20</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(winning_margin<span class="sc">:</span>flg_10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(vote_margin<span class="sc">:</span>flg_10)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["winning_margin"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["flg_5"],"name":[2],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"10.30","2":"FALSE","3":"FALSE"},{"1":"25.24","2":"FALSE","3":"FALSE"},{"1":"67.76","2":"FALSE","3":"FALSE"},{"1":"4.25","2":"TRUE","3":"TRUE"},{"1":"41.18","2":"FALSE","3":"FALSE"},{"1":"25.54","2":"FALSE","3":"FALSE"},{"1":"16.02","2":"FALSE","3":"FALSE"},{"1":"24.14","2":"FALSE","3":"FALSE"},{"1":"19.34","2":"FALSE","3":"FALSE"},{"1":"3.98","2":"TRUE","3":"TRUE"},{"1":"9.75","2":"FALSE","3":"TRUE"},{"1":"19.25","2":"FALSE","3":"FALSE"},{"1":"38.35","2":"FALSE","3":"FALSE"},{"1":"1.08","2":"TRUE","3":"TRUE"},{"1":"33.64","2":"FALSE","3":"FALSE"},{"1":"18.80","2":"FALSE","3":"FALSE"},{"1":"19.09","2":"FALSE","3":"FALSE"},{"1":"25.34","2":"FALSE","3":"FALSE"},{"1":"15.14","2":"FALSE","3":"FALSE"},{"1":"74.86","2":"FALSE","3":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["vote_margin"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["runoff"],"name":[2],"type":["lgl"],"align":["right"]},{"label":["winner"],"name":[3],"type":["chr"],"align":["left"]},{"label":["flg_5"],"name":[4],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"10.30","2":"FALSE","3":"Longoria","4":"FALSE","5":"FALSE"},{"1":"25.24","2":"FALSE","3":"Oliveira","4":"FALSE","5":"FALSE"},{"1":"67.76","2":"FALSE","3":"Martinez","4":"FALSE","5":"FALSE"},{"1":"4.25","2":"TRUE","3":"NA","4":"TRUE","5":"TRUE"},{"1":"41.18","2":"FALSE","3":"Gonzalez Toureilles","4":"FALSE","5":"FALSE"},{"1":"25.54","2":"FALSE","3":"Nevarez","4":"FALSE","5":"FALSE"},{"1":"16.02","2":"FALSE","3":"Gonzalez","4":"FALSE","5":"FALSE"},{"1":"24.14","2":"FALSE","3":"Marquez","4":"FALSE","5":"FALSE"},{"1":"19.34","2":"FALSE","3":"King","4":"FALSE","5":"FALSE"},{"1":"3.98","2":"FALSE","3":"Burnam","4":"TRUE","5":"TRUE"},{"1":"9.75","2":"TRUE","3":"NA","4":"FALSE","5":"TRUE"},{"1":"19.25","2":"FALSE","3":"Turner","4":"FALSE","5":"FALSE"},{"1":"38.35","2":"FALSE","3":"Rose","4":"FALSE","5":"FALSE"},{"1":"1.08","2":"TRUE","3":"NA","4":"TRUE","5":"TRUE"},{"1":"33.64","2":"FALSE","3":"Rodriguez","4":"FALSE","5":"FALSE"},{"1":"18.80","2":"FALSE","3":"Allen","4":"FALSE","5":"FALSE"},{"1":"19.09","2":"TRUE","3":"NA","4":"FALSE","5":"FALSE"},{"1":"25.34","2":"FALSE","3":"Perez","4":"FALSE","5":"FALSE"},{"1":"15.14","2":"FALSE","3":"Miles","4":"FALSE","5":"FALSE"},{"1":"74.86","2":"FALSE","3":"Coleman","4":"FALSE","5":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -355,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["winner"],"name":[4],"type":["chr"],"align":["left"]},{"label":["winner_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["winner_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["winner_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["runner_up"],"name":[8],"type":["chr"],"align":["left"]},{"label":["runner_up_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["runner_up_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["runner_up_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["winning_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["flg_5"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[14],"type":["lgl"],"align":["right"]}],"data":[{"1":"2012","2":"General","3":"1","4":"Lavender","5":"R","6":"Y","7":"82.65","8":"Eason","9":"L","10":"N","11":"17.35","12":"65.3","13":"FALSE","14":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["first_place"],"name":[4],"type":["chr"],"align":["left"]},{"label":["first_place_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["first_place_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["first_place_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["second_place"],"name":[8],"type":["chr"],"align":["left"]},{"label":["second_place_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["second_place_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["second_place_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["vote_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["runoff"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["winner"],"name":[14],"type":["chr"],"align":["left"]},{"label":["flg_5"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[16],"type":["lgl"],"align":["right"]}],"data":[{"1":"2012","2":"General","3":"1","4":"Lavender","5":"R","6":"Y","7":"82.65","8":"Eason","9":"L","10":"N","11":"17.35","12":"65.3","13":"FALSE","14":"Lavender","15":"FALSE","16":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -390,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["winner"],"name":[4],"type":["chr"],"align":["left"]},{"label":["winner_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["winner_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["winner_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["runner_up"],"name":[8],"type":["chr"],"align":["left"]},{"label":["runner_up_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["runner_up_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["runner_up_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["winning_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["flg_5"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[14],"type":["lgl"],"align":["right"]}],"data":[{"1":"2019","2":"House District 148","3":"148","4":"Eastman","5":"D","6":"N","7":"20.34","8":"LaRotta","9":"R","10":"N","11":"15.85","12":"4.49","13":"TRUE","14":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["first_place"],"name":[4],"type":["chr"],"align":["left"]},{"label":["first_place_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["first_place_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["first_place_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["second_place"],"name":[8],"type":["chr"],"align":["left"]},{"label":["second_place_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["second_place_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["second_place_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["vote_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["runoff"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["winner"],"name":[14],"type":["chr"],"align":["left"]},{"label":["flg_5"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[16],"type":["lgl"],"align":["right"]}],"data":[{"1":"2019","2":"House District 148","3":"148","4":"Eastman","5":"D","6":"N","7":"20.34","8":"LaRotta","9":"R","10":"N","11":"15.85","12":"4.49","13":"TRUE","14":"NA","15":"TRUE","16":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -429,21 +438,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1,259
-Columns: 14
-$ year            &lt;chr&gt; "2012", "2012", "2012", "2012", "2012", "2012", "2012"…
-$ election        &lt;chr&gt; "Democratic Primary", "Democratic Primary", "Democrati…
-$ district        &lt;dbl&gt; 35, 37, 39, 40, 43, 74, 75, 77, 80, 90, 95, 101, 110, …
-$ winner          &lt;chr&gt; "Longoria", "Oliveira", "Martinez", "Canales", "Gonzal…
-$ winner_party    &lt;chr&gt; "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D",…
-$ winner_inc      &lt;chr&gt; "N", "Y", "Y", "N", "N", "N", "N", "Y", "Y", "Y", "N",…
-$ winner_pct      &lt;dbl&gt; 55.15, 62.62, 83.88, 30.46, 70.59, 53.82, 52.07, 62.07…
-$ runner_up       &lt;chr&gt; "Ruiz", "Dominguez", "Campos", "Hernandez", "Zamora", …
-$ runner_up_party &lt;chr&gt; "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D",…
-$ runner_up_inc   &lt;chr&gt; "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "N",…
-$ runner_up_pct   &lt;dbl&gt; 44.85, 37.38, 16.12, 26.21, 29.41, 28.28, 36.05, 37.93…
-$ winning_margin  &lt;dbl&gt; 10.30, 25.24, 67.76, 4.25, 41.18, 25.54, 16.02, 24.14,…
-$ flg_5           &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…
-$ flg_10          &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…</code></pre>
+Columns: 16
+$ year               &lt;chr&gt; "2012", "2012", "2012", "2012", "2012", "2012", "20…
+$ election           &lt;chr&gt; "Democratic Primary", "Democratic Primary", "Democr…
+$ district           &lt;dbl&gt; 35, 37, 39, 40, 43, 74, 75, 77, 80, 90, 95, 101, 11…
+$ first_place        &lt;chr&gt; "Longoria", "Oliveira", "Martinez", "Canales", "Gon…
+$ first_place_party  &lt;chr&gt; "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "…
+$ first_place_inc    &lt;chr&gt; "N", "Y", "Y", "N", "N", "N", "N", "Y", "Y", "Y", "…
+$ first_place_pct    &lt;dbl&gt; 55.15, 62.62, 83.88, 30.46, 70.59, 53.82, 52.07, 62…
+$ second_place       &lt;chr&gt; "Ruiz", "Dominguez", "Campos", "Hernandez", "Zamora…
+$ second_place_party &lt;chr&gt; "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "…
+$ second_place_inc   &lt;chr&gt; "N", "N", "N", "N", "N", "N", "N", "N", "N", "N", "…
+$ second_place_pct   &lt;dbl&gt; 44.85, 37.38, 16.12, 26.21, 29.41, 28.28, 36.05, 37…
+$ vote_margin        &lt;dbl&gt; 10.30, 25.24, 67.76, 4.25, 41.18, 25.54, 16.02, 24.…
+$ runoff             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…
+$ winner             &lt;chr&gt; "Longoria", "Oliveira", "Martinez", NA, "Gonzalez T…
+$ flg_5              &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…
+$ flg_10             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -454,10 +465,14 @@ $ flg_10          &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FA
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["winner"],"name":[4],"type":["chr"],"align":["left"]},{"label":["winner_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["winner_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["winner_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["runner_up"],"name":[8],"type":["chr"],"align":["left"]},{"label":["runner_up_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["runner_up_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["runner_up_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["winning_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["flg_5"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[14],"type":["lgl"],"align":["right"]}],"data":[{"1":"2012","2":"General","3":"94","4":"Patrick","5":"R","6":"Y","7":"82.21","8":"Eyerly","9":"L","10":"N","11":"17.79","12":"64.42","13":"FALSE","14":"FALSE"},{"1":"2014","2":"Republican Primary","3":"4","4":"Spitzer","5":"R","6":"N","7":"51.04","8":"Gooden","9":"R","10":"Y","11":"48.96","12":"2.08","13":"TRUE","14":"TRUE"},{"1":"2014","2":"Republican Runoff","3":"53","4":"Murr","5":"R","6":"N","7":"61.30","8":"Henneke","9":"R","10":"N","11":"38.70","12":"22.60","13":"FALSE","14":"FALSE"},{"1":"2012","2":"Republican Primary","3":"41","4":"Martinez","5":"R","6":"N","7":"54.11","8":"Vera","9":"R","10":"N","11":"45.89","12":"8.22","13":"FALSE","14":"TRUE"},{"1":"2012","2":"General","3":"26","4":"Miller","5":"R","6":"N","7":"62.97","8":"Nguyen","9":"D","10":"N","11":"37.03","12":"25.94","13":"FALSE","14":"FALSE"},{"1":"2016","2":"General","3":"146","4":"Thierry","5":"D","6":"N","7":"97.15","8":"Owens","9":"W","10":"N","11":"2.85","12":"94.30","13":"FALSE","14":"FALSE"},{"1":"2018","2":"Democratic Primary","3":"117","4":"Cortez","5":"D","6":"Y","7":"63.42","8":"DeDeaux","9":"D","10":"N","11":"36.58","12":"26.84","13":"FALSE","14":"FALSE"},{"1":"2020","2":"Democratic Primary","3":"97","4":"Beck","5":"D","6":"N","7":"88.77","8":"Willis","9":"D","10":"N","11":"11.23","12":"77.54","13":"FALSE","14":"FALSE"},{"1":"2022","2":"Republican Primary","3":"61","4":"Frazier","5":"R","6":"N","7":"42.33","8":"Chabot","9":"R","10":"N","11":"36.61","12":"5.72","13":"FALSE","14":"TRUE"},{"1":"2016","2":"General","3":"147","4":"Coleman","5":"D","6":"Y","7":"76.27","8":"Murphy","9":"R","10":"N","11":"20.82","12":"55.45","13":"FALSE","14":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["year"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election"],"name":[2],"type":["chr"],"align":["left"]},{"label":["district"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["first_place"],"name":[4],"type":["chr"],"align":["left"]},{"label":["first_place_party"],"name":[5],"type":["chr"],"align":["left"]},{"label":["first_place_inc"],"name":[6],"type":["chr"],"align":["left"]},{"label":["first_place_pct"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["second_place"],"name":[8],"type":["chr"],"align":["left"]},{"label":["second_place_party"],"name":[9],"type":["chr"],"align":["left"]},{"label":["second_place_inc"],"name":[10],"type":["chr"],"align":["left"]},{"label":["second_place_pct"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["vote_margin"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["runoff"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["winner"],"name":[14],"type":["chr"],"align":["left"]},{"label":["flg_5"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["flg_10"],"name":[16],"type":["lgl"],"align":["right"]}],"data":[{"1":"2020","2":"Democratic Primary","3":"97","4":"Beck","5":"D","6":"N","7":"88.77","8":"Willis","9":"D","10":"N","11":"11.23","12":"77.54","13":"FALSE","14":"Beck","15":"FALSE","16":"FALSE"},{"1":"2016","2":"Democratic Primary","3":"97","4":"Tarrant","5":"D","6":"N","7":"78.03","8":"McKernon","9":"D","10":"N","11":"21.97","12":"56.06","13":"FALSE","14":"Tarrant","15":"FALSE","16":"FALSE"},{"1":"2020","2":"Republican Runoff","3":"2","4":"Slaton","5":"R","6":"N","7":"61.08","8":"Flynn","9":"R","10":"Y","11":"38.92","12":"22.16","13":"FALSE","14":"Slaton","15":"FALSE","16":"FALSE"},{"1":"2024","2":"Democratic Primary","3":"77","4":"Perez","5":"D","6":"N","7":"37.97","8":"Chavez","9":"D","10":"N","11":"32.18","12":"5.79","13":"TRUE","14":"NA","15":"FALSE","16":"TRUE"},{"1":"2018","2":"General","3":"70","4":"Sanford","5":"R","6":"Y","7":"61.75","8":"Luton","9":"D","10":"N","11":"38.25","12":"23.50","13":"FALSE","14":"Sanford","15":"FALSE","16":"FALSE"},{"1":"2018","2":"Republican Primary","3":"9","4":"Paddie","5":"R","6":"Y","7":"63.92","8":"Boersma","9":"R","10":"N","11":"36.08","12":"27.84","13":"FALSE","14":"Paddie","15":"FALSE","16":"FALSE"},{"1":"2020","2":"General","3":"90","4":"Romero","5":"D","6":"Y","7":"72.40","8":"Camacho","9":"R","10":"N","11":"27.60","12":"44.80","13":"FALSE","14":"Romero","15":"FALSE","16":"FALSE"},{"1":"2024","2":"Democratic Primary","3":"118","4":"Carranza","5":"D","6":"N","7":"63.14","8":"Quezada","9":"D","10":"N","11":"36.86","12":"26.28","13":"FALSE","14":"Carranza","15":"FALSE","16":"FALSE"},{"1":"2012","2":"Republican Primary","3":"143","4":"Weiskopf","5":"R","6":"N","7":"61.17","8":"Salazar","9":"R","10":"N","11":"38.83","12":"22.34","13":"FALSE","14":"Weiskopf","15":"FALSE","16":"FALSE"},{"1":"2014","2":"General","3":"84","4":"Frullo","5":"R","6":"Y","7":"72.71","8":"Tishler","9":"D","10":"N","11":"27.29","12":"45.42","13":"FALSE","14":"Frullo","15":"FALSE","16":"FALSE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
+<details class="code-fold">
+<summary>Expand this to see code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reps_flags |&gt; names() |&gt; clipr::write_clip()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="exports" class="level2">
@@ -466,14 +481,20 @@ $ flg_10          &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FA
 <div class="cell">
 <details class="code-fold">
 <summary>Expand this to see code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># last assignment</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="ot">&lt;-</span> reps_flags</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/02-reps-margins.rds"</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="sc">|&gt;</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"data-export/02-reps-margins.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># last assignment (doesn't include flags)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="ot">&lt;-</span> reps_calcs</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># just margins for analysis</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="sc">|&gt;</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/02-house-margins.rds"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># margins with flags for analysis</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>reps_flags <span class="sc">|&gt;</span> </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/02-house-margins-flags.rds"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># just margins to use in other projects</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>reps_margins <span class="sc">|&gt;</span> </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"data-export/02-house-margins.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

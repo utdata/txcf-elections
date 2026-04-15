@@ -33,33 +33,113 @@
     ]
   },
   {
-    "objectID": "03-analysis.html",
-    "href": "03-analysis.html",
-    "title": "Analysis",
+    "objectID": "02-house-winners.html",
+    "href": "02-house-winners.html",
+    "title": "Finding winners",
     "section": "",
-    "text": "This is a just a quick look at the Texas House of Representative districts that have the years with tight races based on 5 point and 10 point margins.",
+    "text": "We are trying to make a list of all the Texas House candidates since 2016 and list if they won their elections.\n\n\n\nThis election data only has a candidate last name. There are cases with two candidates with the same last name running in the same election.\nIf a candidate was unopposed in an election, they are not included.\nSome candidates are listed as both an incumbent and not incumbent within the same election cycle. It seems to just be an error.\n\n\n\n\n\nI might want to extrapolate this part about finding winners into a different notebook?",
     "crumbs": [
-      "Analysis"
+      "Finding winners"
     ]
   },
   {
-    "objectID": "03-analysis.html#setup-and-import",
-    "href": "03-analysis.html#setup-and-import",
-    "title": "Analysis",
-    "section": "Setup and import",
-    "text": "Setup and import\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)\n\nreps_margins &lt;- read_rds(\"data-processed/02-reps-margins.rds\")",
+    "objectID": "02-house-winners.html#goal",
+    "href": "02-house-winners.html#goal",
+    "title": "Finding winners",
+    "section": "",
+    "text": "We are trying to make a list of all the Texas House candidates since 2016 and list if they won their elections.\n\n\n\nThis election data only has a candidate last name. There are cases with two candidates with the same last name running in the same election.\nIf a candidate was unopposed in an election, they are not included.\nSome candidates are listed as both an incumbent and not incumbent within the same election cycle. It seems to just be an error.\n\n\n\n\n\nI might want to extrapolate this part about finding winners into a different notebook?",
     "crumbs": [
-      "Analysis"
+      "Finding winners"
     ]
   },
   {
-    "objectID": "03-analysis.html#districts-with-most-competition",
-    "href": "03-analysis.html#districts-with-most-competition",
-    "title": "Analysis",
-    "section": "Districts with most competition",
-    "text": "Districts with most competition\nWe’re finding how many elections there have been since 2012 in each district (primary and general) and then how many of those were competitive.\n\n\nExpand this to see code\nclose_counts &lt;- reps_margins |&gt; \n  group_by(election, district) |&gt; \n  summarize(elec_cnt = n(),\n            elec_flg_5 = sum(flg_5 == F),\n            elec_flg_10 = sum(flg_10 == F),\n            .groups = \"drop\"\n            )\n\nclose_counts\n\n\n\n  \n\n\n\n\nGeneral\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"General\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())\n\n\n\n  \n\n\n\n\n\nPrimaries\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"Democratic Primary\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())\n\n\n\n  \n\n\n\n\n\nExpand this to see code\nclose_counts |&gt; \n  filter(election == \"Republican Primary\") |&gt; \n  arrange(elec_flg_5 |&gt; desc())",
+    "objectID": "02-house-winners.html#setup-import",
+    "href": "02-house-winners.html#setup-import",
+    "title": "Finding winners",
+    "section": "Setup & Import",
+    "text": "Setup & Import",
     "crumbs": [
-      "Analysis"
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#missing-candidates",
+    "href": "02-house-winners.html#missing-candidates",
+    "title": "Finding winners",
+    "section": "Missing candidates",
+    "text": "Missing candidates\nSomething to know about these election results is it will NOT include candidates that were unopposed in an election. Let’s look at some examples:\nWe can look to Ballotpedia in 2024 to see why\n\nDistrict 1\n\nDemocratic Primary: No candidates; no primary.\nRepublican Primary: Gary Vandeaver won.\nGeneral: Vandeaver was unopposed, so no results.\n\n\n\nDistrict 2\n\nDemocratic Primary: There was an unopposed Democrat, so no primary.\nRepublican Primary: Brent Money won.\nGeneral: Money was unopposed, so no results.\n\n\n\nDistrict 3\nSo there are NO results for District 3 in 2024\n\nDemocratic Primary: No candidates; no primary.\nRepublican Primary: Cecil Bell was unopposed, so no results.\nGeneral: Cecil Bell was unopposed, so no results.\n\n\n\nDistrict 4\n\nDemocratic Primary: Alex Bar-Sela unopposed, so no results\nRepublican Primary: Keith Bell won primary.\nGeneral: Bell won the general.",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#create-winners",
+    "href": "02-house-winners.html#create-winners",
+    "title": "Finding winners",
+    "section": "Create winners",
+    "text": "Create winners\nHere we’ll go through each election and we’ll append the race totals and add a flag if the candidate won that race (based on &gt;50% vote.)\n\n\nExpand this to see code\ntotals_win &lt;- \n  totals_rep |&gt; \n  group_by(year, office, district, election) |&gt; \n  mutate(\n    total_votes = sum(candvotes),\n    # winner = candidate has &gt; 50% of vote AND the max votes\n    winner = candvotes == max(candvotes) & candvotes &gt; total_votes / 2,\n  ) |&gt; \n  ungroup()\n\ntotals_win |&gt; nrow()\n\n\n[1] 2991\n\n\nExpand this to see code\ntotals_win |&gt; head()\n\n\n\n  \n\n\n\nI should export that tibble.",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#filter-elections",
+    "href": "02-house-winners.html#filter-elections",
+    "title": "Finding winners",
+    "section": "Filter elections",
+    "text": "Filter elections\nHere we start with our Texas House project specific tasks:\n\nFilter for just the primaries, runoffs and general\nGet only 2016 and later\n\n\n\nExpand this to see code\nelcts &lt;- c(\n  \"Democratic Primary\",\n  \"Democratic Runoff\",\n  \"Republican Primary\",\n  \"Republican Runoff\",\n  \"General\"\n)\n\ntotals_prg &lt;-\n  totals_win |&gt;\n  filter(election %in% elcts, year &gt;= 2016) |&gt; \n  mutate(election = election |&gt; fct(levels = elcts))\n\nprint(\"Showing years\")\n\n\n[1] \"Showing years\"\n\n\nExpand this to see code\ntotals_prg |&gt; count(year)\n\n\n\n  \n\n\n\nExpand this to see code\nprint(\"Showing included elections\")\n\n\n[1] \"Showing included elections\"\n\n\nExpand this to see code\ntotals_prg |&gt; count(election)",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#incumbents-problem",
+    "href": "02-house-winners.html#incumbents-problem",
+    "title": "Finding winners",
+    "section": "Incumbents problem",
+    "text": "Incumbents problem\nWhile working through this project I found that a candidate’s incumbent flag can change during the same election cycle and there doesn’t seem to be a pattern. Through research I found these to mostlyl be errors. If left along I would not be able to group on incumbent but that would create other problems as there are two candidates with the same last name in the same Republican Primary and incumbency is the only way to tell them apart.\nThe only solution I can think of now is to make corrections to these records. We’ll use the Texas Secretary of State results to make decisions. Here are the records in question:\n\n\nExpand this to see code\ntotals_prg |&gt; \n  group_by(year, office, district, name, party) |&gt; \n  summarise(n_inc = n_distinct(incumbent), .groups = \"drop\") |&gt; # counts if different values\n  filter(n_inc &gt; 1)\n\n\n\n  \n\n\n\n\nExpore cases\nThis block will be our exploratory block.\n\n\nExpand this to see code\ntotals_rep |&gt; \n  filter(year == 2020, district == 28, name == \"Gates\")\n\n\n\n  \n\n\n\n\n\nEvidence\n\nRon Reynolds is listed as I in 2016 Democratic Primary results. We will update to Y.\nDoug Miller is listed as I in 2016 Republican Runnoff results. We will update to Y.\nJonathan Stickland listed as I in 2016 Republican Primary results. We will update to Y.\nBen Leman is NOT listed as I in 2018 General results. We’ll change that to N.\nKevin Simmons is NOT listed as I, but another candidate Ron Simmons is also same race according to 2018 Republican Primary results. There is no change to be made here because they are different candidates.\nLorraine Birabil is listed as I in the official 2020 Democratic Primary results. (No easy way to share those results). We’ll change to Y.\nAna Eastman is listed as I in the official 2020 Democratic Primary results. We’ll change to Y.\nGary Gates is listed as I in the official 2020 General results. We’ll change to Y.\n\n\n\nFix cases\n\n\nExpand this to see code\ntotals_inc_fix &lt;- totals_prg |&gt; \n  mutate(\n    incumbent = case_when(\n      year == 2016 & district == 27 & incumbent == \"N\" & name == \"Reynolds\" ~ \"Y\",\n      year == 2016 & district == 73 & incumbent == \"N\" & name == \"Miller\" ~ \"Y\",\n      year == 2016 & district == 92 & incumbent == \"N\" & name == \"Stickland\" ~ \"Y\",\n      year == 2018 & district == 13 & incumbent == \"Y\" & name == \"Leman\" ~ \"N\",\n      year == 2020 & district == 100 & incumbent == \"N\" & name == \"Birabil\" ~ \"Y\",\n      year == 2020 & district == 148 & incumbent == \"N\" & name == \"Eastman\" ~ \"Y\",\n      year == 2020 & district == 28 & incumbent == \"N\" & name == \"Gates\" ~ \"Y\",\n      .default = incumbent\n    )\n  )\n\ntotals_inc_fix |&gt;\n  group_by(year, office, district, name, party) |&gt; \n  summarise(n_inc = n_distinct(incumbent), .groups = \"drop\") |&gt; # counts if different values\n  filter(n_inc &gt; 1)\n\n\n\n  \n\n\n\nWe are now left with just the Simmons pair from District 65, which are two different people.",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#process-elections",
+    "href": "02-house-winners.html#process-elections",
+    "title": "Finding winners",
+    "section": "Process elections",
+    "text": "Process elections\nFor each election (filtered) we need to:\n\nRename some columns as flags for the specific election. We save those results into an election set.\nThen we full_join the election sets back together.\n\nI should probably write a function for the filter and renaming, but I don’t want to expend the brain power at this time.\n\nDemocratic Primary\n\n\nExpand this to see code\ndp_data &lt;-\n  totals_inc_fix |&gt; \n  filter(election == \"Democratic Primary\") |&gt; \n  rename(dp_votes = candvotes,\n         dp_tvotes = total_votes,\n         dp_win = winner) |&gt; \n  select(-election)\n\ndp_data |&gt; nrow()\n\n\n[1] 396\n\n\nExpand this to see code\ndp_data |&gt; head()\n\n\n\n  \n\n\n\n\n\nDemocratic Runoff\n\n\nExpand this to see code\ndr_data &lt;-\n  totals_inc_fix |&gt; \n  filter(election == \"Democratic Runoff\") |&gt; \n  rename(# dr_inc = incumbent,\n         dr_votes = candvotes,\n         dr_tvotes = total_votes,\n         dr_win = winner) |&gt; \n  select(-election)\n\ndr_data |&gt; nrow()\n\n\n[1] 48\n\n\nExpand this to see code\ndr_data |&gt; head()\n\n\n\n  \n\n\n\n\n\nRepublican Primary\n\n\nExpand this to see code\nrp_data &lt;-\n  totals_inc_fix |&gt; \n  filter(election == \"Republican Primary\") |&gt; \n  rename(# rp_inc = incumbent,\n         rp_votes = candvotes,\n         rp_tvotes = total_votes,\n         rp_win = winner) |&gt; \n  select(-election)\n\nrp_data |&gt; nrow()\n\n\n[1] 590\n\n\nExpand this to see code\nrp_data |&gt; head()\n\n\n\n  \n\n\n\n\n\nRepublican Runoff\n\n\nExpand this to see code\nrr_data &lt;-\n  totals_inc_fix |&gt; \n  filter(election == \"Republican Runoff\") |&gt; \n  rename(# rr_inc = incumbent,\n         rr_votes = candvotes,\n         rr_tvotes = total_votes,\n         rr_win = winner) |&gt; \n  select(-election)\n\nrr_data |&gt; nrow()\n\n\n[1] 74\n\n\nExpand this to see code\nrr_data |&gt; head()\n\n\n\n  \n\n\n\n\n\nGeneral\nNow the general election\n\n\nExpand this to see code\ng_data &lt;-\n  totals_inc_fix |&gt; \n  filter(election == \"General\") |&gt; \n  rename(# g_inc = incumbent,\n         g_votes = candvotes,\n         g_tvotes = total_votes,\n         g_win = winner) |&gt; \n  select(-election)\n\ng_data |&gt; head()\n\n\n\n  \n\n\n\n\n\nCombine\nLet’s try a join.\n\n\nExpand this to see code\ntotals_flags &lt;- \n  dp_data |&gt; \n  full_join(dr_data) |&gt; \n  full_join(rp_data) |&gt; \n  full_join(rr_data) |&gt; \n  full_join(g_data)\n\n\nJoining with `by = join_by(year, office, district, name, party, incumbent)`\nJoining with `by = join_by(year, office, district, name, party, incumbent)`\nJoining with `by = join_by(year, office, district, name, party, incumbent)`\nJoining with `by = join_by(year, office, district, name, party, incumbent)`\n\n\nExpand this to see code\ntotals_flags |&gt; nrow()\n\n\n[1] 1723\n\n\nExpand this to see code\ntotals_flags |&gt; head()",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#remove-votes",
+    "href": "02-house-winners.html#remove-votes",
+    "title": "Finding winners",
+    "section": "Remove votes",
+    "text": "Remove votes\n\n\nExpand this to see code\ntotals_export &lt;- totals_flags |&gt; \n  select(!ends_with(\"votes\"))\n\ntotals_export |&gt; glimpse()\n\n\nRows: 1,723\nColumns: 11\n$ year      &lt;chr&gt; \"2016\", \"2016\", \"2016\", \"2016\", \"2016\", \"2016\", \"2016\", \"201…\n$ office    &lt;chr&gt; \"State Rep 110\", \"State Rep 110\", \"State Rep 116\", \"State Re…\n$ district  &lt;dbl&gt; 110, 110, 116, 116, 116, 118, 118, 120, 120, 120, 120, 120, …\n$ name      &lt;chr&gt; \"Rose\", \"Crenshaw\", \"Arevalo\", \"Golando\", \"Resendez\", \"Urest…\n$ party     &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", …\n$ incumbent &lt;chr&gt; \"Y\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", …\n$ dp_win    &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, …\n$ dr_win    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, TRUE, FALSE, NA, NA, NA, NA,…\n$ rp_win    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ rr_win    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ g_win     &lt;lgl&gt; NA, NA, NA, NA, NA, TRUE, NA, NA, TRUE, NA, NA, NA, NA, NA, …",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#checks",
+    "href": "02-house-winners.html#checks",
+    "title": "Finding winners",
+    "section": "Checks",
+    "text": "Checks\n\nChecking split & join\nFiltering by election and then joining all those back is pretty major. Let’s make sure our result has what we expect.\n\nWe’ll first look at the winners data (after incumbency fixes) to see how many distinct people there are.\nThen we’ll compare that to our split & join data. The should be the same.\n\n\n\nExpand this to see code\n# Individuals before we split apart and rejoined\ntotals_inc_fix |&gt; distinct(year, office, district, name, office, party, incumbent) |&gt; nrow()\n\n\n[1] 1723\n\n\nExpand this to see code\n# number of rows in our flagged data\ntotals_export |&gt; nrow()\n\n\n[1] 1723\n\n\n\n\nChecking results to original data\nWe’ll pick one our districts where incumbency was wrong and compare our original data to when we created totals and to our final product.\n\n\nExpand this to see code\n# our source data\ntotals_rep |&gt; \n  filter(year == 2016, district == 27)\n\n\n\n  \n\n\n\nExpand this to see code\n# with winners\ntotals_win |&gt; \n  filter(year == 2016, district == 27)\n\n\n\n  \n\n\n\nExpand this to see code\n# our processed data\ntotals_export |&gt; \n  filter(year == 2016, district == 27)\n\n\n\n  \n\n\n\nAnd then we have our problem child (or children) with the 2018 District 65 Republican Primary race with two people named Simmons.\n\n\nExpand this to see code\n# our source data\ntotals_rep |&gt; \n  filter(year == 2018, district == 65)\n\n\n\n  \n\n\n\nExpand this to see code\n# with winners\ntotals_win |&gt; \n  filter(year == 2018, district == 65)\n\n\n\n  \n\n\n\nExpand this to see code\n# our processed data\ntotals_export |&gt; \n  filter(year == 2018, district == 65)\n\n\n\n  \n\n\n\nBeckley shows no dp_win because she was unopposed in that election and therefor not in our data.\n\n\nMore names?\nCould there be other potential issues if person of the same name ran in the same race.\n\n\nExpand this to see code\ntotals_prg |&gt; \n  count(year, election, office, district, name, sort = T) |&gt; \n  filter(n &gt; 1)\n\n\n\n  \n\n\n\nExpand this to see code\ntotals_prg |&gt; \n  filter(district == 41, name == \"Guerra\")\n\n\n\n  \n\n\n\nThere is another case in District 41 where two people named Guerra ran against each other in the General elections of 2020, 2022 and 2024. They are in different parties.\nWe’ll peek at the 2022 results.\n\n\nExpand this to see code\n# our source data\ntotals_rep |&gt; \n  filter(year == 2022, district == 41)\n\n\n\n  \n\n\n\nExpand this to see code\n# with winners\ntotals_win |&gt; \n  filter(year == 2022, district == 41)\n\n\n\n  \n\n\n\nExpand this to see code\n# our processed data\ntotals_export |&gt; \n  filter(year == 2022, district == 41)",
+    "crumbs": [
+      "Finding winners"
+    ]
+  },
+  {
+    "objectID": "02-house-winners.html#exports",
+    "href": "02-house-winners.html#exports",
+    "title": "Finding winners",
+    "section": "Exports",
+    "text": "Exports\nI think this is the best we can do for now. I’m still worried that we have only last names and that will prove a problem with Simmons and Guerra when we try to join with ballot and spending, but it is the best we have for right now.\n\n\nExpand this to see code\ntotals_export |&gt; write_csv(\"data-export/02-house-winners.csv\")\ntotals_export |&gt; write_rds(\"data-processed/02-house-winners.rds\")",
+    "crumbs": [
+      "Finding winners"
     ]
   },
   {
@@ -117,7 +197,7 @@
     "href": "01-combine.html#tally-votes",
     "title": "Combine results",
     "section": "Tally votes",
-    "text": "Tally votes\n\n\nExpand this to see code\nall_totals &lt;- all_returns |&gt; \n  fun_totals_all() |&gt; \n  arrange(year, election, office, candvotes |&gt; desc())\n\nall_totals |&gt; head()\n\n\n\n  \n\n\n\n\nFilter for State Reps\nFind the state reps\n\n\nExpand this to see code\nrep_totals &lt;- all_totals |&gt; \n  filter(str_detect(office, \"State Rep\")) |&gt; \n  mutate(district = parse_number(office), .after = office)",
+    "text": "Tally votes\n\n\nExpand this to see code\nall_totals &lt;- all_returns |&gt; \n  fun_totals_all() |&gt; \n  arrange(year, election, office, candvotes |&gt; desc())\n\nall_totals |&gt; head()\n\n\n\n  \n\n\n\n\nFilter for State Reps\nFind the state reps in the data.\n\n\nExpand this to see code\nrep_totals &lt;- all_totals |&gt; \n  filter(str_detect(office, \"State Rep\")) |&gt; \n  mutate(district = parse_number(office), .after = office)",
     "crumbs": [
       "Combine results"
     ]
@@ -127,7 +207,7 @@
     "href": "01-combine.html#export-results",
     "title": "Combine results",
     "section": "Export results",
-    "text": "Export results\nI am exporting just the rep results at this point..\n\n\nExpand this to see code\nall_totals |&gt; \n  write_rds(\"data-processed/01-all-totals.rds\")\n\nrep_totals |&gt; \n  write_rds(\"data-processed/01-rep-totals.rds\")",
+    "text": "Export results\nI am exporting just the rep results at this point..\n\n\nExpand this to see code\nall_totals |&gt; \n  write_rds(\"data-processed/01-all-totals.rds\")\n\nrep_totals |&gt; \n  write_rds(\"data-processed/01-house-totals.rds\")",
     "crumbs": [
       "Combine results"
     ]
@@ -137,64 +217,54 @@
     "href": "01-combine.html#checking-unopposed-races",
     "title": "Combine results",
     "section": "Checking unopposed races",
-    "text": "Checking unopposed races\nThis is just to confirm that the reason (or at least a reason) why we don’t have results from every house district is because of unopposed races.\n\n2024 General\nOf all the Texas House results we have, here are the districts for the 2024 general election.\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"General\")\n\n\n\n  \n\n\n\nWe are missing 1, 3, 9, 11 for starters.\nIf we look at results for this election on ballotpedia we can see those same races did not have more than one candidate on the ballot. Even a race with a write-in made it (Dist 5.)\n\n\nRepublican primary\nAnd then if we look at the same for the Republica Primary:\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"Republican Primary\")\n\n\n\n  \n\n\n\nIf we compare the list above with ballotpedia’s primary election list, we see the first district missing is 3, which tracks with Cecil Bell Jr. being the only candidate. District 6 is also unopposed, etc.\n\n\nDemocratic Primary\nFor the Dems, you can look at that same list and see there was not a valid primary race for the first 18 districts. Those all had unopposed or zero candidates and the primary was canceled.\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"Democratic Primary\")",
+    "text": "Checking unopposed races\nThis is just to confirm that the reason (or at least a reason) why we don’t have results from every house district is because of unopposed races.\n\n2024 General\nOf all the Texas House results we have, here are the districts for the 2024 general election.\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"General\")\n\n\n\n  \n\n\n\nWe are missing 1, 3, 9, 11 for starters.\nIf we look at results for this election on ballotpedia we can see those same races did not have more than one candidate on the ballot. Even a race with a write-in made it (Dist 5.)\n\n\nRepublican primary\nAnd then if we look at the same for the Republican Primary:\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"Republican Primary\")\n\n\n\n  \n\n\n\nIf we compare the list above with ballotpedia’s primary election list, we see the first district missing is 3, which tracks with Cecil Bell Jr. being the only candidate. District 6 is also unopposed, etc.\n\n\nDemocratic Primary\nFor the Dems, you can look at that same list and see there was not a valid primary race for the first 18 districts. Those all had unopposed or zero candidates and the primary was canceled.\n\n\nExpand this to see code\nrep_totals |&gt; \n  distinct(year, election, district) |&gt; \n  arrange(year, election, district) |&gt; \n  filter(year == 2024, election == \"Democratic Primary\")",
     "crumbs": [
       "Combine results"
     ]
   },
   {
-    "objectID": "02-margins.html",
-    "href": "02-margins.html",
+    "objectID": "02-house-margins.html",
+    "href": "02-house-margins.html",
     "title": "Calculate margins",
     "section": "",
-    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.",
+    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.\n\n\n\nApril 2026: The previous calculations did not take runoffs into account. This has been remedied.\nDecember 2025: Updates from the first attempt which compared the highest votes received to the lowest votes received. What we needed was the difference between those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.",
     "crumbs": [
       "Calculate margins"
     ]
   },
   {
-    "objectID": "02-margins.html#our-goal",
-    "href": "02-margins.html#our-goal",
+    "objectID": "02-house-margins.html#our-goal",
+    "href": "02-house-margins.html#our-goal",
     "title": "Calculate margins",
     "section": "",
-    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.",
+    "text": "To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.\n\n\n\nApril 2026: The previous calculations did not take runoffs into account. This has been remedied.\nDecember 2025: Updates from the first attempt which compared the highest votes received to the lowest votes received. What we needed was the difference between those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.",
     "crumbs": [
       "Calculate margins"
     ]
   },
   {
-    "objectID": "02-margins.html#updates-dec.-2025",
-    "href": "02-margins.html#updates-dec.-2025",
-    "title": "Calculate margins",
-    "section": "Updates Dec. 2025",
-    "text": "Updates Dec. 2025\nThe first attempt at this compared the highest votes received to the lowest votes received. What we needed was the difference between the percentage of total vote of those finishing 1st and 2nd in each race, which this now does. It’s a complete refactoring.",
-    "crumbs": [
-      "Calculate margins"
-    ]
-  },
-  {
-    "objectID": "02-margins.html#setup-and-import",
-    "href": "02-margins.html#setup-and-import",
+    "objectID": "02-house-margins.html#setup-and-import",
+    "href": "02-house-margins.html#setup-and-import",
     "title": "Calculate margins",
     "section": "Setup and import",
-    "text": "Setup and import\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)\n\n# general &lt;- read_rds(\"data-processed/01-general-results-rep.rds\")\n# primary &lt;- read_rds(\"data-processed/01-primary-results-rep.rds\")\nreps &lt;- read_rds(\"data-processed/01-rep-totals.rds\")",
+    "text": "Setup and import\n\n\nExpand this to see code\nlibrary(tidyverse)\nlibrary(janitor)\n\n# general &lt;- read_rds(\"data-processed/01-general-results-rep.rds\")\n# primary &lt;- read_rds(\"data-processed/01-primary-results-rep.rds\")\nreps &lt;- read_rds(\"data-processed/01-house-totals.rds\")",
     "crumbs": [
       "Calculate margins"
     ]
   },
   {
-    "objectID": "02-margins.html#calculate-win-margin",
-    "href": "02-margins.html#calculate-win-margin",
+    "objectID": "02-house-margins.html#calculate-win-margin",
+    "href": "02-house-margins.html#calculate-win-margin",
     "title": "Calculate margins",
     "section": "Calculate win margin",
-    "text": "Calculate win margin\nThis summarise method was developed with the help of chatGPT. It’s explained here.\n\n\nExpand this to see code\nreps_calcs &lt;- reps |&gt; \n  group_by(year, election, district) |&gt;\n  mutate(\n    total_votes = sum(candvotes),\n    pct = (candvotes / total_votes * 100) |&gt; round(2)\n  ) |&gt;\n  arrange(desc(candvotes), .by_group = TRUE)  |&gt; \n  summarise(\n    winner = first(name),\n    winner_party = first(party),\n    winner_inc = first(incumbent),\n    winner_pct = first(pct),\n    runner_up = nth(name, 2),\n    runner_up_party = nth(party, 2),\n    runner_up_inc = nth(incumbent, 2),\n    runner_up_pct = nth(pct, 2),\n    winning_margin = (winner_pct - runner_up_pct) |&gt; round_half_up(2),\n    .groups = \"drop\"\n  ) |&gt; \n  arrange(year, election, district)\n\nreps_calcs |&gt; head()\n\n\n\n  \n\n\n\n\nAdd flags\nHere we add flags if the race is competitive within 5 or 10 points.\nJust showing the margin and flags to check.\n\n\nExpand this to see code\nreps_flags &lt;- reps_calcs |&gt; \n  mutate(flg_5 = if_else(winning_margin &lt;= 5, T, F),\n         flg_10 = if_else(winning_margin &lt;= 10, T, F))\n\n# peek at flags\nreps_flags |&gt;\n  head(20) |&gt; \n  select(winning_margin:flg_10)",
+    "text": "Calculate win margin\nThis summarise method was developed with the help of chatGPT. It’s explained here.\n\n\nExpand this to see code\nreps_calcs &lt;- reps |&gt; \n  group_by(year, election, district) |&gt;\n  mutate(\n    total_votes = sum(candvotes),\n    pct = (candvotes / total_votes * 100) |&gt; round(2)\n  ) |&gt;\n  arrange(desc(candvotes), .by_group = TRUE)  |&gt; \n  summarise(\n    first_place = first(name),\n    first_place_party = first(party),\n    first_place_inc = first(incumbent),\n    first_place_pct = first(pct),\n    second_place = nth(name, 2),\n    second_place_party = nth(party, 2),\n    second_place_inc = nth(incumbent, 2),\n    second_place_pct = nth(pct, 2),\n    vote_margin = (first_place_pct - second_place_pct) |&gt; round_half_up(2),\n    .groups = \"drop\"\n  ) |&gt;\n  mutate(\n    runoff = first_place_pct &lt;= 50,\n    winner = if_else(!runoff, first_place, NA_character_)\n  ) |&gt;\n  arrange(year, election, district)\n\nreps_calcs |&gt; head()\n\n\n\n  \n\n\n\n\nAdd flags\nHere we add flags if the race is competitive within 5 or 10 points.\nJust showing the margin and flags to check.\n\n\nExpand this to see code\nreps_flags &lt;- reps_calcs |&gt; \n  mutate(flg_5 = if_else(vote_margin &lt;= 5, T, F),\n         flg_10 = if_else(vote_margin &lt;= 10, T, F))\n\n# peek at flags\nreps_flags |&gt;\n  head(20) |&gt; \n  select(vote_margin:flg_10)",
     "crumbs": [
       "Calculate margins"
     ]
   },
   {
-    "objectID": "02-margins.html#test-results",
-    "href": "02-margins.html#test-results",
+    "objectID": "02-house-margins.html#test-results",
+    "href": "02-house-margins.html#test-results",
     "title": "Calculate margins",
     "section": "Test results",
     "text": "Test results\n\n2-candidate race\nDoing some manual calculations to compare with prepared data.\n\n\nExpand this to see code\nreps |&gt; \n  filter(year == \"2012\", election == \"General\", district == 1) |&gt; \n  adorn_totals()\n\n\n\n  \n\n\n\nExpand this to see code\nreps_flags |&gt; filter(year == \"2012\", election == \"General\", district == 1)\n\n\n\n  \n\n\n\n\nLavander: (42063 / 50896) * 100 = 82.64500157\nEason: (8833 / 50896) * 100 = 17.35499843\nDiff: 82.64500157 - 17.35499843 = 65.29000314\n\n\n\nMulti-candidate race\nA test for 3+ candidate race\n\n\nExpand this to see code\nreps |&gt; \n  filter(year == \"2019\", election == \"House District 148\", district == 148) |&gt; \n  adorn_totals()\n\n\n\n  \n\n\n\nExpand this to see code\nreps_flags |&gt; filter(year == \"2019\", election == \"House District 148\", district == 148)\n\n\n\n  \n\n\n\n\nEastman: (4212 / 20711) * 100 = 20.33701898\nLaRotta: (3282 / 20711) * 100 = 15.84665154\nDiff: 20.33701898 - 15.84665154 = 4.49036744\n\n\n\nList of elections\n\n\nExpand this to see code\nreps_flags |&gt; \n  count(election)",
@@ -203,21 +273,21 @@
     ]
   },
   {
-    "objectID": "02-margins.html#last-look",
-    "href": "02-margins.html#last-look",
+    "objectID": "02-house-margins.html#last-look",
+    "href": "02-house-margins.html#last-look",
     "title": "Calculate margins",
     "section": "Last look",
-    "text": "Last look\nGlimpse\n\n\nExpand this to see code\nreps_flags |&gt; glimpse()\n\n\nRows: 1,259\nColumns: 14\n$ year            &lt;chr&gt; \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"2012\"…\n$ election        &lt;chr&gt; \"Democratic Primary\", \"Democratic Primary\", \"Democrati…\n$ district        &lt;dbl&gt; 35, 37, 39, 40, 43, 74, 75, 77, 80, 90, 95, 101, 110, …\n$ winner          &lt;chr&gt; \"Longoria\", \"Oliveira\", \"Martinez\", \"Canales\", \"Gonzal…\n$ winner_party    &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\",…\n$ winner_inc      &lt;chr&gt; \"N\", \"Y\", \"Y\", \"N\", \"N\", \"N\", \"N\", \"Y\", \"Y\", \"Y\", \"N\",…\n$ winner_pct      &lt;dbl&gt; 55.15, 62.62, 83.88, 30.46, 70.59, 53.82, 52.07, 62.07…\n$ runner_up       &lt;chr&gt; \"Ruiz\", \"Dominguez\", \"Campos\", \"Hernandez\", \"Zamora\", …\n$ runner_up_party &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\",…\n$ runner_up_inc   &lt;chr&gt; \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\",…\n$ runner_up_pct   &lt;dbl&gt; 44.85, 37.38, 16.12, 26.21, 29.41, 28.28, 36.05, 37.93…\n$ winning_margin  &lt;dbl&gt; 10.30, 25.24, 67.76, 4.25, 41.18, 25.54, 16.02, 24.14,…\n$ flg_5           &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…\n$ flg_10          &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,…\n\n\n\n\nExpand this to see code\nreps_flags |&gt; slice_sample(n = 10)",
+    "text": "Last look\nGlimpse\n\n\nExpand this to see code\nreps_flags |&gt; glimpse()\n\n\nRows: 1,259\nColumns: 16\n$ year               &lt;chr&gt; \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"2012\", \"20…\n$ election           &lt;chr&gt; \"Democratic Primary\", \"Democratic Primary\", \"Democr…\n$ district           &lt;dbl&gt; 35, 37, 39, 40, 43, 74, 75, 77, 80, 90, 95, 101, 11…\n$ first_place        &lt;chr&gt; \"Longoria\", \"Oliveira\", \"Martinez\", \"Canales\", \"Gon…\n$ first_place_party  &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"…\n$ first_place_inc    &lt;chr&gt; \"N\", \"Y\", \"Y\", \"N\", \"N\", \"N\", \"N\", \"Y\", \"Y\", \"Y\", \"…\n$ first_place_pct    &lt;dbl&gt; 55.15, 62.62, 83.88, 30.46, 70.59, 53.82, 52.07, 62…\n$ second_place       &lt;chr&gt; \"Ruiz\", \"Dominguez\", \"Campos\", \"Hernandez\", \"Zamora…\n$ second_place_party &lt;chr&gt; \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"D\", \"…\n$ second_place_inc   &lt;chr&gt; \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"N\", \"…\n$ second_place_pct   &lt;dbl&gt; 44.85, 37.38, 16.12, 26.21, 29.41, 28.28, 36.05, 37…\n$ vote_margin        &lt;dbl&gt; 10.30, 25.24, 67.76, 4.25, 41.18, 25.54, 16.02, 24.…\n$ runoff             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…\n$ winner             &lt;chr&gt; \"Longoria\", \"Oliveira\", \"Martinez\", NA, \"Gonzalez T…\n$ flg_5              &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…\n$ flg_10             &lt;lgl&gt; FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FAL…\n\n\n\n\nExpand this to see code\nreps_flags |&gt; slice_sample(n = 10)\n\n\n\n  \n\n\n\nExpand this to see code\n# reps_flags |&gt; names() |&gt; clipr::write_clip()",
     "crumbs": [
       "Calculate margins"
     ]
   },
   {
-    "objectID": "02-margins.html#exports",
-    "href": "02-margins.html#exports",
+    "objectID": "02-house-margins.html#exports",
+    "href": "02-house-margins.html#exports",
     "title": "Calculate margins",
     "section": "Exports",
-    "text": "Exports\nSends files for R to data-processed, and .csv to data-export.\n\n\nExpand this to see code\n# last assignment\nreps_margins &lt;- reps_flags\n\nreps_margins |&gt; \n  write_rds(\"data-processed/02-reps-margins.rds\")\n\nreps_margins |&gt; \n  write_csv(\"data-export/02-reps-margins.csv\")",
+    "text": "Exports\nSends files for R to data-processed, and .csv to data-export.\n\n\nExpand this to see code\n# last assignment (doesn't include flags)\nreps_margins &lt;- reps_calcs\n\n# just margins for analysis\nreps_margins |&gt; \n  write_rds(\"data-processed/02-house-margins.rds\")\n\n# margins with flags for analysis\nreps_flags |&gt; \n  write_rds(\"data-processed/02-house-margins-flags.rds\")\n\n# just margins to use in other projects\nreps_margins |&gt; \n  write_csv(\"data-export/02-house-margins.csv\")",
     "crumbs": [
       "Calculate margins"
     ]
@@ -227,7 +297,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "The purpose of this project is to find which Texas House of Representatives races have been competitive in past years.\nWe start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: Comprehensive Election Datasets (Compressed Format) | Docs.\nFrom that data we calculate statewide results, find the two candidates in each district that have the most votes, and then calculate a margin of victory.\nThe processing of these results yields two files, an 02-reps-margins.rds version that end up in data-processed folder, and a 02-reps-margins.csv version end up in the data-export folder.\nThe fields are as follows:",
+    "text": "This project explores using election results to gain insights into political spending. That analysis is in a different notebook and we only process results here.\nWe start with election results by Voting Tabulation Districts as provided by the Texas Legislative Council: Comprehensive Election Datasets (Compressed Format) | Docs.\nWe’ve been looking at two different things\nThe fields are as follows:",
     "crumbs": [
       "Overview"
     ]

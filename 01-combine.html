@@ -161,14 +161,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-margins.html" class="sidebar-item-text sidebar-link">
+  <a href="./02-house-margins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Calculate margins</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis</span></a>
+  <a href="./02-house-winners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finding winners</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="filter-for-state-reps" class="level3">
 <h3 class="anchored" data-anchor-id="filter-for-state-reps">Filter for State Reps</h3>
-<p>Find the state reps</p>
+<p>Find the state reps in the data.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Expand this to see code</summary>
@@ -362,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/01-all-totals.rds"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>rep_totals <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/01-rep-totals.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/01-house-totals.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -393,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="republican-primary" class="level3">
 <h3 class="anchored" data-anchor-id="republican-primary">Republican primary</h3>
-<p>And then if we look at the same for the Republica Primary:</p>
+<p>And then if we look at the same for the Republican Primary:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Expand this to see code</summary>
