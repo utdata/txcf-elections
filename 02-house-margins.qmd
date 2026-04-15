@@ -9,9 +9,10 @@ code-summary: "Expand this to see code"
 
 To find which Texas House district races were within a 5-point and 10-point margin in both the general and primary election for each year? Our data spans from 2012 to 2024.
 
-## Updates Dec. 2025
+### Updates
 
-The first attempt at this compared the highest votes received to the lowest votes received. What we needed was the difference between the percentage of total vote of those finishing 1st and 2nd in each race, which this now does. It's a complete refactoring.
+- April 2026: The previous calculations did not take runoffs into account. This has been remedied.
+- December 2025: Updates from the first attempt which compared the highest votes received to the lowest votes received. What we needed was the difference between those finishing 1st and 2nd in each race, which this now does. It's a complete refactoring.
 
 ## Setup and import
 
@@ -24,7 +25,7 @@ library(janitor)
 
 # general <- read_rds("data-processed/01-general-results-rep.rds")
 # primary <- read_rds("data-processed/01-primary-results-rep.rds")
-reps <- read_rds("data-processed/01-rep-totals.rds")
+reps <- read_rds("data-processed/01-house-totals.rds")
 ```
 
 
@@ -41,17 +42,21 @@ reps_calcs <- reps |>
   ) |>
   arrange(desc(candvotes), .by_group = TRUE)  |> 
   summarise(
-    winner = first(name),
-    winner_party = first(party),
-    winner_inc = first(incumbent),
-    winner_pct = first(pct),
-    runner_up = nth(name, 2),
-    runner_up_party = nth(party, 2),
-    runner_up_inc = nth(incumbent, 2),
-    runner_up_pct = nth(pct, 2),
-    winning_margin = (winner_pct - runner_up_pct) |> round_half_up(2),
+    first_place = first(name),
+    first_place_party = first(party),
+    first_place_inc = first(incumbent),
+    first_place_pct = first(pct),
+    second_place = nth(name, 2),
+    second_place_party = nth(party, 2),
+    second_place_inc = nth(incumbent, 2),
+    second_place_pct = nth(pct, 2),
+    vote_margin = (first_place_pct - second_place_pct) |> round_half_up(2),
     .groups = "drop"
-  ) |> 
+  ) |>
+  mutate(
+    runoff = first_place_pct <= 50,
+    winner = if_else(!runoff, first_place, NA_character_)
+  ) |>
   arrange(year, election, district)
 
 reps_calcs |> head()
@@ -65,13 +70,13 @@ Just showing the margin and flags to check.
 
 ```{r}
 reps_flags <- reps_calcs |> 
-  mutate(flg_5 = if_else(winning_margin <= 5, T, F),
-         flg_10 = if_else(winning_margin <= 10, T, F))
+  mutate(flg_5 = if_else(vote_margin <= 5, T, F),
+         flg_10 = if_else(vote_margin <= 10, T, F))
 
 # peek at flags
 reps_flags |>
   head(20) |> 
-  select(winning_margin:flg_10)
+  select(vote_margin:flg_10)
 ```
 
 ## Test results
@@ -128,6 +133,8 @@ reps_flags |> glimpse()
 
 ```{r}
 reps_flags |> slice_sample(n = 10)
+
+# reps_flags |> names() |> clipr::write_clip()
 ```
 
 ## Exports
@@ -135,12 +142,18 @@ reps_flags |> slice_sample(n = 10)
 Sends files for R to data-processed, and .csv to data-export.
 
 ```{r}
-# last assignment
-reps_margins <- reps_flags
+# last assignment (doesn't include flags)
+reps_margins <- reps_calcs
 
+# just margins for analysis
 reps_margins |> 
-  write_rds("data-processed/02-reps-margins.rds")
+  write_rds("data-processed/02-house-margins.rds")
 
+# margins with flags for analysis
+reps_flags |> 
+  write_rds("data-processed/02-house-margins-flags.rds")
+
+# just margins to use in other projects
 reps_margins |> 
-  write_csv("data-export/02-reps-margins.csv")
+  write_csv("data-export/02-house-margins.csv")
 ```

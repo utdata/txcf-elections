@@ -1,0 +1,1260 @@
+year,election,district,first_place,first_place_party,first_place_inc,first_place_pct,second_place,second_place_party,second_place_inc,second_place_pct,vote_margin,runoff,winner
+2012,Democratic Primary,35,Longoria,D,N,55.15,Ruiz,D,N,44.85,10.3,FALSE,Longoria
+2012,Democratic Primary,37,Oliveira,D,Y,62.62,Dominguez,D,N,37.38,25.24,FALSE,Oliveira
+2012,Democratic Primary,39,Martinez,D,Y,83.88,Campos,D,N,16.12,67.76,FALSE,Martinez
+2012,Democratic Primary,40,Canales,D,N,30.46,Hernandez,D,N,26.21,4.25,TRUE,NA
+2012,Democratic Primary,43,Gonzalez Toureilles,D,N,70.59,Zamora,D,N,29.41,41.18,FALSE,Gonzalez Toureilles
+2012,Democratic Primary,74,Nevarez,D,N,53.82,Garza,D,N,28.28,25.54,FALSE,Nevarez
+2012,Democratic Primary,75,Gonzalez,D,N,52.07,Enriquez,D,N,36.05,16.02,FALSE,Gonzalez
+2012,Democratic Primary,77,Marquez,D,Y,62.07,Barraza,D,N,37.93,24.14,FALSE,Marquez
+2012,Democratic Primary,80,King,D,Y,59.67,Garza,D,N,40.33,19.34,FALSE,King
+2012,Democratic Primary,90,Burnam,D,Y,51.99,Vasquez,D,N,48.01,3.98,FALSE,Burnam
+2012,Democratic Primary,95,Collier,D,N,48.19,Gaines,D,N,38.44,9.75,TRUE,NA
+2012,Democratic Primary,101,Turner,D,N,53.08,Pierson,D,N,33.83,19.25,FALSE,Turner
+2012,Democratic Primary,110,Rose,D,N,62.72,Davis,D,N,24.37,38.35,FALSE,Rose
+2012,Democratic Primary,117,Cortez,D,N,35.07,Torres,D,N,33.99,1.08,TRUE,NA
+2012,Democratic Primary,125,Rodriguez,D,N,66.82,Herrera,D,N,33.18,33.64,FALSE,Rodriguez
+2012,Democratic Primary,131,Allen,D,Y,59.4,Adams,D,N,40.6,18.8,FALSE,Allen
+2012,Democratic Primary,137,Wu,D,N,43.14,Smith,D,N,24.05,19.09,TRUE,NA
+2012,Democratic Primary,144,Perez,D,N,52.18,Ybarra,D,N,26.84,25.34,FALSE,Perez
+2012,Democratic Primary,146,Miles,D,Y,57.57,Edwards,D,N,42.43,15.14,FALSE,Miles
+2012,Democratic Primary,147,Coleman,D,Y,87.43,Hill,D,N,12.57,74.86,FALSE,Coleman
+2012,Democratic Runoff,40,Canales,D,N,52.96,Hernandez,D,N,47.04,5.92,FALSE,Canales
+2012,Democratic Runoff,95,Collier,D,N,59.96,Gaines,D,N,40.04,19.92,FALSE,Collier
+2012,Democratic Runoff,117,Cortez,D,N,56.96,Torres,D,N,43.04,13.92,FALSE,Cortez
+2012,Democratic Runoff,137,Wu,D,N,61.54,Smith,D,N,38.46,23.08,FALSE,Wu
+2012,General,1,Lavender,R,Y,82.65,Eason,L,N,17.35,65.3,FALSE,Lavender
+2012,General,6,Schaefer,R,N,88.76,Parkes,L,N,11.24,77.52,FALSE,Schaefer
+2012,General,8,Cook,R,Y,72.96,Morgan,D,N,27.04,45.92,FALSE,Cook
+2012,General,12,Kacal,R,N,56.89,Stem,D,N,43.11,13.78,FALSE,Kacal
+2012,General,14,Raney,R,Y,60.15,LeUnes,D,N,36.22,23.93,FALSE,Raney
+2012,General,15,Toth,R,N,86.64,Russell,L,N,13.36,73.28,FALSE,Toth
+2012,General,17,Kleinschmidt,R,Y,62.24,Guerra,D,N,37.76,24.48,FALSE,Kleinschmidt
+2012,General,23,Eiland,D,Y,53.93,Faircloth,R,N,46.07,7.86,FALSE,Eiland
+2012,General,24,Bonnen,R,N,73.28,Cates,D,N,26.72,46.56,FALSE,Bonnen
+2012,General,26,Miller,R,N,62.97,Nguyen,D,N,37.03,25.94,FALSE,Miller
+2012,General,27,Reynolds,D,Y,68.96,Allfrey,R,N,29.54,39.42,FALSE,Reynolds
+2012,General,29,Thompson,R,N,65.52,Blatt,D,N,34.48,31.04,FALSE,Thompson
+2012,General,30,Morrison,R,Y,68.33,Hernandez,D,N,31.67,36.66,FALSE,Morrison
+2012,General,31,Guillen,D,Y,66.29,Matthews,R,N,33.71,32.58,FALSE,Guillen
+2012,General,33,Turner,R,N,85.34,Carrasco,L,N,14.66,70.68,FALSE,Turner
+2012,General,34,Herrero,D,N,57.17,Scott,R,Y,42.83,14.34,FALSE,Herrero
+2012,General,38,Lucio,D,Y,70.76,Torres,R,N,25.21,45.55,FALSE,Lucio
+2012,General,39,Martinez,D,Y,77.64,De Los Santos,R,N,22.36,55.28,FALSE,Martinez
+2012,General,41,Guerra,D,Y,61.73,Martinez,R,N,38.27,23.46,FALSE,Guerra
+2012,General,43,Lozano,R,Y,51.55,Gonzalez Toureilles,D,N,48.45,3.1,FALSE,Lozano
+2012,General,45,Isaac,R,Y,53.63,Adams,D,N,42.39,11.24,FALSE,Isaac
+2012,General,46,Dukes,D,Y,86.45,Fernandez,L,N,13.55,72.9,FALSE,Dukes
+2012,General,47,Workman,R,Y,58.09,Frandsen,D,N,36.93,21.16,FALSE,Workman
+2012,General,48,Howard,D,Y,59.2,Thomas,R,N,35.54,23.66,FALSE,Howard
+2012,General,49,Naishtat,D,Y,82.73,Phillips,L,N,17.27,65.46,FALSE,Naishtat
+2012,General,51,Rodriguez,D,Y,88.17,DiBianca,L,N,11.83,76.34,FALSE,Rodriguez
+2012,General,52,Gonzales,R,Y,70.28,Simmons,L,N,29.72,40.56,FALSE,Gonzales
+2012,General,54,Aycock,R,Y,57.51,Brown,D,N,42.49,15.02,FALSE,Aycock
+2012,General,56,Anderson,R,Y,79.47,Snider,L,N,20.53,58.94,FALSE,Anderson
+2012,General,59,Sheffield,R,N,78.23,Norris,D,N,21.77,56.46,FALSE,Sheffield
+2012,General,61,King,R,Y,88.91,Britt,G,N,11.09,77.82,FALSE,King
+2012,General,62,Phillips,R,Y,75.68,Perez,D,N,24.32,51.36,FALSE,Phillips
+2012,General,63,Parker,R,Y,85.31,Hermann,L,N,14.69,70.62,FALSE,Parker
+2012,General,64,Crownover,R,Y,61.1,Brown,D,N,34.39,26.71,FALSE,Crownover
+2012,General,65,Simmons,R,N,59.12,Brown,D,N,38.58,20.54,FALSE,Simmons
+2012,General,69,Frank,R,N,87.01,Brown,L,N,12.99,74.02,FALSE,Frank
+2012,General,73,Miller,R,Y,88.2,Black,L,N,11.8,76.4,FALSE,Miller
+2012,General,74,Nevarez,D,N,60.4,Kincaid,R,N,39.6,20.8,FALSE,Nevarez
+2012,General,78,Moody,D,N,53.83,Margo,R,Y,46.17,7.66,FALSE,Moody
+2012,General,84,Frullo,R,Y,82.58,Lamb-Vines,G,N,17.42,65.16,FALSE,Frullo
+2012,General,85,Stephenson,R,N,58.35,Olivo,D,N,41.65,16.7,FALSE,Stephenson
+2012,General,87,Price,R,Y,77.29,Bosquez,D,N,22.71,54.58,FALSE,Price
+2012,General,92,Stickland,R,N,80.67,Fatzinger,L,N,19.33,61.34,FALSE,Stickland
+2012,General,93,Krause,R,N,58.95,Hardin,D,N,37.52,21.43,FALSE,Krause
+2012,General,94,Patrick,R,Y,82.21,Eyerly,L,N,17.79,64.42,FALSE,Patrick
+2012,General,95,Collier,D,N,77.36,Mitchell,R,N,22.64,54.72,FALSE,Collier
+2012,General,96,Zedler,R,Y,80.53,Koch,L,N,19.47,61.06,FALSE,Zedler
+2012,General,97,Goldman,R,N,59.43,Grassia,D,N,37.65,21.78,FALSE,Goldman
+2012,General,98,Capriglione,R,N,85.58,Goolsby,L,N,14.42,71.16,FALSE,Capriglione
+2012,General,99,Geren,R,Y,66.17,McClure,D,N,30.21,35.96,FALSE,Geren
+2012,General,101,Turner,D,N,87.9,Nulsen,L,N,12.1,75.8,FALSE,Turner
+2012,General,102,Carter,R,Y,57.13,Hancock,D,N,42.87,14.26,FALSE,Carter
+2012,General,105,Harper-Brown,R,Y,50.07,Robbins,D,N,48.26,1.81,FALSE,Harper-Brown
+2012,General,106,Fallon,R,N,83.17,Caston,L,N,16.83,66.34,FALSE,Fallon
+2012,General,107,Sheets,R,Y,50.84,Miklos,D,N,49.16,1.68,FALSE,Sheets
+2012,General,108,Branch,R,Y,79.69,Woods,L,N,20.31,59.38,FALSE,Branch
+2012,General,109,Giddings,D,Y,93.59,Jackson,L,N,6.41,87.18,FALSE,Giddings
+2012,General,113,Burkett,R,N,80.94,Sarlay,G,N,19.06,61.88,FALSE,Burkett
+2012,General,114,Villalba,R,N,54.15,Kent,D,N,45.85,8.3,FALSE,Villalba
+2012,General,115,Ratliff,R,N,55.31,Fabishak,D,N,41.43,13.88,FALSE,Ratliff
+2012,General,117,Cortez,D,N,53.82,Garza,R,Y,46.18,7.64,FALSE,Cortez
+2012,General,118,Farias,D,Y,59.85,Casias,R,N,40.15,19.7,FALSE,Farias
+2012,General,119,Gutierrez,D,Y,61.89,Campos,R,N,38.11,23.78,FALSE,Gutierrez
+2012,General,120,McClendon,D,Y,87.89,Fox,G,N,12.11,75.78,FALSE,McClendon
+2012,General,121,Straus,R,Y,80.24,Thomas,L,N,19.76,60.48,FALSE,Straus
+2012,General,123,Villarreal,D,Y,87.52,Robinson,G,N,12.48,75.04,FALSE,Villarreal
+2012,General,124,Menendez,D,Y,84.93,Gonzales,G,N,15.07,69.86,FALSE,Menendez
+2012,General,125,Rodriguez,D,N,61.19,Perez Jackson,R,N,37.11,24.08,FALSE,Rodriguez
+2012,General,127,Huberty,R,Y,70.21,Pogue,D,N,29.79,40.42,FALSE,Huberty
+2012,General,130,Fletcher,R,Y,90.15,Browning,G,N,9.85,80.3,FALSE,Fletcher
+2012,General,131,Allen,D,Y,94.5,Montestruc,L,N,3.39,91.11,FALSE,Allen
+2012,General,132,Callegari,R,Y,80.69,Kurtz,L,N,19.31,61.38,FALSE,Callegari
+2012,General,133,Murphy,R,Y,84.97,LaFleur,L,N,15.03,69.94,FALSE,Murphy
+2012,General,134,Davis,R,Y,54.64,Johnson,D,N,45.36,9.28,FALSE,Davis
+2012,General,135,Elkins,R,Y,60.36,Morgan,D,N,39.64,20.72,FALSE,Elkins
+2012,General,136,Dale,R,N,53.06,Stillwell,D,N,40.72,12.34,FALSE,Dale
+2012,General,137,Wu,D,N,65.76,Khan,R,N,34.24,31.52,FALSE,Wu
+2012,General,138,Bohac,R,Y,80.45,Coughran,L,N,19.55,60.9,FALSE,Bohac
+2012,General,139,Turner,D,Y,77.08,Brocato,R,N,22.92,54.16,FALSE,Turner
+2012,General,141,Thompson,D,Y,87.85,Bunch,R,N,12.15,75.7,FALSE,Thompson
+2012,General,143,Hernandez Luna,D,Y,72.94,Weiskopf,R,N,27.06,45.88,FALSE,Hernandez Luna
+2012,General,144,Perez,D,N,52.07,Pineda,R,N,45.54,6.53,FALSE,Perez
+2012,General,147,Coleman,D,Y,92.21,Shafto,G,N,7.79,84.42,FALSE,Coleman
+2012,General,148,Farrar,D,Y,85.96,Cooper,G,N,14.04,71.92,FALSE,Farrar
+2012,General,149,Vo,D,Y,61.12,Williams,R,N,38.88,22.24,FALSE,Vo
+2012,General,150,Riddle,R,Y,69.68,Neal,D,N,30.32,39.36,FALSE,Riddle
+2012,Republican Primary,2,Flynn,R,Y,59.52,Alexander,R,N,40.48,19.04,FALSE,Flynn
+2012,Republican Primary,3,Bell,R,N,56.9,Bagley,R,N,26.36,30.54,FALSE,Bell
+2012,Republican Primary,4,Gooden,R,Y,54.44,Spitzer,R,N,45.56,8.88,FALSE,Gooden
+2012,Republican Primary,5,Hughes,R,Y,77.66,Lookadoo,R,N,22.34,55.32,FALSE,Hughes
+2012,Republican Primary,6,Schaefer,R,N,57.68,Berman,R,Y,42.32,15.36,FALSE,Schaefer
+2012,Republican Primary,7,Simpson,R,Y,61.64,Merritt,R,N,38.36,23.28,FALSE,Simpson
+2012,Republican Primary,8,Cook,R,Y,62,Vickery,R,N,38,24,FALSE,Cook
+2012,Republican Primary,9,Paddie,R,N,52.17,Christian,R,Y,47.83,4.34,FALSE,Paddie
+2012,Republican Primary,10,Pitts,R,Y,57.55,Fabby,R,N,26.96,30.59,FALSE,Pitts
+2012,Republican Primary,11,Hopson,R,Y,47.13,Clardy,R,N,46.31,0.82,TRUE,NA
+2012,Republican Primary,12,Anderson,R,N,29.54,Kacal,R,N,23.76,5.78,TRUE,NA
+2012,Republican Primary,14,Raney,R,Y,81.48,Hawkins,R,N,18.52,62.96,FALSE,Raney
+2012,Republican Primary,15,Toth,R,N,56.48,Eissler,R,Y,43.52,12.96,FALSE,Toth
+2012,Republican Primary,18,Otto,R,Y,66.55,Stovall,R,N,33.45,33.1,FALSE,Otto
+2012,Republican Primary,19,White,R,Y,54.51,Hamilton,R,Y,45.49,9.02,FALSE,White
+2012,Republican Primary,21,Ritter,R,Y,72.72,Miller,R,N,27.28,45.44,FALSE,Ritter
+2012,Republican Primary,23,Faircloth,R,N,38.62,Wallace,R,N,31.63,6.99,TRUE,NA
+2012,Republican Primary,24,Bonnen,R,N,45.06,Sitton,R,N,32.65,12.41,TRUE,NA
+2012,Republican Primary,26,Miller,R,N,52.39,Chaumette,R,N,26.89,25.5,FALSE,Miller
+2012,Republican Primary,29,Thompson,R,N,67.05,Rosenthal-Ritter,R,N,32.95,34.1,FALSE,Thompson
+2012,Republican Primary,33,Turner,R,N,58.34,Pruitt,R,N,41.66,16.68,FALSE,Turner
+2012,Republican Primary,41,Martinez,R,N,54.11,Vera,R,N,45.89,8.22,FALSE,Martinez
+2012,Republican Primary,43,Lozano,R,Y,44.2,Wilson,R,N,43.75,0.45,TRUE,NA
+2012,Republican Primary,47,Workman,R,Y,66.85,Downton,R,N,33.15,33.7,FALSE,Workman
+2012,Republican Primary,53,Hilderbran,R,Y,72.21,Wise,R,N,27.79,44.42,FALSE,Hilderbran
+2012,Republican Primary,55,Sheffield,R,Y,57.39,Alaniz,R,N,42.61,14.78,FALSE,Sheffield
+2012,Republican Primary,56,Anderson,R,Y,52.36,DeCluitt,R,N,37.89,14.47,FALSE,Anderson
+2012,Republican Primary,57,Ashby,R,N,58.11,Beck,R,Y,41.89,16.22,FALSE,Ashby
+2012,Republican Primary,59,Miller,R,Y,42.48,Sheffield,R,N,41.5,0.98,TRUE,NA
+2012,Republican Primary,64,Crownover,R,Y,69.36,Brucia,R,N,30.64,38.72,FALSE,Crownover
+2012,Republican Primary,65,Simmons,R,N,61.6,Loerwald,R,N,22.37,39.23,FALSE,Simmons
+2012,Republican Primary,67,Cole,R,N,32.29,Leach,R,N,30.22,2.07,TRUE,NA
+2012,Republican Primary,68,McKnight,R,N,49.01,Springer,R,N,34.51,14.5,TRUE,NA
+2012,Republican Primary,70,Sanford,R,N,60.62,Wilson,R,N,39.38,21.24,FALSE,Sanford
+2012,Republican Primary,73,Miller,R,Y,75.1,Smith,R,N,24.9,50.2,FALSE,Miller
+2012,Republican Primary,74,Kincaid,R,N,67.16,Alcala,R,N,32.84,34.32,FALSE,Kincaid
+2012,Republican Primary,83,Perry,R,N,71.1,Jones,R,N,28.9,42.2,FALSE,Perry
+2012,Republican Primary,85,Stephenson,R,N,53.3,Duggan,R,N,46.7,6.6,FALSE,Stephenson
+2012,Republican Primary,88,Landtroop,R,Y,34.12,King,R,N,30.43,3.69,TRUE,NA
+2012,Republican Primary,91,Sapp,R,N,39.85,Klick,R,N,31.93,7.92,TRUE,NA
+2012,Republican Primary,92,Stickland,R,N,60.18,Fisher,R,N,39.82,20.36,FALSE,Stickland
+2012,Republican Primary,93,Krause,R,N,50.7,Nash,R,Y,37.6,13.1,FALSE,Krause
+2012,Republican Primary,94,Patrick,R,Y,74.73,Lanza,R,N,25.27,49.46,FALSE,Patrick
+2012,Republican Primary,96,Zedler,R,Y,62.85,Leyman,R,N,37.15,25.7,FALSE,Zedler
+2012,Republican Primary,97,Goldman,R,N,54.68,Todd,R,N,35.77,18.91,FALSE,Goldman
+2012,Republican Primary,98,Capriglione,R,N,55.56,Truitt,R,Y,44.44,11.12,FALSE,Capriglione
+2012,Republican Primary,106,Fallon,R,N,71.34,Fulton,R,N,28.66,42.68,FALSE,Fallon
+2012,Republican Primary,114,Keffer,R,N,47.46,Villalba,R,N,41.15,6.31,TRUE,NA
+2012,Republican Primary,115,Nguyen,R,N,35.04,Ratliff,R,N,30.07,4.97,TRUE,NA
+2012,Republican Primary,121,Straus,R,Y,62.92,Beebe,R,N,37.08,25.84,FALSE,Straus
+2012,Republican Primary,127,Huberty,R,Y,90.26,Jordan,R,N,9.74,80.52,FALSE,Huberty
+2012,Republican Primary,129,Davis,R,Y,77.46,Huls,R,N,22.54,54.92,FALSE,Davis
+2012,Republican Primary,132,Callegari,R,Y,79.51,Brown,R,N,20.49,59.02,FALSE,Callegari
+2012,Republican Primary,133,Murphy,R,Y,61.12,Witt,R,N,38.88,22.24,FALSE,Murphy
+2012,Republican Primary,136,Dale,R,N,66.37,Matthews,R,N,33.63,32.74,FALSE,Dale
+2012,Republican Primary,138,Bohac,R,Y,72.51,Smith,R,N,27.49,45.02,FALSE,Bohac
+2012,Republican Primary,143,Weiskopf,R,N,61.17,Salazar,R,N,38.83,22.34,FALSE,Weiskopf
+2012,Republican Primary,144,Pineda,R,N,58.25,Pena,R,N,41.75,16.5,FALSE,Pineda
+2012,Republican Primary,149,Williams,R,N,52.8,Lee,R,N,34.86,17.94,FALSE,Williams
+2012,Republican Primary,150,Riddle,R,Y,80.86,Wilson,R,N,19.14,61.72,FALSE,Riddle
+2012,Republican Runoff,11,Clardy,R,N,51.14,Hopson,R,Y,48.86,2.28,FALSE,Clardy
+2012,Republican Runoff,12,Kacal,R,N,50.88,Anderson,R,N,49.12,1.76,FALSE,Kacal
+2012,Republican Runoff,23,Faircloth,R,N,56.05,Wallace,R,N,43.95,12.1,FALSE,Faircloth
+2012,Republican Runoff,24,Bonnen,R,N,57.82,Sitton,R,N,42.18,15.64,FALSE,Bonnen
+2012,Republican Runoff,26,Miller,R,N,57.81,Chaumette,R,N,42.19,15.62,FALSE,Miller
+2012,Republican Runoff,43,Lozano,R,Y,54.15,Wilson,R,N,45.85,8.3,FALSE,Lozano
+2012,Republican Runoff,59,Sheffield,R,N,54.79,Miller,R,Y,45.21,9.58,FALSE,Sheffield
+2012,Republican Runoff,67,Leach,R,N,53.43,Cole,R,N,46.57,6.86,FALSE,Leach
+2012,Republican Runoff,68,Springer,R,N,56.41,McKnight,R,N,43.59,12.82,FALSE,Springer
+2012,Republican Runoff,88,King,R,N,53.98,Landtroop,R,Y,46.02,7.96,FALSE,King
+2012,Republican Runoff,91,Klick,R,N,53.83,Sapp,R,N,46.17,7.66,FALSE,Klick
+2012,Republican Runoff,114,Villalba,R,N,51.77,Keffer,R,N,48.23,3.54,FALSE,Villalba
+2012,Republican Runoff,115,Ratliff,R,N,51.93,Nguyen,R,N,48.07,3.86,FALSE,Ratliff
+2013,House Dist 50,50,VanDeWalle,NA,N,39.16,Israel,NA,N,31.86,7.3,TRUE,NA
+2014,Democratic Primary,36,Munoz,D,Y,76.56,Regalado,D,N,23.44,53.12,FALSE,Munoz
+2014,Democratic Primary,75,Gonzalez,D,Y,68.91,Sepulveda,D,N,31.09,37.82,FALSE,Gonzalez
+2014,Democratic Primary,76,Blanco,D,N,43.69,Chavez,D,N,29.09,14.6,TRUE,NA
+2014,Democratic Primary,77,Marquez,D,Y,66.41,Ness-Garcia,D,N,33.59,32.82,FALSE,Marquez
+2014,Democratic Primary,79,Pickett,D,Y,84.42,Peartree,D,N,15.58,68.84,FALSE,Pickett
+2014,Democratic Primary,90,Romero,D,N,51.08,Burnam,D,Y,48.92,2.16,FALSE,Romero
+2014,Democratic Primary,105,Motley,D,N,47.26,Meza,D,N,28.41,18.85,TRUE,NA
+2014,Democratic Primary,109,Giddings,D,Y,87.66,Gregory,D,N,12.34,75.32,FALSE,Giddings
+2014,Democratic Primary,110,Rose,D,Y,57.16,Crenshaw,D,N,42.84,14.32,FALSE,Rose
+2014,Democratic Primary,131,Allen,D,Y,88.67,Okorafor,D,N,11.33,77.34,FALSE,Allen
+2014,Democratic Primary,145,Alvarado,D,Y,85.49,Delgado,D,N,14.51,70.98,FALSE,Alvarado
+2014,Democratic Runoff,76,Blanco,D,N,68.08,Chavez,D,N,31.92,36.16,FALSE,Blanco
+2014,Democratic Runoff,105,Motley,D,N,74.59,Meza,D,N,25.41,49.18,FALSE,Motley
+2014,General,3,Bell,R,Y,91.08,Parr,L,N,8.92,82.16,FALSE,Bell
+2014,General,4,Spitzer,R,N,89.13,Stralow,L,N,10.87,78.26,FALSE,Spitzer
+2014,General,5,Hughes,R,Y,92.34,Walenta,L,N,7.66,84.68,FALSE,Hughes
+2014,General,6,Schaefer,R,Y,87.84,Gardner,L,N,12.16,75.68,FALSE,Schaefer
+2014,General,8,Cook,R,Y,87.85,Wilford,L,N,12.15,75.7,FALSE,Cook
+2014,General,14,Raney,R,Y,68.08,Metscher,D,N,28.49,39.59,FALSE,Raney
+2014,General,16,Metcalf,R,N,83.79,Hayles,D,N,13.66,70.13,FALSE,Metcalf
+2014,General,17,Kleinschmidt,R,Y,64.6,Banks,D,N,35.4,29.2,FALSE,Kleinschmidt
+2014,General,20,Farney,R,Y,73.33,Wyman,D,N,22.73,50.6,FALSE,Farney
+2014,General,21,Phelan,R,N,74.4,Bruney,D,N,25.6,48.8,FALSE,Phelan
+2014,General,23,Faircloth,R,N,54.64,Criss,D,N,45.36,9.28,FALSE,Faircloth
+2014,General,26,Miller,R,Y,69.68,Paaso,D,N,30.32,39.36,FALSE,Miller
+2014,General,27,Reynolds,D,Y,66.98,Hamilton,R,N,33.02,33.96,FALSE,Reynolds
+2014,General,41,Guerra,D,Y,57.46,Casas,R,N,42.54,14.92,FALSE,Guerra
+2014,General,42,Raymond,D,Y,88.44,Serna,G,N,11.56,76.88,FALSE,Raymond
+2014,General,43,Lozano,R,Y,61.41,Gonzalez,D,N,38.59,22.82,FALSE,Lozano
+2014,General,44,Kuempel,R,Y,75.68,Bohmfalk,D,N,24.32,51.36,FALSE,Kuempel
+2014,General,45,Isaac,R,Y,72.64,Duke,L,N,27.36,45.28,FALSE,Isaac
+2014,General,46,Dukes,D,Y,84.03,Ludlow,L,N,15.97,68.06,FALSE,Dukes
+2014,General,47,Workman,R,Y,73.04,McKinlay,L,N,26.96,46.08,FALSE,Workman
+2014,General,48,Howard,D,Y,78.1,Easton,L,N,21.9,56.2,FALSE,Howard
+2014,General,49,Naishtat,D,Y,85.08,Krawisz,L,N,14.92,70.16,FALSE,Naishtat
+2014,General,50,Israel,D,Y,58.68,VanDeWalle,R,N,37.13,21.55,FALSE,Israel
+2014,General,51,Rodriguez,D,Y,87.36,DiBianca,L,N,12.64,74.72,FALSE,Rodriguez
+2014,General,52,Gonzales,R,Y,56.42,Osborn,D,N,38.53,17.89,FALSE,Gonzales
+2014,General,53,Murr,R,N,89.91,Martin,L,N,10.09,79.82,FALSE,Murr
+2014,General,56,Anderson,R,Y,83.35,Deuvall,L,N,16.65,66.7,FALSE,Anderson
+2014,General,58,Burns,R,N,80.44,Kauffman,D,N,19.56,60.88,FALSE,Burns
+2014,General,61,King,R,Y,83.04,Britt,D,N,16.96,66.08,FALSE,King
+2014,General,63,Parker,R,Y,77.34,Moran,D,N,22.66,54.68,FALSE,Parker
+2014,General,64,Crownover,R,Y,63.39,Lyons,D,N,33.77,29.62,FALSE,Crownover
+2014,General,65,Simmons,R,Y,64.31,Mendoza,D,N,35.69,28.62,FALSE,Simmons
+2014,General,67,Leach,R,Y,78.56,Peavy,L,N,21.44,57.12,FALSE,Leach
+2014,General,76,Blanco,D,N,87.09,Lozano,L,N,12.91,74.18,FALSE,Blanco
+2014,General,77,Marquez,D,Y,78.15,Mendoza,I,N,21.85,56.3,FALSE,Marquez
+2014,General,80,King,D,Y,89.6,Buentello,G,N,10.4,79.2,FALSE,King
+2014,General,81,Landgraf,R,N,99.04,McCulloch,W,N,0.96,98.08,FALSE,Landgraf
+2014,General,83,Burrows,R,N,81.22,Tarbox,D,N,18.78,62.44,FALSE,Burrows
+2014,General,84,Frullo,R,Y,72.71,Tishler,D,N,27.29,45.42,FALSE,Frullo
+2014,General,85,Stephenson,R,Y,66.62,Drabek,D,N,33.38,33.24,FALSE,Stephenson
+2014,General,87,Price,R,Y,84.34,Bosquez,D,N,15.66,68.68,FALSE,Price
+2014,General,88,King,R,Y,93.18,McKennon,L,N,6.82,86.36,FALSE,King
+2014,General,89,Laubenberg,R,Y,71.61,Karmally,D,N,28.39,43.22,FALSE,Laubenberg
+2014,General,91,Klick,R,Y,68.74,Ragan,D,N,28.18,40.56,FALSE,Klick
+2014,General,92,Stickland,R,Y,63.62,Penney,D,N,36.38,27.24,FALSE,Stickland
+2014,General,94,Tinderholt,R,N,56.63,Ballweg,D,N,40.49,16.14,FALSE,Tinderholt
+2014,General,95,Collier,D,Y,75.78,McDaniel,R,N,24.22,51.56,FALSE,Collier
+2014,General,96,Zedler,R,Y,80.75,Eaker,L,N,19.25,61.5,FALSE,Zedler
+2014,General,97,Goldman,R,Y,81.63,Wingo,L,N,18.37,63.26,FALSE,Goldman
+2014,General,100,Johnson,D,Y,89.97,Chapman,L,N,10.03,79.94,FALSE,Johnson
+2014,General,101,Turner,D,Y,84.59,Nulsen,L,N,15.41,69.18,FALSE,Turner
+2014,General,102,Koop,R,N,62.49,Clayton,D,N,37.51,24.98,FALSE,Koop
+2014,General,105,Anderson,R,N,55.45,Motley,D,N,42.72,12.73,FALSE,Anderson
+2014,General,106,Fallon,R,Y,69.93,Osterholt,D,N,27.53,42.4,FALSE,Fallon
+2014,General,107,Sheets,R,Y,55.02,Donovan,D,N,44.98,10.04,FALSE,Sheets
+2014,General,108,Meyer,R,N,60.68,Bailey,D,N,39.32,21.36,FALSE,Meyer
+2014,General,112,Chen Button,R,Y,81.63,Binkley,L,N,18.37,63.26,FALSE,Chen Button
+2014,General,113,Burkett,R,Y,59.43,Whitley,D,N,40.57,18.86,FALSE,Burkett
+2014,General,114,Villalba,R,Y,81.07,Griffing,L,N,18.93,62.14,FALSE,Villalba
+2014,General,115,Rinaldi,R,N,57.11,Stafford,D,N,39.53,17.58,FALSE,Rinaldi
+2014,General,117,Galindo,R,N,52.7,Cortez,D,Y,47.3,5.4,FALSE,Galindo
+2014,General,120,McClendon,D,Y,82.28,Villela,L,N,17.72,64.56,FALSE,McClendon
+2014,General,121,Straus,R,Y,82.1,Carruthers,L,N,17.9,64.2,FALSE,Straus
+2014,General,122,Larson,R,Y,85.01,Holland,L,N,14.99,70.02,FALSE,Larson
+2014,General,123,Villarreal,D,Y,86.28,Ingmundson,G,N,13.72,72.56,FALSE,Villarreal
+2014,General,125,Rodriguez,D,Y,76.92,Behrman,L,N,23.08,53.84,FALSE,Rodriguez
+2014,General,126,Harless,R,Y,86.31,Hernandez,L,N,13.69,72.62,FALSE,Harless
+2014,General,128,Smith,R,Y,90.7,Lowder,L,N,9.3,81.4,FALSE,Smith
+2014,General,129,Paul,R,N,67.81,Gay,D,N,32.19,35.62,FALSE,Paul
+2014,General,130,Fletcher,R,Y,90.77,Browning,G,N,9.23,81.54,FALSE,Fletcher
+2014,General,132,Schofield,R,N,66.12,Lopez,D,N,33.88,32.24,FALSE,Schofield
+2014,General,133,Murphy,R,Y,74.6,Nicol,D,N,25.4,49.2,FALSE,Murphy
+2014,General,134,Davis,R,Y,61.18,Ruff,D,N,38.82,22.36,FALSE,Davis
+2014,General,135,Elkins,R,Y,65.86,Abbas,D,N,34.14,31.72,FALSE,Elkins
+2014,General,136,Dale,R,Y,54.19,Bucy,D,N,41.11,13.08,FALSE,Dale
+2014,General,137,Wu,D,Y,57.86,Fiki,R,N,42.14,15.72,FALSE,Wu
+2014,General,138,Bohac,R,Y,66.78,Vernon,D,N,33.22,33.56,FALSE,Bohac
+2014,General,144,Pena,R,N,50.64,Perez,D,Y,49.36,1.28,FALSE,Pena
+2014,General,146,Miles,D,Y,91.87,Bradford,G,N,8.13,83.74,FALSE,Miles
+2014,General,148,Farrar,D,Y,60.29,Carmona,R,N,39.71,20.58,FALSE,Farrar
+2014,General,149,Vo,D,Y,54.9,Hoang,R,N,45.1,9.8,FALSE,Vo
+2014,General,150,Riddle,R,Y,73.15,Perez,D,N,26.85,46.3,FALSE,Riddle
+2014,Republican Primary,1,VanDeaver,R,N,54.35,Lavender,R,Y,45.65,8.7,FALSE,VanDeaver
+2014,Republican Primary,4,Spitzer,R,N,51.04,Gooden,R,Y,48.96,2.08,FALSE,Spitzer
+2014,Republican Primary,6,Schaefer,R,Y,61.09,Ogle,R,N,38.91,22.18,FALSE,Schaefer
+2014,Republican Primary,8,Cook,R,Y,58.62,Vickery,R,N,35.03,23.59,FALSE,Cook
+2014,Republican Primary,10,Fabby,R,N,38.09,Wray,R,N,35.82,2.27,TRUE,NA
+2014,Republican Primary,11,Clardy,R,Y,83.99,Sevilla,R,N,16.01,67.98,FALSE,Clardy
+2014,Republican Primary,12,Kacal,R,Y,76.29,Delasandro,R,N,23.71,52.58,FALSE,Kacal
+2014,Republican Primary,15,Keough,R,N,57.39,Tough,R,N,42.61,14.78,FALSE,Keough
+2014,Republican Primary,16,Seago,R,N,43.61,Metcalf,R,N,41.84,1.77,TRUE,NA
+2014,Republican Primary,18,Otto,R,Y,61.83,Holcomb,R,N,38.17,23.66,FALSE,Otto
+2014,Republican Primary,21,Phelan,R,N,59.9,Nichols,R,N,40.1,19.8,FALSE,Phelan
+2014,Republican Primary,23,Faircloth,R,N,66.02,Senter,R,N,33.98,32.04,FALSE,Faircloth
+2014,Republican Primary,53,Murr,R,N,41.13,Henneke,R,N,28.97,12.16,TRUE,NA
+2014,Republican Primary,55,White,R,N,53.73,Sheffield,R,Y,46.27,7.46,FALSE,White
+2014,Republican Primary,58,Eby,R,N,40.14,Burns,R,N,30.39,9.75,TRUE,NA
+2014,Republican Primary,59,Sheffield,R,Y,60.88,Pelton,R,N,31.16,29.72,FALSE,Sheffield
+2014,Republican Primary,60,Keffer,R,Y,56.3,Crisp,R,N,43.7,12.6,FALSE,Keffer
+2014,Republican Primary,64,Crownover,R,Y,54.97,King,R,N,45.03,9.94,FALSE,Crownover
+2014,Republican Primary,66,Shaheen,R,N,48.83,Callison,R,N,40.04,8.79,TRUE,NA
+2014,Republican Primary,71,King,R,Y,67.29,Castro,R,N,32.71,34.58,FALSE,King
+2014,Republican Primary,72,Darby,R,Y,79.45,Thomason,R,N,20.55,58.9,FALSE,Darby
+2014,Republican Primary,81,Landgraf,R,N,58.6,Keith,R,N,41.4,17.2,FALSE,Landgraf
+2014,Republican Primary,83,Perry,R,Y,73.02,Massengale,R,N,26.98,46.04,FALSE,Perry
+2014,Republican Primary,92,Stickland,R,Y,64.99,Cargile,R,N,35.01,29.98,FALSE,Stickland
+2014,Republican Primary,94,Tinderholt,R,N,55.45,Patrick,R,Y,44.55,10.9,FALSE,Tinderholt
+2014,Republican Primary,102,Koop,R,N,34.74,Carter,R,Y,33.15,1.59,TRUE,NA
+2014,Republican Primary,105,Anderson,R,N,52.73,Harper-Brown,R,Y,47.27,5.46,FALSE,Anderson
+2014,Republican Primary,108,Meyer,R,N,47.14,Westcott,R,N,30.18,16.96,TRUE,NA
+2014,Republican Primary,112,Chen Button,R,Y,54.03,Patterson,R,N,45.97,8.06,FALSE,Chen Button
+2014,Republican Primary,115,Rinaldi,R,N,50.56,Ratliff,R,Y,49.44,1.12,FALSE,Rinaldi
+2014,Republican Primary,117,Galindo,R,N,64.62,Garza,R,N,35.38,29.24,FALSE,Galindo
+2014,Republican Primary,121,Straus,R,Y,61.22,Beebe,R,N,38.78,22.44,FALSE,Straus
+2014,Republican Primary,129,Berg,R,N,25.58,Paul,R,N,25.13,0.45,TRUE,NA
+2014,Republican Primary,132,Schofield,R,N,44.62,Hodge,R,N,19.48,25.14,TRUE,NA
+2014,Republican Primary,134,Davis,R,Y,70.93,Parker,R,N,29.07,41.86,FALSE,Davis
+2014,Republican Primary,149,Hoang,R,N,56.53,Ho,R,N,43.47,13.06,FALSE,Hoang
+2014,Republican Primary,150,Riddle,R,Y,74.93,Noun,R,N,25.07,49.86,FALSE,Riddle
+2014,Republican Runoff,10,Wray,R,N,52.93,Fabby,R,N,47.07,5.86,FALSE,Wray
+2014,Republican Runoff,16,Metcalf,R,N,62.07,Seago,R,N,37.93,24.14,FALSE,Metcalf
+2014,Republican Runoff,53,Murr,R,N,61.3,Henneke,R,N,38.7,22.6,FALSE,Murr
+2014,Republican Runoff,58,Burns,R,N,53.41,Eby,R,N,46.59,6.82,FALSE,Burns
+2014,Republican Runoff,66,Shaheen,R,N,54.27,Callison,R,N,45.73,8.54,FALSE,Shaheen
+2014,Republican Runoff,102,Koop,R,N,59.82,Carter,R,Y,40.18,19.64,FALSE,Koop
+2014,Republican Runoff,108,Meyer,R,N,74.45,Westcott,R,N,25.55,48.9,FALSE,Meyer
+2014,Republican Runoff,129,Paul,R,N,52.35,Berg,R,N,47.65,4.7,FALSE,Paul
+2014,Republican Runoff,132,Schofield,R,N,67.58,Hodge,R,N,32.42,35.16,FALSE,Schofield
+2015,House Dist 123,123,Bernal,D,N,47.46,Previtera,R,N,21.28,26.18,TRUE,NA
+2015,House Dist 123 (2nd),123,Bernal,D,N,63.67,Previtera,R,N,36.33,27.34,FALSE,Bernal
+2015,House Dist 124,124,Minjarez,D,N,42.22,Herrera,D,N,28.3,13.92,TRUE,NA
+2015,House Dist 124 (2nd),124,Minjarez,D,N,54.98,Herrera,D,N,45.02,9.96,FALSE,Minjarez
+2015,House Dist 13,13,Cerny Bilski,R,N,43.46,Schubert,R,N,32.79,10.67,TRUE,NA
+2015,House Dist 13 (2nd),13,Schubert,R,N,57.14,Cerny Bilski,R,N,42.86,14.28,FALSE,Schubert
+2015,House Dist 17,17,Cyrier,R,N,46.13,Golemon,R,N,24.47,21.66,TRUE,NA
+2015,House Dist 17 (2nd),17,Cyrier,R,N,52.06,Golemon,R,N,47.94,4.12,FALSE,Cyrier
+2015,House District 118,118,Lujan,R,N,29.23,Uresti,D,N,21.72,7.51,TRUE,NA
+2016,Democratic Primary,27,Reynolds,D,Y,48.46,Bartholomew,D,N,24.12,24.34,TRUE,NA
+2016,Democratic Primary,33,Jacobs,D,N,74.67,Padgett,D,N,25.33,49.34,FALSE,Jacobs
+2016,Democratic Primary,36,Munoz,D,Y,60.07,Padron,D,N,39.93,20.14,FALSE,Munoz
+2016,Democratic Primary,37,Oliveira,D,Y,67.94,De Leon,D,N,32.06,35.88,FALSE,Oliveira
+2016,Democratic Primary,49,Hinojosa,D,N,56.96,Way,D,N,18.74,38.22,FALSE,Hinojosa
+2016,Democratic Primary,54,Blankenship,D,N,71.48,Carter,D,N,28.52,42.96,FALSE,Blankenship
+2016,Democratic Primary,64,Flanagan,D,N,51.88,Greco,D,N,48.12,3.76,FALSE,Flanagan
+2016,Democratic Primary,75,Gonzalez,D,Y,57.92,Quintanilla,D,N,42.08,15.84,FALSE,Gonzalez
+2016,Democratic Primary,77,Ortega,D,N,69.21,Lopez,D,N,30.79,38.42,FALSE,Ortega
+2016,Democratic Primary,97,Tarrant,D,N,78.03,McKernon,D,N,21.97,56.06,FALSE,Tarrant
+2016,Democratic Primary,110,Rose,D,Y,63.69,Crenshaw,D,N,36.31,27.38,FALSE,Rose
+2016,Democratic Primary,116,Arevalo,D,N,53,Golando,D,N,28.94,24.06,FALSE,Arevalo
+2016,Democratic Primary,118,Uresti,D,N,59.17,Farias,D,N,40.83,18.34,FALSE,Uresti
+2016,Democratic Primary,120,Miller,D,N,26.61,Gervin-Hawkins,D,N,26.31,0.3,TRUE,NA
+2016,Democratic Primary,124,Minjarez,D,Y,71.47,Contreras,D,N,28.53,42.94,FALSE,Minjarez
+2016,Democratic Primary,126,Dawson-Thomas,D,N,60.74,Hernandez,D,N,39.26,21.48,FALSE,Dawson-Thomas
+2016,Democratic Primary,131,Allen,D,Y,89.65,Shike,D,N,10.35,79.3,FALSE,Allen
+2016,Democratic Primary,137,Wu,D,Y,64.73,Pollard,D,N,35.27,29.46,FALSE,Wu
+2016,Democratic Primary,139,Willis,D,N,32.14,Johnson,D,N,28.56,3.58,TRUE,NA
+2016,Democratic Primary,144,Perez,D,N,53.32,Wheeler,D,N,35.77,17.55,FALSE,Perez
+2016,Democratic Primary,148,Farrar,D,Y,88.12,Wilson,D,N,11.88,76.24,FALSE,Farrar
+2016,Democratic Primary,149,Vo,D,Y,64.87,Smith,D,N,35.13,29.74,FALSE,Vo
+2016,Democratic Runoff,27,Reynolds,D,N,52.89,Bartholomew,D,N,47.11,5.78,FALSE,Reynolds
+2016,Democratic Runoff,120,Gervin-Hawkins,D,N,55.83,Salas,D,N,44.17,11.66,FALSE,Gervin-Hawkins
+2016,Democratic Runoff,139,Johnson,D,N,52.95,Willis,D,N,47.05,5.9,FALSE,Johnson
+2016,General,10,Wray,R,Y,86.94,Richter,L,N,13.06,73.88,FALSE,Wray
+2016,General,11,Clardy,R,Y,74.85,Wright,D,N,25.15,49.7,FALSE,Clardy
+2016,General,13,Schubert,R,Y,78.63,Webster,D,N,21.37,57.26,FALSE,Schubert
+2016,General,18,Bailes,R,N,88.01,Nagel,L,N,11.99,76.02,FALSE,Bailes
+2016,General,23,Faircloth,R,Y,58.87,Criss,D,N,41.13,17.74,FALSE,Faircloth
+2016,General,26,Miller,R,Y,57.86,DeMerchant,D,N,42.14,15.72,FALSE,Miller
+2016,General,27,Reynolds,D,Y,67.98,Bryant,R,N,32.02,35.96,FALSE,Reynolds
+2016,General,29,Thompson,R,Y,61.07,Floyd,D,N,38.93,22.14,FALSE,Thompson
+2016,General,33,Holland,R,N,67.79,Jacobs,D,N,28.89,38.9,FALSE,Holland
+2016,General,40,Canales,D,Y,73.78,De Leon,R,N,26.22,47.56,FALSE,Canales
+2016,General,41,Guerra,D,Y,56.78,Garza DeShazo,R,N,43.22,13.56,FALSE,Guerra
+2016,General,43,Lozano,R,Y,61.13,Garcia-Utley,D,N,38.87,22.26,FALSE,Lozano
+2016,General,44,Kuempel,R,Y,72.57,Bohmfalk,D,N,27.43,45.14,FALSE,Kuempel
+2016,General,46,Dukes,D,Y,70.29,Nila,R,N,19.16,51.13,FALSE,Dukes
+2016,General,47,Workman,R,Y,53.58,Jordan,D,N,41.69,11.89,FALSE,Workman
+2016,General,48,Howard,D,Y,79.4,Easton,L,N,20.6,58.8,FALSE,Howard
+2016,General,49,Hinojosa,D,N,84.41,Perkins,L,N,15.59,68.82,FALSE,Hinojosa
+2016,General,50,Israel,D,Y,63.69,Ruiz,R,N,36.31,27.38,FALSE,Israel
+2016,General,51,Rodriguez,D,Y,87.23,Gruene,G,N,12.77,74.46,FALSE,Rodriguez
+2016,General,52,Gonzales,R,Y,75.51,Knetsar,L,N,24.49,51.02,FALSE,Gonzales
+2016,General,53,Murr,R,Y,76.92,Ertel,D,N,20.03,56.89,FALSE,Murr
+2016,General,54,Cosper,R,N,54.84,Blankenship,D,N,45.16,9.68,FALSE,Cosper
+2016,General,56,Anderson,R,Y,86.54,Deuvall,L,N,13.46,73.08,FALSE,Anderson
+2016,General,64,Stucky,R,N,61.59,Flanagan,D,N,38.41,23.18,FALSE,Stucky
+2016,General,65,Simmons,R,Y,56.26,Mendoza,D,N,43.74,12.52,FALSE,Simmons
+2016,General,66,Shaheen,R,Y,57.39,Nelson,D,N,38.73,18.66,FALSE,Shaheen
+2016,General,67,Leach,R,Y,56.63,Coleman,D,N,39.68,16.95,FALSE,Leach
+2016,General,70,Sanford,R,Y,67.08,Bryant,D,N,28.47,38.61,FALSE,Sanford
+2016,General,71,Lambert,R,N,80.64,LoPachin,D,N,19.36,61.28,FALSE,Lambert
+2016,General,78,Moody,D,Y,63.36,Lane,R,N,36.64,26.72,FALSE,Moody
+2016,General,85,Stephenson,R,Y,60.4,Davis,D,N,39.6,20.8,FALSE,Stephenson
+2016,General,89,Laubenberg,R,Y,63.53,Hamilton,D,N,32.67,30.86,FALSE,Laubenberg
+2016,General,92,Stickland,R,Y,55.64,Leach,D,N,38.74,16.9,FALSE,Stickland
+2016,General,93,Krause,R,Y,60.67,Bean,D,N,39.33,21.34,FALSE,Krause
+2016,General,94,Tinderholt,R,Y,73.64,Pallett,L,N,26.36,47.28,FALSE,Tinderholt
+2016,General,95,Collier,D,Y,75.6,McDaniel,R,N,24.4,51.2,FALSE,Collier
+2016,General,96,Zedler,R,Y,56.98,Lee,D,N,43.02,13.96,FALSE,Zedler
+2016,General,97,Goldman,R,Y,57.23,Tarrant,D,N,39.11,18.12,FALSE,Goldman
+2016,General,98,Capriglione,R,Y,75.2,Chibli,D,N,24.8,50.4,FALSE,Capriglione
+2016,General,99,Geren,R,Y,82.79,Hawkins,L,N,17.21,65.58,FALSE,Geren
+2016,General,100,Johnson,D,Y,86.99,Marcus,L,N,13.01,73.98,FALSE,Johnson
+2016,General,101,Turner,D,Y,66.33,Garza,R,N,33.67,32.66,FALSE,Turner
+2016,General,102,Koop,R,Y,54.66,Irvin,D,N,45.34,9.32,FALSE,Koop
+2016,General,105,Anderson,R,Y,50.07,Meza,D,N,49.93,0.14,FALSE,Anderson
+2016,General,106,Fallon,R,Y,80.8,Caston,L,N,19.2,61.6,FALSE,Fallon
+2016,General,107,Neave,D,N,50.76,Sheets,R,Y,49.24,1.52,FALSE,Neave
+2016,General,108,Meyer,R,Y,72.5,Smith,L,N,27.5,45,FALSE,Meyer
+2016,General,109,Giddings,D,Y,82.74,Russell,R,N,17.26,65.48,FALSE,Giddings
+2016,General,111,Davis,D,Y,78.2,Jackson,R,N,21.8,56.4,FALSE,Davis
+2016,General,112,Chen Button,R,Y,57.22,Blackshear,D,N,42.78,14.44,FALSE,Chen Button
+2016,General,113,Burkett,R,Y,55.16,Bowers,D,N,44.84,10.32,FALSE,Burkett
+2016,General,114,Villalba,R,Y,55.72,Burke,D,N,40.57,15.15,FALSE,Villalba
+2016,General,115,Rinaldi,R,Y,50.89,Ocker,D,N,49.11,1.78,FALSE,Rinaldi
+2016,General,117,Cortez,D,N,51.21,Galindo,R,Y,48.52,2.69,FALSE,Cortez
+2016,General,118,Uresti,D,N,55.17,Lujan,R,Y,44.83,10.34,FALSE,Uresti
+2016,General,120,Gervin-Hawkins,D,N,77.65,Thompson,I,Y,22.35,55.3,FALSE,Gervin-Hawkins
+2016,General,126,Roberts,R,N,58,Dawson-Thomas,D,N,39.17,18.83,FALSE,Roberts
+2016,General,127,Huberty,R,Y,81.9,Ford,L,N,12.33,69.57,FALSE,Huberty
+2016,General,128,Cain,R,N,86.41,Lowder,L,N,13.59,72.82,FALSE,Cain
+2016,General,132,Schofield,R,Y,80.23,Kurtz,L,N,19.77,60.46,FALSE,Schofield
+2016,General,134,Davis,R,Y,53.56,Rose,D,N,43.3,10.26,FALSE,Davis
+2016,General,135,Elkins,R,Y,54.85,Ybanez,D,N,45.15,9.7,FALSE,Elkins
+2016,General,136,Dale,R,Y,55,Gordon,D,N,45,10,FALSE,Dale
+2016,General,137,Wu,D,Y,66.99,Baker,R,N,30.29,36.7,FALSE,Wu
+2016,General,144,Perez,D,N,60.25,Pena,R,Y,39.75,20.5,FALSE,Perez
+2016,General,146,Thierry,D,N,97.15,Owens,W,N,2.85,94.3,FALSE,Thierry
+2016,General,147,Coleman,D,Y,76.27,Murphy,R,N,20.82,55.45,FALSE,Coleman
+2016,General,149,Vo,D,Y,63.55,Chu,R,N,36.45,27.1,FALSE,Vo
+2016,General,150,Swanson,R,N,63.19,Kelly,D,N,36.81,26.38,FALSE,Swanson
+2016,House Dist 118 (2nd),118,Lujan,R,N,52.38,Uresti,D,N,47.62,4.76,FALSE,Lujan
+2016,House Dist 120,120,Thompson,I,N,32.96,Miller,D,N,28.03,4.93,TRUE,NA
+2016,House Dist 120 (2nd),120,Thompson,D,N,52.05,Miller,D,N,47.95,4.1,FALSE,Thompson
+2016,House Dist 139,139,Johnson,D,N,83.11,Tezino,D,N,16.89,66.22,FALSE,Johnson
+2016,Republican Primary,1,VanDeaver,R,Y,61.92,Lavender,R,N,38.08,23.84,FALSE,VanDeaver
+2016,Republican Primary,2,Flynn,R,Y,50.99,Slaton,R,N,49.01,1.98,FALSE,Flynn
+2016,Republican Primary,4,Gooden,R,N,51.79,Spitzer,R,Y,48.21,3.58,FALSE,Gooden
+2016,Republican Primary,5,Hefner,R,N,46.03,Misenheimer,R,N,26.98,19.05,TRUE,NA
+2016,Republican Primary,7,Dean,R,N,57.98,Watts,R,N,42.02,15.96,FALSE,Dean
+2016,Republican Primary,8,Cook,R,Y,50.39,McNutt,R,N,49.61,0.78,FALSE,Cook
+2016,Republican Primary,11,Clardy,R,Y,86.33,Sevilla,R,N,13.67,72.66,FALSE,Clardy
+2016,Republican Primary,12,Kacal,R,Y,70.41,Stanford,R,N,19.05,51.36,FALSE,Kacal
+2016,Republican Primary,14,Raney,R,Y,68.78,Fields,R,N,31.22,37.56,FALSE,Raney
+2016,Republican Primary,17,Cyrier,R,Y,64.54,Golemon,R,N,35.46,29.08,FALSE,Cyrier
+2016,Republican Primary,18,Strahan,R,N,28.14,Bailes,R,N,25.8,2.34,TRUE,NA
+2016,Republican Primary,20,Wilson,R,N,54.26,Farney,R,Y,45.74,8.52,FALSE,Wilson
+2016,Republican Primary,27,Bryant,R,N,52.49,Walker,R,N,47.51,4.98,FALSE,Bryant
+2016,Republican Primary,33,Keating,R,N,37.63,Holland,R,N,32.86,4.77,TRUE,NA
+2016,Republican Primary,47,Workman,R,Y,60.57,Wiley,R,N,39.43,21.14,FALSE,Workman
+2016,Republican Primary,54,Cosper,R,N,41.73,Ruiz,R,N,36.84,4.89,TRUE,NA
+2016,Republican Primary,55,Shine,R,N,50.27,White,R,Y,49.73,0.54,FALSE,Shine
+2016,Republican Primary,58,Burns,R,Y,53.6,Eby,R,N,46.4,7.2,FALSE,Burns
+2016,Republican Primary,59,Sheffield,R,Y,61.64,Graves,R,N,38.36,23.28,FALSE,Sheffield
+2016,Republican Primary,60,Lang,R,N,53.8,Downing,R,N,46.2,7.6,FALSE,Lang
+2016,Republican Primary,64,Stucky,R,N,42.25,King,R,N,30.03,12.22,TRUE,NA
+2016,Republican Primary,65,Simmons,R,Y,83.23,Kissling,R,N,16.77,66.46,FALSE,Simmons
+2016,Republican Primary,71,Lambert,R,N,51.92,Castro,R,N,21.63,30.29,FALSE,Lambert
+2016,Republican Primary,73,Miller,R,Y,43.48,Biedermann,R,N,39.84,3.64,TRUE,NA
+2016,Republican Primary,81,Landgraf,R,Y,67.57,Crawford,R,N,32.43,35.14,FALSE,Landgraf
+2016,Republican Primary,84,Frullo,R,Y,55.2,Landtroop,R,N,44.8,10.4,FALSE,Frullo
+2016,Republican Primary,89,Laubenberg,R,Y,70.67,Lytle,R,N,29.33,41.34,FALSE,Laubenberg
+2016,Republican Primary,92,Stickland,R,N,58.13,Fisher,R,N,41.87,16.26,FALSE,Stickland
+2016,Republican Primary,94,Tinderholt,R,Y,58.31,Piel,R,N,41.69,16.62,FALSE,Tinderholt
+2016,Republican Primary,96,Zedler,R,Y,71.77,Nelson,R,N,28.23,43.54,FALSE,Zedler
+2016,Republican Primary,99,Geren,R,Y,58.23,French,R,N,41.77,16.46,FALSE,Geren
+2016,Republican Primary,106,Fallon,R,Y,82.88,Trubenbach,R,N,17.12,65.76,FALSE,Fallon
+2016,Republican Primary,112,Chen Button,R,Y,77.42,DeHart,R,N,22.58,54.84,FALSE,Chen Button
+2016,Republican Primary,113,Burkett,R,Y,55.95,Boos,R,N,44.05,11.9,FALSE,Burkett
+2016,Republican Primary,114,Villalba,R,Y,55.16,Morenoff,R,N,44.84,10.32,FALSE,Villalba
+2016,Republican Primary,115,Rinaldi,R,Y,53.45,Ratliff,R,N,46.55,6.9,FALSE,Rinaldi
+2016,Republican Primary,118,Lujan,R,Y,72.8,Casias,R,N,27.2,45.6,FALSE,Lujan
+2016,Republican Primary,121,Straus,R,Y,60.24,Judson,R,N,28.45,31.79,FALSE,Straus
+2016,Republican Primary,127,Huberty,R,Y,77.84,Bosworth,R,N,22.16,55.68,FALSE,Huberty
+2016,Republican Primary,128,Cain,R,N,47.83,Smith,R,Y,43.75,4.08,TRUE,NA
+2016,Republican Primary,130,Oliverson,R,N,70.04,Smith,R,N,29.96,40.08,FALSE,Oliverson
+2016,Republican Primary,134,Davis,R,Y,59.48,Palmer,R,N,40.52,18.96,FALSE,Davis
+2016,Republican Primary,150,Swanson,R,N,52.48,Riddle,R,Y,39.63,12.85,FALSE,Swanson
+2016,Republican Runoff,5,Hefner,R,N,60.62,Misenheimer,R,N,39.38,21.24,FALSE,Hefner
+2016,Republican Runoff,18,Bailes,R,N,67.43,Strahan,R,N,32.57,34.86,FALSE,Bailes
+2016,Republican Runoff,33,Holland,R,N,50.62,Keating,R,N,49.38,1.24,FALSE,Holland
+2016,Republican Runoff,54,Cosper,R,N,50.4,Ruiz,R,N,49.6,0.8,FALSE,Cosper
+2016,Republican Runoff,64,Stucky,R,N,65.75,King,R,N,34.25,31.5,FALSE,Stucky
+2016,Republican Runoff,73,Biedermann,R,N,55.4,Miller,R,N,44.6,10.8,FALSE,Biedermann
+2016,Republican Runoff,128,Cain,R,N,50.19,Smith,R,Y,49.81,0.38,FALSE,Cain
+2018,Democratic Primary,12,Arnold,D,N,59.6,Miller,D,N,40.4,19.2,FALSE,Arnold
+2018,Democratic Primary,14,Wilkinson,D,N,63.23,Vidal,D,N,36.77,26.46,FALSE,Wilkinson
+2018,Democratic Primary,27,Reynolds,D,Y,61.37,Carter,D,N,38.63,22.74,FALSE,Reynolds
+2018,Democratic Primary,28,Scoggins,D,N,80.97,White,D,N,19.03,61.94,FALSE,Scoggins
+2018,Democratic Primary,29,Presley,D,N,59.77,Forbis,D,N,40.23,19.54,FALSE,Presley
+2018,Democratic Primary,31,Guillen,D,Y,55.39,Garza,D,N,44.61,10.78,FALSE,Guillen
+2018,Democratic Primary,37,Oliveira,D,Y,48.48,Dominguez,D,N,36.4,12.08,TRUE,NA
+2018,Democratic Primary,41,Guerra,D,Y,82.78,Pinkard,D,N,17.22,65.56,FALSE,Guerra
+2018,Democratic Primary,45,Bell-Metereau,D,N,45.49,Zwiener,D,N,30.63,14.86,TRUE,NA
+2018,Democratic Primary,46,Vela,D,N,39.52,Cole,D,N,38.23,1.29,TRUE,NA
+2018,Democratic Primary,47,Goodwin,D,N,33.64,Fowler,D,N,29.18,4.46,TRUE,NA
+2018,Democratic Primary,53,Ertel,D,N,56.06,Herrera,D,N,43.94,12.12,FALSE,Ertel
+2018,Democratic Primary,63,Haines,D,N,81.71,Wolf,D,N,18.29,63.42,FALSE,Haines
+2018,Democratic Primary,64,Pruneda,D,N,41.55,Morris,D,N,38.68,2.87,TRUE,NA
+2018,Democratic Primary,75,Gonzalez,D,Y,68.59,Fermath,D,N,31.41,37.18,FALSE,Gonzalez
+2018,Democratic Primary,84,Fields,D,N,58.26,Carrizales,D,N,41.74,16.52,FALSE,Fields
+2018,Democratic Primary,93,Bean,D,N,50.79,Mathews,D,N,49.21,1.58,FALSE,Bean
+2018,Democratic Primary,100,Johnson,D,Y,70.33,Crenshaw,D,N,29.67,40.66,FALSE,Johnson
+2018,Democratic Primary,104,Gonzalez,D,N,62.57,Alonzo,D,Y,37.43,25.14,FALSE,Gonzalez
+2018,Democratic Primary,105,Meza,D,N,57.27,Jenkins,D,N,42.73,14.54,FALSE,Meza
+2018,Democratic Primary,106,Thompson,D,N,69.82,Rhea,D,N,30.18,39.64,FALSE,Thompson
+2018,Democratic Primary,108,Cattanach,D,N,63.03,Duffy,D,N,36.97,26.06,FALSE,Cattanach
+2018,Democratic Primary,109,Jones,D,N,44.74,Sherman,D,N,40.2,4.54,TRUE,NA
+2018,Democratic Primary,113,Bowers,D,N,64.59,Ingram,D,N,35.41,29.18,FALSE,Bowers
+2018,Democratic Primary,115,Johnson,D,N,77.26,Bower,D,N,22.74,54.52,FALSE,Johnson
+2018,Democratic Primary,116,Martinez Fischer,D,N,50.65,Arevalo,D,Y,49.35,1.3,FALSE,Martinez Fischer
+2018,Democratic Primary,117,Cortez,D,Y,63.42,DeDeaux,D,N,36.58,26.84,FALSE,Cortez
+2018,Democratic Primary,118,Pacheco,D,N,57.39,Uresti,D,Y,42.61,14.78,FALSE,Pacheco
+2018,Democratic Primary,124,Minjarez,D,Y,78.42,Contreras,D,N,21.58,56.84,FALSE,Minjarez
+2018,Democratic Primary,126,Hurtado,D,N,77.68,Fizer,D,N,22.32,55.36,FALSE,Hurtado
+2018,Democratic Primary,132,Calanni,D,N,66.97,Pena,D,N,33.03,33.94,FALSE,Calanni
+2018,Democratic Primary,133,Moore,D,N,49.95,Schexnayder,D,N,40.9,9.05,TRUE,NA
+2018,Democratic Primary,134,Sawyer,D,N,90.55,Oliver,D,N,9.45,81.1,FALSE,Sawyer
+2018,Democratic Primary,138,Milasincic,D,N,56.65,Pool,D,N,43.35,13.3,FALSE,Milasincic
+2018,Democratic Primary,139,Johnson,D,Y,60.36,Bates,D,N,39.64,20.72,FALSE,Johnson
+2018,Democratic Primary,142,Dutton,D,Y,65.3,Bonton,D,N,34.7,30.6,FALSE,Dutton
+2018,Democratic Primary,146,Thierry,D,Y,64.76,Owens,D,N,26.97,37.79,FALSE,Thierry
+2018,Democratic Primary,147,Coleman,D,Y,81.23,Espinoza,D,N,18.77,62.46,FALSE,Coleman
+2018,Democratic Runoff,37,Dominguez,D,N,56.68,Oliveira,D,Y,43.32,13.36,FALSE,Dominguez
+2018,Democratic Runoff,45,Zwiener,D,N,51.44,Bell-Metereau,D,N,48.56,2.88,FALSE,Zwiener
+2018,Democratic Runoff,46,Cole,D,N,50.93,Vela,D,N,49.07,1.86,FALSE,Cole
+2018,Democratic Runoff,47,Goodwin,D,N,58.11,Fowler,D,N,41.89,16.22,FALSE,Goodwin
+2018,Democratic Runoff,64,Morris,D,N,54.03,Pruneda,D,N,45.97,8.06,FALSE,Morris
+2018,Democratic Runoff,109,Sherman,D,N,64.2,Jones,D,N,35.8,28.4,FALSE,Sherman
+2018,Democratic Runoff,133,Schexnayder,D,N,56.43,Moore,D,N,43.57,12.86,FALSE,Schexnayder
+2018,General,2,Flynn,R,Y,80.04,Brannon,D,N,19.96,60.08,FALSE,Flynn
+2018,General,3,Bell,R,Y,76,Seger,D,N,24,52,FALSE,Bell
+2018,General,4,Bell,R,N,74.1,Williams,D,N,24.19,49.91,FALSE,Bell
+2018,General,5,Hefner,R,Y,79.35,Liebbe,D,N,20.65,58.7,FALSE,Hefner
+2018,General,6,Schaefer,R,Y,75.6,Katz,L,N,24.4,51.2,FALSE,Schaefer
+2018,General,8,Harris,R,N,78.22,Ratcliff,D,N,21.78,56.44,FALSE,Harris
+2018,General,10,Wray,R,Y,70.26,Emery,D,N,27.45,42.81,FALSE,Wray
+2018,General,11,Clardy,R,Y,74.36,Johnson,D,N,25.64,48.72,FALSE,Clardy
+2018,General,12,Kacal,R,Y,67.59,Arnold,D,N,32.41,35.18,FALSE,Kacal
+2018,General,13,Leman,R,Y,79.12,Webster,D,N,20.88,58.24,FALSE,Leman
+2018,General,14,Raney,R,Y,56.38,Wilkinson,D,N,43.62,12.76,FALSE,Raney
+2018,General,15,Toth,R,N,67.15,Perez McGill,D,N,32.85,34.3,FALSE,Toth
+2018,General,16,Metcalf,R,Y,80.33,Midler,D,N,19.67,60.66,FALSE,Metcalf
+2018,General,17,Cyrier,R,Y,62.54,Ryan,D,N,37.46,25.08,FALSE,Cyrier
+2018,General,18,Bailes,R,Y,75.49,Lemond,D,N,24.51,50.98,FALSE,Bailes
+2018,General,19,White,R,Y,83.19,Williams,D,N,16.81,66.38,FALSE,White
+2018,General,20,Wilson,R,Y,71.5,Wyman,D,N,28.5,43,FALSE,Wilson
+2018,General,23,Middleton,R,N,56.46,Jamrok,D,N,41.43,15.03,FALSE,Middleton
+2018,General,24,Bonnen,R,Y,69.59,Phelps,D,N,28.37,41.22,FALSE,Bonnen
+2018,General,26,Miller,R,Y,52.41,DeMerchant,D,N,47.59,4.82,FALSE,Miller
+2018,General,28,Zerwas,R,Y,54.16,Scoggins,D,N,45.84,8.32,FALSE,Zerwas
+2018,General,29,Thompson,R,Y,100,Presley,D,N,0,100,FALSE,Thompson
+2018,General,30,Morrison,R,Y,74.7,Hayter,D,N,25.3,49.4,FALSE,Morrison
+2018,General,33,Holland,R,Y,65.02,Gunn,D,N,34.98,30.04,FALSE,Holland
+2018,General,34,Herrero,D,Y,61.11,Hale,R,N,38.89,22.22,FALSE,Herrero
+2018,General,41,Guerra,D,Y,61.49,Garza DeShazo,R,N,38.51,22.98,FALSE,Guerra
+2018,General,42,Raymond,D,Y,74.31,De La Garza,R,N,25.69,48.62,FALSE,Raymond
+2018,General,43,Lozano,R,Y,61.12,Miller,D,N,38.88,22.24,FALSE,Lozano
+2018,General,44,Kuempel,R,Y,68.64,Rodgers,D,N,31.36,37.28,FALSE,Kuempel
+2018,General,45,Zwiener,D,N,51.6,Strange,R,N,48.4,3.2,FALSE,Zwiener
+2018,General,46,Cole,D,N,82.23,Nila,R,N,14.95,67.28,FALSE,Cole
+2018,General,47,Goodwin,D,N,52.4,Workman,R,Y,47.6,4.8,FALSE,Goodwin
+2018,General,49,Hinojosa,D,Y,83,Austin,R,N,17,66,FALSE,Hinojosa
+2018,General,52,Talarico,D,N,51.73,Flores,R,N,48.27,3.46,FALSE,Talarico
+2018,General,53,Murr,R,Y,78.55,Ertel,D,N,21.45,57.1,FALSE,Murr
+2018,General,54,Buckley,R,N,53.8,Richerson,D,N,46.2,7.6,FALSE,Buckley
+2018,General,56,Anderson,R,Y,65.78,Turner-Pearson,D,N,34.22,31.56,FALSE,Anderson
+2018,General,57,Ashby,R,Y,79.04,Rogers,D,N,20.96,58.08,FALSE,Ashby
+2018,General,62,Smith,R,N,76.16,Hefner,D,N,21.9,54.26,FALSE,Smith
+2018,General,63,Parker,R,Y,67.12,Haines,D,N,32.88,34.24,FALSE,Parker
+2018,General,64,Stucky,R,Y,52.81,Morris,D,N,44.49,8.32,FALSE,Stucky
+2018,General,65,Beckley,D,N,51.16,Simmons,R,Y,48.84,2.32,FALSE,Beckley
+2018,General,66,Shaheen,R,Y,50.29,Hirsch,D,N,49.71,0.58,FALSE,Shaheen
+2018,General,67,Leach,R,Y,51.15,Depew,D,N,48.85,2.3,FALSE,Leach
+2018,General,70,Sanford,R,Y,61.75,Luton,D,N,38.25,23.5,FALSE,Sanford
+2018,General,71,Lambert,R,Y,78.05,Hatton,D,N,21.95,56.1,FALSE,Lambert
+2018,General,73,Biedermann,R,Y,74.78,Phillips,D,N,25.22,49.56,FALSE,Biedermann
+2018,General,78,Moody,D,Y,65.24,Lane,R,N,34.76,30.48,FALSE,Moody
+2018,General,81,Landgraf,R,Y,74.99,Gamboa,D,N,25.01,49.98,FALSE,Landgraf
+2018,General,82,Craddick,R,Y,80.13,Bounds,D,N,19.87,60.26,FALSE,Craddick
+2018,General,83,Burrows,R,Y,77.32,Landry,D,N,22.68,54.64,FALSE,Burrows
+2018,General,84,Frullo,R,Y,60.15,Fields,D,N,39.85,20.3,FALSE,Frullo
+2018,General,85,Stephenson,R,Y,56.48,Cantu,D,N,43.52,12.96,FALSE,Stephenson
+2018,General,86,Smithee,R,Y,82.13,Purcell,D,N,17.87,64.26,FALSE,Smithee
+2018,General,88,King,R,Y,83.75,Barron,D,N,16.25,67.5,FALSE,King
+2018,General,89,Noble,R,N,59.54,Ash,D,N,40.46,19.08,FALSE,Noble
+2018,General,91,Klick,R,Y,63.48,Sims,D,N,36.52,26.96,FALSE,Klick
+2018,General,92,Stickland,R,Y,49.82,Riddell,D,N,47.43,2.39,TRUE,NA
+2018,General,93,Krause,R,Y,53.87,Bean,D,N,46.13,7.74,FALSE,Krause
+2018,General,94,Tinderholt,R,Y,52.49,Jones,D,N,43.91,8.58,FALSE,Tinderholt
+2018,General,95,Collier,D,Y,76.51,West,R,N,21.78,54.73,FALSE,Collier
+2018,General,96,Zedler,R,Y,50.84,Ray,D,N,47.21,3.63,FALSE,Zedler
+2018,General,97,Goldman,R,Y,53.19,McLaughlin,D,N,44.86,8.33,FALSE,Goldman
+2018,General,98,Capriglione,R,Y,68.25,Ringo,D,N,29.34,38.91,FALSE,Capriglione
+2018,General,99,Geren,R,Y,64.31,Stackhouse,D,N,35.69,28.62,FALSE,Geren
+2018,General,101,Turner,D,Y,87.39,Allen,L,N,12.61,74.78,FALSE,Turner
+2018,General,102,Ramos,D,N,52.88,Koop,R,Y,47.12,5.76,FALSE,Ramos
+2018,General,103,Anchia,D,Y,78.25,Fortenberry,R,N,21.75,56.5,FALSE,Anchia
+2018,General,105,Meza,D,N,54.74,Anderson,R,Y,45.26,9.48,FALSE,Meza
+2018,General,106,Patterson,R,N,58.31,Thompson,D,N,41.69,16.62,FALSE,Patterson
+2018,General,107,Neave,D,Y,57.1,Metzger,R,N,42.9,14.2,FALSE,Neave
+2018,General,108,Meyer,R,Y,50.14,Cattanach,D,N,49.86,0.28,FALSE,Meyer
+2018,General,112,Chen Button,R,Y,51.04,Chambers,D,N,48.96,2.08,FALSE,Chen Button
+2018,General,113,Bowers,D,N,53.48,Boos,R,N,46.52,6.96,FALSE,Bowers
+2018,General,114,Turner,D,N,55.65,Luby Ryan,R,N,44.35,11.3,FALSE,Turner
+2018,General,115,Johnson,D,N,56.79,Rinaldi,R,Y,43.21,13.58,FALSE,Johnson
+2018,General,116,Martinez Fischer,D,N,70.4,Padron,R,N,29.6,40.8,FALSE,Martinez Fischer
+2018,General,117,Cortez,D,Y,57.39,Berlanga,R,N,42.61,14.78,FALSE,Cortez
+2018,General,118,Pacheco,D,N,58.05,Lujan,R,N,41.95,16.1,FALSE,Pacheco
+2018,General,120,Gervin-Hawkins,D,Y,68.37,Payne,R,N,31.63,36.74,FALSE,Gervin-Hawkins
+2018,General,121,Allison,R,N,53.17,Montoya,D,N,44.73,8.44,FALSE,Allison
+2018,General,122,Larson,R,Y,61.93,Barnett,D,N,38.07,23.86,FALSE,Larson
+2018,General,124,Minjarez,D,Y,67.64,Arredondo,R,N,32.36,35.28,FALSE,Minjarez
+2018,General,125,Rodriguez,D,Y,81.38,Pina,L,N,18.62,62.76,FALSE,Rodriguez
+2018,General,126,Harless,R,N,54.84,Hurtado,D,N,45.16,9.68,FALSE,Harless
+2018,General,127,Huberty,R,Y,80.24,Woods,L,N,19.76,60.48,FALSE,Huberty
+2018,General,129,Paul,R,Y,56.51,Karjeker,D,N,41.82,14.69,FALSE,Paul
+2018,General,130,Oliverson,R,Y,68.44,Infortunio,D,N,29.68,38.76,FALSE,Oliverson
+2018,General,131,Allen,D,Y,85.81,Ali,R,N,14.19,71.62,FALSE,Allen
+2018,General,132,Calanni,D,N,49.26,Schofield,R,Y,49.09,0.17,TRUE,NA
+2018,General,133,Murphy,R,Y,58.11,Schexnayder,D,N,41.89,16.22,FALSE,Murphy
+2018,General,134,Davis,R,Y,53.17,Sawyer,D,N,46.83,6.34,FALSE,Davis
+2018,General,135,Rosenthal,D,N,50.81,Elkins,R,Y,47.65,3.16,FALSE,Rosenthal
+2018,General,136,Bucy,D,N,53.37,Dale,R,Y,43.73,9.64,FALSE,Bucy
+2018,General,137,Wu,D,Y,88.28,Sharp,L,N,11.72,76.56,FALSE,Wu
+2018,General,138,Bohac,R,Y,50.03,Milasincic,D,N,49.93,0.1,FALSE,Bohac
+2018,General,139,Johnson,D,Y,92.79,Trojacek,L,N,7.21,85.58,FALSE,Johnson
+2018,General,144,Perez,D,Y,61.18,Villarreal,R,N,38.82,22.36,FALSE,Perez
+2018,General,145,Alvarado,D,Y,90.36,Hunt,L,N,9.64,80.72,FALSE,Alvarado
+2018,General,146,Thierry,D,Y,92.89,Campbell,L,N,7.11,85.78,FALSE,Thierry
+2018,General,147,Coleman,D,Y,80.8,Wang,R,N,19.2,61.6,FALSE,Coleman
+2018,General,148,Farrar,D,Y,67.91,McConnico,R,N,32.09,35.82,FALSE,Farrar
+2018,General,149,Vo,D,Y,88.32,Close,L,N,11.68,76.64,FALSE,Vo
+2018,General,150,Swanson,R,Y,57.78,Kelly,D,N,42.22,15.56,FALSE,Swanson
+2018,House District 13,13,Leman,R,N,43.19,Wolfskill,R,N,36.93,6.26,TRUE,NA
+2018,House District 52,52,Talarico,D,N,50.89,Flores,R,N,49.11,1.78,FALSE,Talarico
+2018,Republican Primary,2,Flynn,R,Y,51.71,Slaton,R,N,48.29,3.42,FALSE,Flynn
+2018,Republican Primary,4,Spitzer,R,N,45.78,Bell,R,N,26.21,19.57,TRUE,NA
+2018,Republican Primary,6,Schaefer,R,Y,73.28,Kamel,R,N,26.72,46.56,FALSE,Schaefer
+2018,Republican Primary,8,Harris,R,N,45.01,McNutt,R,N,39.38,5.63,TRUE,NA
+2018,Republican Primary,9,Paddie,R,Y,63.92,Boersma,R,N,36.08,27.84,FALSE,Paddie
+2018,Republican Primary,11,Clardy,R,Y,66.81,Ward,R,N,33.19,33.62,FALSE,Clardy
+2018,Republican Primary,13,Wolfskill,R,N,38.45,Leman,R,N,36.29,2.16,TRUE,NA
+2018,Republican Primary,14,Raney,R,Y,57.68,Laningham,R,N,23.59,34.09,FALSE,Raney
+2018,Republican Primary,15,Toth,R,N,78.38,Waters,R,N,21.62,56.76,FALSE,Toth
+2018,Republican Primary,18,Bailes,R,Y,59.14,Cook,R,N,40.86,18.28,FALSE,Bailes
+2018,Republican Primary,23,Middleton,R,N,57.13,Faircloth,R,Y,42.87,14.26,FALSE,Middleton
+2018,Republican Primary,25,Bonnen,R,Y,76.8,Rambo,R,N,23.2,53.6,FALSE,Bonnen
+2018,Republican Primary,45,Strange,R,N,54.79,Pearce,R,N,24.34,30.45,FALSE,Strange
+2018,Republican Primary,47,Workman,R,Y,59.52,Wiley,R,N,31.21,28.31,FALSE,Workman
+2018,Republican Primary,52,Flores,R,N,60.85,Story,R,N,22.39,38.46,FALSE,Flores
+2018,Republican Primary,54,Cosper,R,Y,44.6,Buckley,R,N,41.55,3.05,TRUE,NA
+2018,Republican Primary,55,Shine,R,Y,60.11,Hall,R,N,21.42,38.69,FALSE,Shine
+2018,Republican Primary,59,Sheffield,R,Y,57.86,Evans,R,N,42.14,15.72,FALSE,Sheffield
+2018,Republican Primary,60,Lang,R,Y,58.37,Largent,R,N,38.48,19.89,FALSE,Lang
+2018,Republican Primary,62,Smith,R,N,45.84,Lawson,R,N,34.35,11.49,TRUE,NA
+2018,Republican Primary,64,Stucky,R,Y,64.31,Roy,R,N,35.69,28.62,FALSE,Stucky
+2018,Republican Primary,65,Simmons,R,Y,83.31,Simmons,R,N,16.69,66.62,FALSE,Simmons
+2018,Republican Primary,73,Biedermann,R,Y,57.74,Campbell,R,N,42.26,15.48,FALSE,Biedermann
+2018,Republican Primary,87,Price,R,Y,78.43,Brassfield,R,N,21.57,56.86,FALSE,Price
+2018,Republican Primary,88,King,R,Y,50.43,Huddleston,R,N,30.5,19.93,FALSE,King
+2018,Republican Primary,89,Noble,R,N,54.23,Payton,R,N,45.77,8.46,FALSE,Noble
+2018,Republican Primary,98,Capriglione,R,Y,62.71,Mizani,R,N,37.29,25.42,FALSE,Capriglione
+2018,Republican Primary,99,Geren,R,Y,56.82,French,R,N,43.18,13.64,FALSE,Geren
+2018,Republican Primary,102,Koop,R,Y,72.02,Carnahan,R,N,15.04,56.98,FALSE,Koop
+2018,Republican Primary,105,Anderson,R,Y,93.6,Mali,R,N,6.4,87.2,FALSE,Anderson
+2018,Republican Primary,106,Patterson,R,N,53.97,Bedsole,R,N,46.03,7.94,FALSE,Patterson
+2018,Republican Primary,107,Metzger,R,N,45.32,Ruzicka,R,N,27.34,17.98,TRUE,NA
+2018,Republican Primary,113,Boos,R,N,54.44,Lauersdorf,R,N,27.54,26.9,FALSE,Boos
+2018,Republican Primary,114,Luby Ryan,R,N,53.11,Villalba,R,Y,46.89,6.22,FALSE,Luby Ryan
+2018,Republican Primary,117,Berlanga,R,N,72.15,Raymond,R,N,27.85,44.3,FALSE,Berlanga
+2018,Republican Primary,121,Beebe,R,N,29.56,Allison,R,N,26.34,3.22,TRUE,NA
+2018,Republican Primary,122,Larson,R,Y,59.48,Fails,R,N,40.52,18.96,FALSE,Larson
+2018,Republican Primary,126,Harless,R,N,50.61,Fulton,R,N,35.86,14.75,FALSE,Harless
+2018,Republican Primary,127,Huberty,R,Y,82.86,Grant,R,N,17.14,65.72,FALSE,Huberty
+2018,Republican Primary,134,Davis,R,Y,56.31,Dokupil,R,N,43.69,12.62,FALSE,Davis
+2018,Republican Primary,144,Villarreal,R,N,62.11,Pena,R,N,37.89,24.22,FALSE,Villarreal
+2018,Republican Primary,150,Swanson,R,Y,80,Wilson,R,N,20,60,FALSE,Swanson
+2018,Republican Runoff,4,Bell,R,N,57.71,Spitzer,R,N,42.29,15.42,FALSE,Bell
+2018,Republican Runoff,8,Harris,R,N,56.98,McNutt,R,N,43.02,13.96,FALSE,Harris
+2018,Republican Runoff,13,Leman,R,N,57.3,Wolfskill,R,N,42.7,14.6,FALSE,Leman
+2018,Republican Runoff,54,Buckley,R,N,58.22,Cosper,R,Y,41.78,16.44,FALSE,Buckley
+2018,Republican Runoff,62,Smith,R,N,71.2,Lawson,R,N,28.8,42.4,FALSE,Smith
+2018,Republican Runoff,107,Metzger,R,N,56,Ruzicka,R,N,44,12,FALSE,Metzger
+2018,Republican Runoff,121,Allison,R,N,57.48,Beebe,R,N,42.52,14.96,FALSE,Allison
+2019,House Dist 125 (2nd),125,Lopez,D,N,58.42,Rangel,R,N,41.58,16.84,FALSE,Lopez
+2019,House Dist 145 (2nd),145,Morales,D,N,60.77,Noriega,D,N,39.23,21.54,FALSE,Morales
+2019,House District 100,100,Birabil,D,N,33.2,Armstrong,D,N,20.76,12.44,TRUE,NA
+2019,House District 125,125,Rangel,R,N,37.91,Lopez,D,N,19.49,18.42,TRUE,NA
+2019,House District 145,145,Morales,D,N,35.84,Noriega,D,N,31.21,4.63,TRUE,NA
+2019,House District 148,148,Eastman,D,N,20.34,LaRotta,R,N,15.85,4.49,TRUE,NA
+2019,House District 28,28,Markowitz,D,N,39.06,Gates,R,N,28.45,10.61,TRUE,NA
+2019,House District 79,79,Fierro,D,N,53.34,Noe,D,N,26.65,26.69,FALSE,Fierro
+2020,Democratic Primary,14,Dudding,D,N,65.46,Rahman,D,N,34.54,30.92,FALSE,Dudding
+2020,Democratic Primary,26,Lalani,D,N,31.69,DeMerchant,D,N,29.58,2.11,TRUE,NA
+2020,Democratic Primary,27,Reynolds,D,Y,66.25,Ross,D,N,33.75,32.5,FALSE,Reynolds
+2020,Democratic Primary,36,Munoz,D,Y,68.16,Padron,D,N,31.84,36.32,FALSE,Munoz
+2020,Democratic Primary,37,Dominguez,D,Y,51.46,Medina,D,N,48.54,2.92,FALSE,Dominguez
+2020,Democratic Primary,38,Lucio,D,Y,53.9,Gamez,D,N,46.1,7.8,FALSE,Lucio
+2020,Democratic Primary,41,Guerra,D,Y,58.77,Gonzales,D,N,41.23,17.54,FALSE,Guerra
+2020,Democratic Primary,45,Zwiener,D,Y,69.14,Posada,D,N,30.86,38.28,FALSE,Zwiener
+2020,Democratic Primary,51,Rodriguez,D,Y,79.45,Sanchez,D,N,20.55,58.9,FALSE,Rodriguez
+2020,Democratic Primary,65,Beckley,D,Y,66.69,Dixon,D,N,33.31,33.38,FALSE,Beckley
+2020,Democratic Primary,66,Hirsch,D,N,58.95,Garza Lopez,D,N,41.05,17.9,FALSE,Hirsch
+2020,Democratic Primary,67,Adair,D,N,32.91,Sanchez,D,N,27.03,5.88,TRUE,NA
+2020,Democratic Primary,74,Morales,D,N,51.73,Cantu,D,N,27.2,24.53,FALSE,Morales
+2020,Democratic Primary,76,Ordaz Perez,D,N,56.4,Tamayo,D,N,43.6,12.8,FALSE,Ordaz Perez
+2020,Democratic Primary,80,King,D,Y,66.56,Valdez,D,N,33.44,33.12,FALSE,King
+2020,Democratic Primary,83,Perry-Franks,D,N,54.05,Barrick,D,N,45.95,8.1,FALSE,Perry-Franks
+2020,Democratic Primary,89,Ash,D,N,54.53,Cocks,D,N,45.47,9.06,FALSE,Ash
+2020,Democratic Primary,92,Whitfield,D,N,56.3,Riddell,D,N,43.7,12.6,FALSE,Whitfield
+2020,Democratic Primary,97,Beck,D,N,88.77,Willis,D,N,11.23,77.54,FALSE,Beck
+2020,Democratic Primary,100,Birabil,D,N,29.33,Crockett,D,N,25.89,3.44,TRUE,NA
+2020,Democratic Primary,108,Cattanach,D,N,58.18,Terry,D,N,26.59,31.59,FALSE,Cattanach
+2020,Democratic Primary,109,Sherman,D,Y,61.84,Graham,D,N,38.16,23.68,FALSE,Sherman
+2020,Democratic Primary,116,Martinez Fischer,D,Y,81.12,Bohl,D,N,18.88,62.24,FALSE,Martinez Fischer
+2020,Democratic Primary,119,Campos,D,N,46.05,Ramos,D,N,43.77,2.28,TRUE,NA
+2020,Democratic Primary,121,Montoya,D,N,68.65,Moyer DeFelice,D,N,22.82,45.83,FALSE,Montoya
+2020,Democratic Primary,126,Hurtado,D,N,78.64,Fizer,D,N,21.36,57.28,FALSE,Hurtado
+2020,Democratic Primary,128,Williams,D,N,72.45,Markle,D,N,27.55,44.9,FALSE,Williams
+2020,Democratic Primary,131,Allen,D,Y,78.41,Patton,D,N,10.91,67.5,FALSE,Allen
+2020,Democratic Primary,134,Johnson,D,N,68.46,Powers,D,N,19.59,48.87,FALSE,Johnson
+2020,Democratic Primary,138,Bacy,D,N,46.77,Pool,D,N,29.2,17.57,TRUE,NA
+2020,Democratic Primary,139,Johnson,D,Y,64.28,Thibodeaux,D,N,35.72,28.56,FALSE,Johnson
+2020,Democratic Primary,141,Thompson,D,Y,80.51,Franklyn,D,N,19.49,61.02,FALSE,Thompson
+2020,Democratic Primary,142,Dutton,D,Y,45.28,Davis,D,N,25.31,19.97,TRUE,NA
+2020,Democratic Primary,146,Thierry,D,Y,67.34,Woods,D,N,32.66,34.68,FALSE,Thierry
+2020,Democratic Primary,147,Coleman,D,Y,61.5,Wagner,D,N,29.2,32.3,FALSE,Coleman
+2020,Democratic Primary,148,Eastman,D,N,41.57,Morales Shaw,D,N,22.08,19.49,TRUE,NA
+2020,Democratic Runoff,26,DeMerchant,D,N,52.35,Lalani,D,N,47.65,4.7,FALSE,DeMerchant
+2020,Democratic Runoff,67,Sanchez,D,N,51.05,Adair,D,N,48.95,2.1,FALSE,Sanchez
+2020,Democratic Runoff,100,Crockett,D,N,50.44,Birabil,D,Y,49.56,0.88,FALSE,Crockett
+2020,Democratic Runoff,119,Campos,D,N,56.09,Ramos,D,N,43.91,12.18,FALSE,Campos
+2020,Democratic Runoff,138,Bacy,D,N,79.25,Pool,D,N,20.75,58.5,FALSE,Bacy
+2020,Democratic Runoff,142,Dutton,D,Y,52.27,Davis,D,N,47.73,4.54,FALSE,Dutton
+2020,Democratic Runoff,148,Morales Shaw,D,N,51.19,Eastman,D,Y,48.81,2.38,FALSE,Morales Shaw
+2020,General,2,Slaton,R,N,81.29,Brannon,D,N,18.71,62.58,FALSE,Slaton
+2020,General,3,Bell,R,Y,77.35,Shupp,D,N,22.65,54.7,FALSE,Bell
+2020,General,4,Bell,R,Y,79.08,Sprabary,L,N,20.92,58.16,FALSE,Bell
+2020,General,5,Hefner,R,Y,79.97,Prince,D,N,20.03,59.94,FALSE,Hefner
+2020,General,6,Schaefer,R,Y,68.16,Gobble,D,N,31.84,36.32,FALSE,Schaefer
+2020,General,8,Harris,R,Y,85.91,Adams,L,N,14.09,71.82,FALSE,Harris
+2020,General,10,Ellzey,R,N,75.83,Savino,L,N,24.17,51.66,FALSE,Ellzey
+2020,General,11,Clardy,R,Y,75.75,Johnson,D,N,24.25,51.5,FALSE,Clardy
+2020,General,14,Raney,R,Y,57.53,Dudding,D,N,42.47,15.06,FALSE,Raney
+2020,General,15,Toth,R,Y,66.47,Perez McGill,D,N,33.53,32.94,FALSE,Toth
+2020,General,17,Cyrier,R,Y,63.6,Eden,D,N,36.4,27.2,FALSE,Cyrier
+2020,General,20,Wilson,R,Y,71.41,Tiedt,D,N,28.59,42.82,FALSE,Wilson
+2020,General,22,Deshotel,D,Y,68.27,Randle,R,N,31.73,36.54,FALSE,Deshotel
+2020,General,23,Middleton,R,Y,60.17,Antonelli,D,N,39.83,20.34,FALSE,Middleton
+2020,General,24,Bonnen,R,Y,69.92,Rogers,D,N,27.57,42.35,FALSE,Bonnen
+2020,General,25,Vasut,R,N,71.57,Henry,D,N,28.43,43.14,FALSE,Vasut
+2020,General,26,Jetton,R,N,51.79,DeMerchant,D,N,48.21,3.58,FALSE,Jetton
+2020,General,27,Reynolds,D,Y,67.81,Virippan,R,N,32.19,35.62,FALSE,Reynolds
+2020,General,28,Gates,R,Y,55.27,Markowitz,D,N,44.73,10.54,FALSE,Gates
+2020,General,29,Thompson,R,Y,56.69,Boldt,D,N,43.31,13.38,FALSE,Thompson
+2020,General,31,Guillen,D,Y,58.41,Knowlton,R,N,41.59,16.82,FALSE,Guillen
+2020,General,32,Hunter,R,Y,61.14,Holguin,D,N,38.86,22.28,FALSE,Hunter
+2020,General,33,Holland,R,Y,64.95,Rose,D,N,35.05,29.9,FALSE,Holland
+2020,General,34,Herrero,D,Y,59.49,Hernandez,R,N,40.51,18.98,FALSE,Herrero
+2020,General,41,Guerra,D,Y,57.87,Guerra,R,N,42.13,15.74,FALSE,Guerra
+2020,General,44,Kuempel,R,Y,67.42,Bohmfalk,D,N,29.48,37.94,FALSE,Kuempel
+2020,General,45,Zwiener,D,Y,50.53,Isaac,R,N,49.47,1.06,FALSE,Zwiener
+2020,General,47,Goodwin,D,Y,49.27,Berry,R,N,48.28,0.99,TRUE,NA
+2020,General,48,Howard,D,Y,70.1,Strieber,R,N,29.9,40.2,FALSE,Howard
+2020,General,49,Hinojosa,D,Y,78.85,Meyer,R,N,17.96,60.89,FALSE,Hinojosa
+2020,General,50,Israel,D,Y,68.78,Delarose,R,N,31.22,37.56,FALSE,Israel
+2020,General,51,Rodriguez,D,Y,82.66,Reynolds,R,N,17.34,65.32,FALSE,Rodriguez
+2020,General,52,Talarico,D,Y,51.44,Valdez,R,N,48.56,2.88,FALSE,Talarico
+2020,General,53,Murr,R,Y,78.2,Herrera,D,N,21.8,56.4,FALSE,Murr
+2020,General,54,Buckley,R,Y,53.39,Williams,D,N,46.61,6.78,FALSE,Buckley
+2020,General,56,Anderson,R,Y,67.29,Turner-Pearson,D,N,32.71,34.58,FALSE,Anderson
+2020,General,57,Ashby,R,Y,79.45,Rogers,D,N,20.55,58.9,FALSE,Ashby
+2020,General,58,Burns,R,Y,79.04,Rocha,D,N,20.96,58.08,FALSE,Burns
+2020,General,61,King,R,Y,82.95,Cox,D,N,14.16,68.79,FALSE,King
+2020,General,62,Smith,R,Y,78.59,Thomas,D,N,21.41,57.18,FALSE,Smith
+2020,General,63,Parker,R,Y,67.42,Peeler,D,N,32.58,34.84,FALSE,Parker
+2020,General,64,Stucky,R,Y,54.95,Brewer,D,N,45.05,9.9,FALSE,Stucky
+2020,General,65,Beckley,D,Y,51.51,Thimesch,R,N,48.49,3.02,FALSE,Beckley
+2020,General,66,Shaheen,R,Y,49.56,Hirsch,D,N,48.58,0.98,TRUE,NA
+2020,General,67,Leach,R,Y,51.71,Sanchez,D,N,48.29,3.42,FALSE,Leach
+2020,General,68,Springer,R,Y,85.47,Ledbetter,D,N,14.53,70.94,FALSE,Springer
+2020,General,70,Sanford,R,Y,61.85,Bado,D,N,38.15,23.7,FALSE,Sanford
+2020,General,71,Lambert,R,Y,78.85,Hatton,D,N,21.15,57.7,FALSE,Lambert
+2020,General,73,Biedermann,R,Y,74.83,Phillips,D,N,25.17,49.66,FALSE,Biedermann
+2020,General,74,Morales,D,N,54.4,Falcon,R,N,45.6,8.8,FALSE,Morales
+2020,General,78,Moody,D,Y,61.65,Lane,R,N,38.35,23.3,FALSE,Moody
+2020,General,83,Burrows,R,Y,79.29,Perry-Franks,D,N,20.71,58.58,FALSE,Burrows
+2020,General,84,Frullo,R,Y,61.22,Gibson,D,N,38.78,22.44,FALSE,Frullo
+2020,General,85,Stephenson,R,Y,56.44,Cardenas,D,N,41.15,15.29,FALSE,Stephenson
+2020,General,89,Noble,R,Y,59.04,Ash,D,N,38.45,20.59,FALSE,Noble
+2020,General,90,Romero,D,Y,72.4,Camacho,R,N,27.6,44.8,FALSE,Romero
+2020,General,91,Klick,R,Y,63.87,Sims,D,N,36.13,27.74,FALSE,Klick
+2020,General,92,Cason,R,N,50.87,Whitfield,D,N,47.2,3.67,FALSE,Cason
+2020,General,93,Krause,R,Y,54.47,Bean,D,N,45.53,8.94,FALSE,Krause
+2020,General,94,Tinderholt,R,Y,50.97,Simmons,D,N,45.9,5.07,FALSE,Tinderholt
+2020,General,96,Cook,R,N,51.22,Drago,D,N,46.1,5.12,FALSE,Cook
+2020,General,97,Goldman,R,Y,52.55,Beck,D,N,45.19,7.36,FALSE,Goldman
+2020,General,98,Capriglione,R,Y,67.85,Edmondson,D,N,32.15,35.7,FALSE,Capriglione
+2020,General,102,Ramos,D,Y,53.94,Koop,R,N,46.06,7.88,FALSE,Ramos
+2020,General,103,Anchia,D,Y,74.56,Fortenberry,R,N,25.44,49.12,FALSE,Anchia
+2020,General,105,Meza,D,Y,54.96,Hernandez,R,N,42.03,12.93,FALSE,Meza
+2020,General,106,Patterson,R,Y,58.51,Skidonenko,D,N,41.49,17.02,FALSE,Patterson
+2020,General,107,Neave,D,Y,56.5,Smith,R,N,43.5,13,FALSE,Neave
+2020,General,108,Meyer,R,Y,49.65,Cattanach,D,N,48.03,1.62,TRUE,NA
+2020,General,109,Sherman,D,Y,83.28,Allen,R,N,16.72,66.56,FALSE,Sherman
+2020,General,112,Button,R,Y,48.92,Chambers,D,N,48.59,0.33,TRUE,NA
+2020,General,113,Bowers,D,Y,51.77,Douglas,R,N,48.23,3.54,FALSE,Bowers
+2020,General,114,Turner,D,Y,53.65,Del Rosal,R,N,46.35,7.3,FALSE,Turner
+2020,General,115,Johnson,D,Y,56.9,Brownlee,R,N,43.1,13.8,FALSE,Johnson
+2020,General,116,Martinez Fischer,D,Y,69.12,Litoff,R,N,30.88,38.24,FALSE,Martinez Fischer
+2020,General,117,Cortez,D,Y,54.85,Raymond,R,N,41.29,13.56,FALSE,Cortez
+2020,General,118,Pacheco,D,Y,56.75,Salyer,R,N,39.92,16.83,FALSE,Pacheco
+2020,General,119,Campos,D,N,61.67,Garza,R,N,34.72,26.95,FALSE,Campos
+2020,General,120,Gervin-Hawkins,D,Y,65.81,Payne,R,N,30.98,34.83,FALSE,Gervin-Hawkins
+2020,General,121,Allison,R,Y,53.45,Montoya,D,N,46.55,6.9,FALSE,Allison
+2020,General,122,Larson,R,Y,59.63,Barnett,D,N,40.37,19.26,FALSE,Larson
+2020,General,125,Lopez,D,Y,79.8,Valdivia,L,N,20.2,59.6,FALSE,Lopez
+2020,General,126,Harless,R,Y,53.32,Hurtado,D,N,46.68,6.64,FALSE,Harless
+2020,General,127,Huberty,R,Y,70.26,Antoniou,L,N,29.74,40.52,FALSE,Huberty
+2020,General,128,Cain,R,Y,68.39,Williams,D,N,31.61,36.78,FALSE,Cain
+2020,General,129,Paul,R,Y,58.93,Alix,D,N,41.07,17.86,FALSE,Paul
+2020,General,130,Oliverson,R,Y,69,Henry,D,N,31,38,FALSE,Oliverson
+2020,General,132,Schofield,R,N,51.82,Calanni,D,Y,48.07,3.75,FALSE,Schofield
+2020,General,133,Murphy,R,Y,57.17,Moore,D,N,41.15,16.02,FALSE,Murphy
+2020,General,134,Johnson,D,N,52.27,Davis,R,Y,47.73,4.54,FALSE,Johnson
+2020,General,135,Rosenthal,D,Y,49.06,Ray,R,N,48.66,0.4,TRUE,NA
+2020,General,136,Bucy,D,Y,53.3,Guevara,R,N,43.08,10.22,FALSE,Bucy
+2020,General,137,Wu,D,Y,81.48,Sharp,L,N,18.52,62.96,FALSE,Wu
+2020,General,138,Hull,R,N,51.64,Bacy,D,N,48.36,3.28,FALSE,Hull
+2020,General,139,Johnson,D,Y,85.88,Trojacek,L,N,14.12,71.76,FALSE,Johnson
+2020,General,142,Dutton,D,Y,74.77,Rowe,R,N,25.23,49.54,FALSE,Dutton
+2020,General,144,Perez,D,Y,56.42,Salas,R,N,43.58,12.84,FALSE,Perez
+2020,General,145,Morales,D,Y,64.01,Fierro,R,N,33.73,30.28,FALSE,Morales
+2020,General,146,Thierry,D,Y,87.04,Campbell,L,N,12.96,74.08,FALSE,Thierry
+2020,General,148,Morales Shaw,D,N,63.67,LaRotta,R,N,36.33,27.34,FALSE,Morales Shaw
+2020,General,149,Vo,D,Y,59.42,Truong,R,N,40.58,18.84,FALSE,Vo
+2020,General,150,Swanson,R,Y,58.15,Walsh,D,N,38.55,19.6,FALSE,Swanson
+2020,House Dist 28 (2nd),28,Gates,R,N,58.05,Markowitz,D,N,41.95,16.1,FALSE,Gates
+2020,Republican Primary,2,Flynn,R,Y,44.76,Slaton,R,N,36.15,8.61,TRUE,NA
+2020,Republican Primary,9,Paddie,R,Y,77.79,Williams,R,N,22.21,55.58,FALSE,Paddie
+2020,Republican Primary,10,Ellzey,R,N,64.77,Pitts,R,N,29.47,35.3,FALSE,Ellzey
+2020,Republican Primary,25,Garrett,R,N,28.63,Vasut,R,N,22.23,6.4,TRUE,NA
+2020,Republican Primary,26,Morgan,R,N,49.68,Jetton,R,N,40.67,9.01,TRUE,NA
+2020,Republican Primary,27,Virippan,R,N,54.12,Seth,R,N,45.88,8.24,FALSE,Virippan
+2020,Republican Primary,28,Gates,R,N,95.28,Hammel,R,N,4.72,90.56,FALSE,Gates
+2020,Republican Primary,30,Morrison,R,Y,78.73,Hicks-Callaway,R,N,21.27,57.46,FALSE,Morrison
+2020,Republican Primary,45,Isaac,R,N,47.86,Wymore,R,N,41.4,6.46,TRUE,NA
+2020,Republican Primary,47,Fleck,R,N,32.15,Berry,R,N,22.89,9.26,TRUE,NA
+2020,Republican Primary,49,Meyer,R,N,71.83,Aragona,R,N,28.17,43.66,FALSE,Meyer
+2020,Republican Primary,59,Slawson,R,N,45.76,Sheffield,R,Y,29.95,15.81,TRUE,NA
+2020,Republican Primary,60,Francis,R,N,45.91,Rogers,R,N,43.78,2.13,TRUE,NA
+2020,Republican Primary,65,Thimesch,R,N,57.84,Cline,R,N,42.16,15.68,FALSE,Thimesch
+2020,Republican Primary,72,Darby,R,Y,86.06,Lucas,R,N,13.94,72.12,FALSE,Darby
+2020,Republican Primary,74,Falcon,R,N,53.51,Garza,R,N,46.49,7.02,FALSE,Falcon
+2020,Republican Primary,85,Stephenson,R,Y,78.83,Boettcher,R,N,19.39,59.44,FALSE,Stephenson
+2020,Republican Primary,92,Cason,R,N,54.04,Griffin,R,N,36.72,17.32,FALSE,Cason
+2020,Republican Primary,102,Koop,R,N,76.8,Walker,R,N,23.2,53.6,FALSE,Koop
+2020,Republican Primary,103,Fortenberry,R,N,52.97,Mecom,R,N,47.03,5.94,FALSE,Fortenberry
+2020,Republican Primary,106,Patterson,R,Y,76.09,Trombley,R,N,23.91,52.18,FALSE,Patterson
+2020,Republican Primary,116,Litoff,R,N,50.1,Padron,R,N,49.9,0.2,FALSE,Litoff
+2020,Republican Primary,120,Payne,R,N,71.56,Vicencio,R,N,28.44,43.12,FALSE,Payne
+2020,Republican Primary,127,Huberty,R,Y,81.86,Ford,R,N,18.14,63.72,FALSE,Huberty
+2020,Republican Primary,128,Cain,R,Y,79.3,Hoskins,R,N,20.7,58.6,FALSE,Cain
+2020,Republican Primary,129,Paul,R,Y,78.85,Lee,R,N,21.15,57.7,FALSE,Paul
+2020,Republican Primary,132,Schofield,R,N,52.95,Garcia,R,N,47.05,5.9,FALSE,Schofield
+2020,Republican Primary,135,Ray,R,N,83.86,Beazley,R,N,16.14,67.72,FALSE,Ray
+2020,Republican Primary,138,Hull,R,N,59.32,Flynn,R,N,32.32,27,FALSE,Hull
+2020,Republican Runoff,2,Slaton,R,N,61.08,Flynn,R,Y,38.92,22.16,FALSE,Slaton
+2020,Republican Runoff,25,Vasut,R,N,69.43,Garrett,R,N,30.57,38.86,FALSE,Vasut
+2020,Republican Runoff,26,Jetton,R,N,52.4,Morgan,R,N,47.6,4.8,FALSE,Jetton
+2020,Republican Runoff,45,Isaac,R,N,64.89,Wymore,R,N,35.11,29.78,FALSE,Isaac
+2020,Republican Runoff,47,Berry,R,N,54.68,Fleck,R,N,45.32,9.36,FALSE,Berry
+2020,Republican Runoff,59,Slawson,R,N,61.51,Sheffield,R,Y,38.49,23.02,FALSE,Slawson
+2020,Republican Runoff,60,Rogers,R,N,51.45,Francis,R,N,48.55,2.9,FALSE,Rogers
+2021,House Dist 10 (2nd),10,Harrison,R,N,55.38,Wray,R,N,44.62,10.76,FALSE,Harrison
+2021,House Dist 118 (2nd),118,Lujan,R,N,51.23,Ramirez,D,N,48.77,2.46,FALSE,Lujan
+2021,House Dist 68 (2nd),68,Spiller,R,N,62.9,Carter,R,N,37.1,25.8,FALSE,Spiller
+2021,House District 10,10,Harrison,R,N,40.65,Wray,R,N,35.52,5.13,TRUE,NA
+2021,House District 118,118,Lujan,R,N,41.49,Ramirez,D,N,20.04,21.45,TRUE,NA
+2021,House District 68,68,Spiller,R,N,43.89,Carter,R,N,18.06,25.83,TRUE,NA
+2022,Democratic Primary,13,Davis,D,N,73,Peacock,D,N,27,46,FALSE,Davis
+2022,Democratic Primary,22,Trahan,D,N,48.43,Hayes,D,N,42.73,5.7,TRUE,NA
+2022,Democratic Primary,26,Lee,D,N,63.16,Allen,D,N,36.84,26.32,FALSE,Lee
+2022,Democratic Primary,27,Reynolds,D,Y,83.5,Carreon,D,N,16.5,67,FALSE,Reynolds
+2022,Democratic Primary,33,Lynskey,D,N,51.45,Haase,D,N,48.55,2.9,FALSE,Lynskey
+2022,Democratic Primary,37,Cortez,D,N,41.26,Villarreal,D,N,38.49,2.77,TRUE,NA
+2022,Democratic Primary,38,Gamez,D,N,58.21,Gracia,D,N,41.79,16.42,FALSE,Gamez
+2022,Democratic Primary,42,Raymond,D,Y,62.67,Delgado,D,N,37.33,25.34,FALSE,Raymond
+2022,Democratic Primary,45,Zwiener,D,Y,80.75,Villescaz,D,N,12.15,68.6,FALSE,Zwiener
+2022,Democratic Primary,50,Talarico,D,N,78.48,Alcorta,D,N,21.52,56.96,FALSE,Talarico
+2022,Democratic Primary,51,Flores,D,N,60.34,Valadez-Mata,D,N,11.36,48.98,FALSE,Flores
+2022,Democratic Primary,70,Garcia Hernandez,D,N,34.17,Plesa,D,N,33.11,1.06,TRUE,NA
+2022,Democratic Primary,75,Gonzalez,D,Y,73.42,Rodriguez,D,N,26.58,46.84,FALSE,Gonzalez
+2022,Democratic Primary,76,Lalani,D,N,36.67,Johnson,D,N,24.71,11.96,TRUE,NA
+2022,Democratic Primary,79,Ordaz Perez,D,N,65.19,Fierro,D,Y,34.81,30.38,FALSE,Ordaz Perez
+2022,Democratic Primary,92,Bhojani,D,N,57.59,Scott,D,N,25.45,32.14,FALSE,Bhojani
+2022,Democratic Primary,97,McLaurin,D,N,72.07,Rector,D,N,27.93,44.14,FALSE,McLaurin
+2022,Democratic Primary,100,Crenshaw,D,N,34.24,Jones,D,N,25.64,8.6,TRUE,NA
+2022,Democratic Primary,108,Ginsberg,D,N,80.78,Heald,D,N,19.22,61.56,FALSE,Ginsberg
+2022,Democratic Primary,113,Bowers,D,Y,77.69,Nkanga,D,N,22.31,55.38,FALSE,Bowers
+2022,Democratic Primary,114,Guio,D,N,24.72,Bryant,D,N,21.26,3.46,TRUE,NA
+2022,Democratic Primary,121,Moyer DeFelice,D,N,79.1,Gregory,D,N,20.9,58.2,FALSE,Moyer DeFelice
+2022,Democratic Primary,124,Garcia,D,N,70.01,Lopez,D,N,22.45,47.56,FALSE,Garcia
+2022,Democratic Primary,125,Lopez,D,Y,58.25,Garza,D,N,41.75,16.5,FALSE,Lopez
+2022,Democratic Primary,131,Allen,D,Y,54.34,Guillory,D,N,32.24,22.1,FALSE,Allen
+2022,Democratic Primary,132,Campbell,D,N,52.1,West,D,N,47.9,4.2,FALSE,Campbell
+2022,Democratic Primary,142,Dutton,D,Y,51.29,Houston,D,N,48.71,2.58,FALSE,Dutton
+2022,Democratic Primary,147,Jones,D,N,41.81,Keys Bess,D,N,19.86,21.95,TRUE,NA
+2022,Democratic Runoff,22,Hayes,D,N,50.86,Trahan,D,N,49.14,1.72,FALSE,Hayes
+2022,Democratic Runoff,37,Villarreal,D,N,52.45,Cortez,D,N,47.55,4.9,FALSE,Villarreal
+2022,Democratic Runoff,70,Plesa,D,N,55.13,Garcia Hernandez,D,N,44.87,10.26,FALSE,Plesa
+2022,Democratic Runoff,76,Lalani,D,N,62.95,Johnson,D,N,37.05,25.9,FALSE,Lalani
+2022,Democratic Runoff,100,Jones,D,N,68.25,Crenshaw,D,N,31.75,36.5,FALSE,Jones
+2022,Democratic Runoff,114,Bryant,D,N,57.26,Guio,D,N,42.74,14.52,FALSE,Bryant
+2022,Democratic Runoff,147,Jones,D,N,53.71,Keys Bess,D,N,46.29,7.42,FALSE,Jones
+2022,General,4,Bell,R,Y,77.27,Savino,L,N,22.73,54.54,FALSE,Bell
+2022,General,6,Schaefer,R,Y,73.29,Grace,D,N,26.71,46.58,FALSE,Schaefer
+2022,General,8,Harris,R,Y,88,Adams,L,N,12,76,FALSE,Harris
+2022,General,9,Ashby,R,Y,82.37,Rogers,D,N,17.63,64.74,FALSE,Ashby
+2022,General,13,Orr,R,N,77.5,Davis,D,N,22.5,55,FALSE,Orr
+2022,General,14,Raney,R,Y,68.09,Miller,L,N,31.91,36.18,FALSE,Raney
+2022,General,15,Toth,R,Y,65.67,Johnson,D,N,34.33,31.34,FALSE,Toth
+2022,General,17,Gerdes,R,N,64.21,Eden,D,N,31.87,32.34,FALSE,Gerdes
+2022,General,19,Troxclair,R,N,72.65,Baggett,D,N,27.35,45.3,FALSE,Troxclair
+2022,General,20,Wilson,R,Y,59.08,Camacho,D,N,40.92,18.16,FALSE,Wilson
+2022,General,22,Hayes,D,N,56.49,Randle,R,N,43.51,12.98,FALSE,Hayes
+2022,General,23,Leo-Wilson,R,N,63.78,Henry,D,N,36.22,27.56,FALSE,Leo-Wilson
+2022,General,24,Bonnen,R,Y,68.01,Creedon,D,N,30.01,38,FALSE,Bonnen
+2022,General,26,Jetton,R,Y,60.67,Lee,D,N,39.33,21.34,FALSE,Jetton
+2022,General,27,Reynolds,D,Y,70.27,Gilani,R,N,29.73,40.54,FALSE,Reynolds
+2022,General,28,Gates,R,Y,61.56,Adriatico,D,N,38.44,23.12,FALSE,Gates
+2022,General,31,Guillen,R,Y,71.24,Gutierrez,D,N,28.76,42.48,FALSE,Guillen
+2022,General,33,Holland,R,Y,65.11,Lynskey,D,N,34.89,30.22,FALSE,Holland
+2022,General,34,Herrero,D,Y,57.65,Vaughn,R,N,42.35,15.3,FALSE,Herrero
+2022,General,35,Longoria,D,Y,64.18,Rosa,R,N,35.82,28.36,FALSE,Longoria
+2022,General,37,Lopez,R,N,51.83,Villarreal,D,N,48.17,3.66,FALSE,Lopez
+2022,General,39,Martinez,D,Y,64.69,Garcia,R,N,35.31,29.38,FALSE,Martinez
+2022,General,41,Guerra,D,Y,56.97,Guerra,R,N,43.03,13.94,FALSE,Guerra
+2022,General,42,Raymond,D,Y,71.23,Brennan,R,N,28.77,42.46,FALSE,Raymond
+2022,General,44,Kuempel,R,Y,69.3,Bohmfalk,D,N,30.7,38.6,FALSE,Kuempel
+2022,General,45,Zwiener,D,Y,59.24,Lopez,R,N,40.76,18.48,FALSE,Zwiener
+2022,General,46,Cole,D,Y,75.5,Strasser,R,N,21.74,53.76,FALSE,Cole
+2022,General,47,Goodwin,D,Y,61.29,McCarthy,R,N,38.71,22.58,FALSE,Goodwin
+2022,General,48,Howard,D,Y,79.6,McCarthy,L,N,20.4,59.2,FALSE,Howard
+2022,General,49,Hinojosa,D,Y,83.46,Griffin,R,N,14.4,69.06,FALSE,Hinojosa
+2022,General,50,Talarico,D,N,76.88,Johnson,R,N,20.22,56.66,FALSE,Talarico
+2022,General,51,Flores,D,N,84.45,Reynolds,R,N,15.55,68.9,FALSE,Flores
+2022,General,52,Harris,R,N,55.94,Echegaray,D,N,44.06,11.88,FALSE,Harris
+2022,General,53,Murr,R,Y,79.83,Herrera,D,N,20.17,59.66,FALSE,Murr
+2022,General,54,Buckley,R,Y,62.99,Hildner,D,N,37.01,25.98,FALSE,Buckley
+2022,General,55,Shine,R,Y,61.06,Sanders,D,N,38.94,22.12,FALSE,Shine
+2022,General,56,Anderson,R,Y,70.15,Shank,D,N,29.85,40.3,FALSE,Anderson
+2022,General,57,Hayes,R,N,65.29,Hamilton,L,N,34.71,30.58,FALSE,Hayes
+2022,General,61,Frazier,R,N,58.26,King,D,N,41.74,16.52,FALSE,Frazier
+2022,General,63,Bumgarner,R,N,55.93,Wooten,D,N,44.07,11.86,FALSE,Bumgarner
+2022,General,65,Thimesch,R,N,59.79,Verdell,D,N,40.21,19.58,FALSE,Thimesch
+2022,General,66,Shaheen,R,Y,60.42,Ringness,D,N,39.58,20.84,FALSE,Shaheen
+2022,General,67,Leach,R,Y,59.2,Morris,D,N,40.8,18.4,FALSE,Leach
+2022,General,69,Frank,R,Y,79.13,Coppage,D,N,18.71,60.42,FALSE,Frank
+2022,General,70,Plesa,D,N,50.73,Jolly,R,N,49.27,1.46,FALSE,Plesa
+2022,General,71,Lambert,R,Y,80.99,Goolsbee,D,N,19.01,61.98,FALSE,Lambert
+2022,General,73,Isaac,R,N,70.35,Calhoun,D,N,29.65,40.7,FALSE,Isaac
+2022,General,74,Morales,D,Y,55.68,Parker,R,N,44.32,11.36,FALSE,Morales
+2022,General,75,Gonzalez,D,Y,75.91,Mullins,L,N,24.09,51.82,FALSE,Gonzalez
+2022,General,76,Lalani,D,N,57.26,Mathews,R,N,42.74,14.52,FALSE,Lalani
+2022,General,85,Kitzman,R,N,73.82,Baggett,D,N,24.23,49.59,FALSE,Kitzman
+2022,General,87,Price,R,Y,87.08,Hearn,L,N,12.92,74.16,FALSE,Price
+2022,General,92,Bhojani,D,N,58.01,Livingston,R,N,41.99,16.02,FALSE,Bhojani
+2022,General,93,Schatzline,R,N,59.93,Chowdhury,D,N,40.07,19.86,FALSE,Schatzline
+2022,General,94,Tinderholt,R,Y,56.63,Sherrard,D,N,43.37,13.26,FALSE,Tinderholt
+2022,General,95,Collier,D,Y,74.88,Mondick,R,N,25.12,49.76,FALSE,Collier
+2022,General,97,Goldman,R,Y,58.2,McLaurin,D,N,41.8,16.4,FALSE,Goldman
+2022,General,98,Capriglione,R,Y,66.27,Elkins,D,N,33.73,32.54,FALSE,Capriglione
+2022,General,99,Geren,R,Y,61.84,Coffey,D,N,38.16,23.68,FALSE,Geren
+2022,General,100,Jones,D,N,85.09,Roberts,L,N,14.91,70.18,FALSE,Jones
+2022,General,102,Ramos,D,Y,62.22,Fischer,R,N,37.78,24.44,FALSE,Ramos
+2022,General,103,Anchia,D,Y,75.52,Arrieta,I,N,24.48,51.04,FALSE,Anchia
+2022,General,105,Meza,D,Y,55.8,Meagher,R,N,44.2,11.6,FALSE,Meza
+2022,General,107,Neave,D,Y,72.88,Newsom,L,N,27.12,45.76,FALSE,Neave
+2022,General,108,Meyer,R,Y,56.45,Ginsberg,D,N,43.55,12.9,FALSE,Meyer
+2022,General,111,Davis,D,Y,79.12,Flores Yrigollen,R,N,20.88,58.24,FALSE,Davis
+2022,General,112,Button,R,Y,54.83,Curl,D,N,45.17,9.66,FALSE,Button
+2022,General,114,Bryant,D,N,66.01,Lamb,R,N,33.99,32.02,FALSE,Bryant
+2022,General,115,Johnson,D,Y,56.7,Denis,R,N,43.3,13.4,FALSE,Johnson
+2022,General,117,Cortez,D,Y,62.6,Schwope,R,N,37.4,25.2,FALSE,Cortez
+2022,General,118,Lujan,R,Y,51.84,Ramirez,D,N,48.16,3.68,FALSE,Lujan
+2022,General,119,Campos,D,Y,78.02,Thomas,L,N,21.98,56.04,FALSE,Campos
+2022,General,120,Gervin-Hawkins,D,Y,67.5,Payne,R,N,32.5,35,FALSE,Gervin-Hawkins
+2022,General,121,Allison,R,Y,55.02,Moyer DeFelice,D,N,44.98,10.04,FALSE,Allison
+2022,General,122,Dorazio,R,N,56.02,Aramburu,D,N,41.14,14.88,FALSE,Dorazio
+2022,General,123,Bernal,D,Y,66.76,Valdez,R,N,33.24,33.52,FALSE,Bernal
+2022,General,124,Garcia,D,N,66.99,Arredondo,R,N,33.01,33.98,FALSE,Garcia
+2022,General,125,Lopez,D,Y,62.41,Raymond,R,N,37.59,24.82,FALSE,Lopez
+2022,General,128,Cain,R,Y,70.49,Crews,D,N,29.51,40.98,FALSE,Cain
+2022,General,129,Paul,R,Y,60.79,Marvel,D,N,39.21,21.58,FALSE,Paul
+2022,General,131,Allen,D,Y,80.52,Monroe,R,N,19.48,61.04,FALSE,Allen
+2022,General,132,Schofield,R,Y,59.74,Campbell,D,N,40.26,19.48,FALSE,Schofield
+2022,General,133,DeAyala,R,N,61.44,Maarouf,D,N,36.39,25.05,FALSE,DeAyala
+2022,General,134,Johnson,D,Y,61.56,McConnico,R,N,37.13,24.43,FALSE,Johnson
+2022,General,135,Rosenthal,D,Y,57.62,May,R,N,42.38,15.24,FALSE,Rosenthal
+2022,General,136,Bucy,D,Y,61.32,Evans,R,N,36.04,25.28,FALSE,Bucy
+2022,General,137,Wu,D,Y,76.02,Sharp,L,N,23.98,52.04,FALSE,Wu
+2022,General,138,Hull,R,Y,57.09,Morales,D,N,42.91,14.18,FALSE,Hull
+2022,General,145,Morales,D,Y,71.33,Mabry,R,N,28.67,42.66,FALSE,Morales
+2022,General,148,Morales Shaw,D,Y,55.52,Smith,R,N,42.59,12.93,FALSE,Morales Shaw
+2022,General,149,Vo,D,Y,59.84,Truong,R,N,37.65,22.19,FALSE,Vo
+2022,General,150,Swanson,R,Y,60.7,Brown Daniel,D,N,39.3,21.4,FALSE,Swanson
+2022,House District 147,147,Jones,D,N,52.3,Keys Bess,D,N,47.7,4.6,FALSE,Jones
+2022,Republican Primary,1,VanDeaver,R,Y,62.86,Lavender,R,N,28.97,33.89,FALSE,VanDeaver
+2022,Republican Primary,2,Slaton,R,Y,82.34,Bostick,R,N,17.66,64.68,FALSE,Slaton
+2022,Republican Primary,3,Bell,R,Y,67.19,McDonald,R,N,32.81,34.38,FALSE,Bell
+2022,Republican Primary,5,Hefner,R,Y,80.95,Collier,R,N,19.05,61.9,FALSE,Hefner
+2022,Republican Primary,6,Schaefer,R,Y,88.88,Turner,R,N,11.12,77.76,FALSE,Schaefer
+2022,Republican Primary,11,Clardy,R,Y,52.76,Hale,R,N,20.83,31.93,FALSE,Clardy
+2022,Republican Primary,12,Kacal,R,Y,46.96,Bius,R,N,41.81,5.15,TRUE,NA
+2022,Republican Primary,13,Orr,R,N,51.28,Wilson,R,N,48.72,2.56,FALSE,Orr
+2022,Republican Primary,14,Raney,R,Y,57.2,Slocum,R,N,42.8,14.4,FALSE,Raney
+2022,Republican Primary,15,Toth,R,Y,69.22,Blair,R,N,30.78,38.44,FALSE,Toth
+2022,Republican Primary,17,Gerdes,R,N,29.97,Pape,R,N,27.73,2.24,TRUE,NA
+2022,Republican Primary,18,Bailes,R,Y,56.18,Holt,R,N,26.43,29.75,FALSE,Bailes
+2022,Republican Primary,19,Troxclair,R,N,38.24,Berry,R,N,35.44,2.8,TRUE,NA
+2022,Republican Primary,23,Gurski,R,N,31.39,Leo-Wilson,R,N,28.12,3.27,TRUE,NA
+2022,Republican Primary,28,Gates,R,Y,75.23,Boettcher,R,N,24.77,50.46,FALSE,Gates
+2022,Republican Primary,31,Guillen,R,Y,56.64,Monreal,R,N,34.08,22.56,FALSE,Guillen
+2022,Republican Primary,33,Holland,R,Y,69.23,London,R,N,25.84,43.39,FALSE,Holland
+2022,Republican Primary,34,Vaughn,R,N,72.25,Hernandez,R,N,27.75,44.5,FALSE,Vaughn
+2022,Republican Primary,37,Lopez,R,N,69.35,Rivera,R,N,30.65,38.7,FALSE,Lopez
+2022,Republican Primary,52,McGuinness,R,N,35.12,Harris,R,N,31.37,3.75,TRUE,NA
+2022,Republican Primary,53,Murr,R,Y,63.34,Virdell,R,N,36.66,26.68,FALSE,Murr
+2022,Republican Primary,57,Hayes,R,N,57.5,Poole,R,N,28.66,28.84,FALSE,Hayes
+2022,Republican Primary,60,Rogers,R,Y,43.71,Olcott,R,N,36.06,7.65,TRUE,NA
+2022,Republican Primary,61,Frazier,R,N,42.33,Chabot,R,N,36.61,5.72,TRUE,NA
+2022,Republican Primary,62,Smith,R,Y,58.7,Luther,R,N,41.3,17.4,FALSE,Smith
+2022,Republican Primary,63,Bumgarner,R,N,29,Younger,R,N,27.51,1.49,TRUE,NA
+2022,Republican Primary,64,Stucky,R,Y,50.24,Hopper,R,N,49.76,0.48,FALSE,Stucky
+2022,Republican Primary,65,Thimesch,R,N,59.73,Inge,R,N,26.32,33.41,FALSE,Thimesch
+2022,Republican Primary,67,Leach,R,Y,76.87,Schmoker,R,N,23.13,53.74,FALSE,Leach
+2022,Republican Primary,68,Spiller,R,Y,69.81,Middleton,R,N,13.47,56.34,FALSE,Spiller
+2022,Republican Primary,70,Jolly,R,N,38.05,Bowlin,R,N,31.98,6.07,TRUE,NA
+2022,Republican Primary,71,Lambert,R,Y,75.61,Weatherby,R,N,24.39,51.22,FALSE,Lambert
+2022,Republican Primary,73,Casteel,R,N,45.72,Isaac,R,N,44.68,1.04,TRUE,NA
+2022,Republican Primary,76,Mathews,R,N,51.58,Cherivirala,R,N,26.55,25.03,FALSE,Mathews
+2022,Republican Primary,81,Landgraf,R,Y,79.96,Gray,R,N,20.04,59.92,FALSE,Landgraf
+2022,Republican Primary,83,Burrows,R,Y,82.54,Jordan,R,N,17.46,65.08,FALSE,Burrows
+2022,Republican Primary,84,Glasheen,R,N,41.88,Tepper,R,N,40.19,1.69,TRUE,NA
+2022,Republican Primary,85,Stephenson,R,Y,40.03,Kitzman,R,N,34.49,5.54,TRUE,NA
+2022,Republican Primary,88,King,R,Y,64.73,Hutto,R,N,35.27,29.46,FALSE,King
+2022,Republican Primary,91,Klick,R,Y,49.01,Lowe,R,N,39.02,9.99,TRUE,NA
+2022,Republican Primary,93,Schatzline,R,N,43.49,Hill,R,N,36.62,6.87,TRUE,NA
+2022,Republican Primary,98,Capriglione,R,Y,68.08,Ryan,R,N,31.92,36.16,FALSE,Capriglione
+2022,Republican Primary,105,Meagher,R,N,63.85,Hernandez,R,N,36.15,27.7,FALSE,Meagher
+2022,Republican Primary,121,Allison,R,Y,84.06,Champion,R,N,15.94,68.12,FALSE,Allison
+2022,Republican Primary,122,Chan,R,N,37.06,Dorazio,R,N,27.45,9.61,TRUE,NA
+2022,Republican Primary,127,Cunningham,R,N,79.28,Robertson,R,N,20.72,58.56,FALSE,Cunningham
+2022,Republican Primary,132,Schofield,R,Y,91.51,Le,R,N,8.49,83.02,FALSE,Schofield
+2022,Republican Primary,133,Barineau,R,N,28.39,DeAyala,R,N,27.08,1.31,TRUE,NA
+2022,Republican Primary,134,McConnico,R,N,75.43,Dominguez,R,N,24.57,50.86,FALSE,McConnico
+2022,Republican Primary,135,Hagerty,R,N,51.41,May,R,N,48.59,2.82,FALSE,Hagerty
+2022,Republican Primary,136,Evans,R,N,83.73,Salahuddin,R,N,16.27,67.46,FALSE,Evans
+2022,Republican Primary,138,Hull,R,Y,64.44,Flynn,R,N,19.39,45.05,FALSE,Hull
+2022,Republican Primary,147,Jones,R,N,53.65,Baylor,R,N,46.35,7.3,FALSE,Jones
+2022,Republican Primary,150,Swanson,R,Y,68.49,Riddle,R,N,25.32,43.17,FALSE,Swanson
+2022,Republican Runoff,12,Kacal,R,Y,57.91,Bius,R,N,42.09,15.82,FALSE,Kacal
+2022,Republican Runoff,17,Gerdes,R,N,51.24,Pape,R,N,48.76,2.48,FALSE,Gerdes
+2022,Republican Runoff,19,Troxclair,R,N,56.51,Berry,R,N,43.49,13.02,FALSE,Troxclair
+2022,Republican Runoff,23,Leo-Wilson,R,N,57.67,Gurski,R,N,42.33,15.34,FALSE,Leo-Wilson
+2022,Republican Runoff,52,Harris,R,N,50.56,McGuinness,R,N,49.44,1.12,FALSE,Harris
+2022,Republican Runoff,60,Rogers,R,Y,50.8,Olcott,R,N,49.2,1.6,FALSE,Rogers
+2022,Republican Runoff,61,Frazier,R,N,63.91,Chabot,R,N,36.09,27.82,FALSE,Frazier
+2022,Republican Runoff,63,Bumgarner,R,N,62.23,Younger,R,N,37.77,24.46,FALSE,Bumgarner
+2022,Republican Runoff,70,Jolly,R,N,52.12,Bowlin,R,N,47.88,4.24,FALSE,Jolly
+2022,Republican Runoff,73,Isaac,R,N,50.61,Casteel,R,N,49.39,1.22,FALSE,Isaac
+2022,Republican Runoff,84,Tepper,R,N,58.94,Glasheen,R,N,41.06,17.88,FALSE,Tepper
+2022,Republican Runoff,85,Kitzman,R,N,57.97,Stephenson,R,Y,42.03,15.94,FALSE,Kitzman
+2022,Republican Runoff,91,Klick,R,Y,54.34,Lowe,R,N,45.66,8.68,FALSE,Klick
+2022,Republican Runoff,93,Schatzline,R,N,64.97,Hill,R,N,35.03,29.94,FALSE,Schatzline
+2022,Republican Runoff,122,Dorazio,R,N,54.94,Chan,R,N,45.06,9.88,FALSE,Dorazio
+2022,Republican Runoff,133,DeAyala,R,N,51.09,Barineau,R,N,48.91,2.18,FALSE,DeAyala
+2024,Democratic Primary,19,Handley,D,N,57.16,Vance,D,N,42.84,14.32,FALSE,Handley
+2024,Democratic Primary,22,Manuel,D,Y,73.52,Price,D,N,22.45,51.07,FALSE,Manuel
+2024,Democratic Primary,27,Reynolds,D,Y,85.56,Carreon,D,N,14.44,71.12,FALSE,Reynolds
+2024,Democratic Primary,28,Rocha,D,N,57,Adriatico,D,N,43,14,FALSE,Rocha
+2024,Democratic Primary,34,Ortiz,D,N,72.97,Berrera,D,N,27.03,45.94,FALSE,Ortiz
+2024,Democratic Primary,37,Cortez,D,N,32.48,Gracia,D,N,25.43,7.05,TRUE,NA
+2024,Democratic Primary,45,Zwiener,D,Y,70.98,Pastrano,D,N,29.02,41.96,FALSE,Zwiener
+2024,Democratic Primary,50,Talarico,D,Y,84.43,Boynton,D,N,15.57,68.86,FALSE,Talarico
+2024,Democratic Primary,52,Birkholz,D,N,50.8,Carroll,D,N,49.2,1.6,FALSE,Birkholz
+2024,Democratic Primary,63,Beckley,D,N,66.37,Wooten,D,N,33.63,32.74,FALSE,Beckley
+2024,Democratic Primary,67,Washington,D,N,65.88,Nunn,D,N,34.12,31.76,FALSE,Washington
+2024,Democratic Primary,76,Lalani,D,Y,63.47,Johnson,D,N,36.53,26.94,FALSE,Lalani
+2024,Democratic Primary,77,Perez,D,N,37.97,Chavez,D,N,32.18,5.79,TRUE,NA
+2024,Democratic Primary,80,Castellano,D,N,27.05,Cuellar,D,N,25.5,1.55,TRUE,NA
+2024,Democratic Primary,97,Symons,D,N,44.12,Walker,D,N,34.63,9.49,TRUE,NA
+2024,Democratic Primary,100,Jones,D,Y,50.66,Caraway,D,N,25.81,24.85,FALSE,Jones
+2024,Democratic Primary,108,Ginsberg,D,N,58.91,Simon,D,N,41.09,17.82,FALSE,Ginsberg
+2024,Democratic Primary,109,Davis,D,N,61.9,Walton,D,N,38.1,23.8,FALSE,Davis
+2024,Democratic Primary,115,Garcia Hernandez,D,N,58.4,Rumsey,D,N,30.53,27.87,FALSE,Garcia Hernandez
+2024,Democratic Primary,118,Carranza,D,N,63.14,Quezada,D,N,36.86,26.28,FALSE,Carranza
+2024,Democratic Primary,119,Campos,D,Y,83.52,Fuentes,D,N,16.48,67.04,FALSE,Campos
+2024,Democratic Primary,121,Swift,D,N,72.88,Sinha,D,N,27.12,45.76,FALSE,Swift
+2024,Democratic Primary,125,Lopez,D,Y,67.59,Garza,D,N,32.41,35.18,FALSE,Lopez
+2024,Democratic Primary,130,Robinson,D,N,59.66,Arturo,D,N,40.34,19.32,FALSE,Robinson
+2024,Democratic Primary,131,Allen,D,Y,58.78,Guillory,D,N,23.99,34.79,FALSE,Allen
+2024,Democratic Primary,139,Thibodeaux,D,N,33.29,Ward Johnson,D,N,24.06,9.23,TRUE,NA
+2024,Democratic Primary,142,Dutton,D,Y,60.53,Norris,D,N,18.94,41.59,FALSE,Dutton
+2024,Democratic Primary,146,Simmons,D,N,49.39,Thierry,D,Y,44.53,4.86,TRUE,NA
+2024,General,2,Money,R,N,80.56,Washington,D,N,19.44,61.12,FALSE,Money
+2024,General,4,Bell,R,Y,69.67,Bar-Sela,D,N,30.33,39.34,FALSE,Bell
+2024,General,5,Hefner,R,Y,98.8,Nichols,W,N,1.2,97.6,FALSE,Hefner
+2024,General,6,Alders,R,N,71.83,Grace,D,N,28.17,43.66,FALSE,Alders
+2024,General,7,Dean,R,Y,74.21,Cooper,D,N,25.79,48.42,FALSE,Dean
+2024,General,8,Harris,R,Y,81.36,Salter,D,N,18.64,62.72,FALSE,Harris
+2024,General,10,Harrison,R,Y,98.67,Brummell,W,N,1.28,97.39,FALSE,Harrison
+2024,General,12,Wharton,R,N,76.84,Howard Mullins,D,N,23.16,53.68,FALSE,Wharton
+2024,General,13,Orr,R,Y,76.18,Hunter,D,N,23.82,52.36,FALSE,Orr
+2024,General,14,Dyson,R,N,60.46,Medina,D,N,39.54,20.92,FALSE,Dyson
+2024,General,16,Metcalf,R,Y,80.36,Midler,D,N,19.64,60.72,FALSE,Metcalf
+2024,General,17,Gerdes,R,Y,66.15,Venable,D,N,33.85,32.3,FALSE,Gerdes
+2024,General,18,Holt,R,N,86.58,Steele,L,N,13.42,73.16,FALSE,Holt
+2024,General,19,Troxclair,R,Y,70.85,Handley,D,N,25.52,45.33,FALSE,Troxclair
+2024,General,20,Wilson,R,Y,59.76,Wyman,D,N,40.24,19.52,FALSE,Wilson
+2024,General,23,Leo-Wilson,R,Y,66.87,Merugumala,D,N,33.13,33.74,FALSE,Leo-Wilson
+2024,General,25,Vasut,R,Y,61.04,Daggett,D,N,38.96,22.08,FALSE,Vasut
+2024,General,26,Morgan,R,N,59.17,Lee,D,N,40.83,18.34,FALSE,Morgan
+2024,General,27,Reynolds,D,Y,69.81,Max-Alalibo,R,N,30.19,39.62,FALSE,Reynolds
+2024,General,28,Gates,R,Y,60.55,Rocha,D,N,39.45,21.1,FALSE,Gates
+2024,General,29,Barry,R,N,61.52,Bell,D,N,38.48,23.04,FALSE,Barry
+2024,General,30,Louderback,R,N,76.96,Bassham,D,N,23.04,53.92,FALSE,Louderback
+2024,General,32,Hunter,R,Y,68.69,McAuliffe,D,N,31.31,37.38,FALSE,Hunter
+2024,General,34,Villalobos,R,N,55.37,Ortiz,D,N,44.63,10.74,FALSE,Villalobos
+2024,General,37,Lopez,R,Y,55.01,Gracia,D,N,44.99,10.02,FALSE,Lopez
+2024,General,39,Martinez,D,Y,60.9,Garcia,R,N,39.1,21.8,FALSE,Martinez
+2024,General,41,Guerra,D,Y,53.47,Guerra,R,N,46.53,6.94,FALSE,Guerra
+2024,General,43,Lozano,R,Y,66.73,Casarez,D,N,33.27,33.46,FALSE,Lozano
+2024,General,44,Schoolcraft,R,N,65.12,Norman,D,N,34.88,30.24,FALSE,Schoolcraft
+2024,General,45,Zwiener,D,Y,56.76,Moreno,R,N,43.24,13.52,FALSE,Zwiener
+2024,General,46,Cole,D,Y,73.24,Kosich,R,N,26.76,46.48,FALSE,Cole
+2024,General,47,Goodwin,D,Y,60.17,Firsing,R,N,39.83,20.34,FALSE,Goodwin
+2024,General,48,Howard,D,Y,83,McCarthy,L,N,17,66,FALSE,Howard
+2024,General,52,Harris,R,Y,56.24,Birkholz,D,N,43.76,12.48,FALSE,Harris
+2024,General,53,Virdell,R,N,76.59,Herrera,D,N,21.17,55.42,FALSE,Virdell
+2024,General,54,Buckley,R,Y,61.09,Richardson,D,N,38.91,22.18,FALSE,Buckley
+2024,General,55,Hickland,R,N,57.41,Lee,D,N,42.59,14.82,FALSE,Hickland
+2024,General,56,Curry,R,N,68.59,Shank,D,N,31.41,37.18,FALSE,Curry
+2024,General,57,Hayes,R,Y,58.27,Johnson,D,N,38.51,19.76,FALSE,Hayes
+2024,General,58,Kerwin,R,N,82.06,Windmann,L,N,17.94,64.12,FALSE,Kerwin
+2024,General,59,Slawson,R,Y,80.67,Bohm,D,N,19.33,61.34,FALSE,Slawson
+2024,General,61,Richardson,R,N,59.62,Adams,D,N,40.38,19.24,FALSE,Richardson
+2024,General,62,Luther,R,N,77.71,Drake,D,N,22.29,55.42,FALSE,Luther
+2024,General,63,Bumgarner,R,Y,55.66,Beckley,D,N,44.34,11.32,FALSE,Bumgarner
+2024,General,64,Hopper,R,N,63.12,Brewer,D,N,36.88,26.24,FALSE,Hopper
+2024,General,65,Little,R,N,60.3,DeBurr,D,N,39.7,20.6,FALSE,Little
+2024,General,66,Shaheen,R,Y,61.11,Carstens,D,N,38.89,22.22,FALSE,Shaheen
+2024,General,67,Leach,R,Y,60.23,Washington,D,N,39.77,20.46,FALSE,Leach
+2024,General,68,Spiller,R,Y,87.17,Swann,D,N,12.83,74.34,FALSE,Spiller
+2024,General,69,Frank,R,Y,78.68,Coppage,D,N,21.32,57.36,FALSE,Frank
+2024,General,70,Plesa,D,Y,52.22,Kinard,R,N,47.78,4.44,FALSE,Plesa
+2024,General,71,Lambert,R,Y,81.03,Goolsbee,D,N,18.97,62.06,FALSE,Lambert
+2024,General,73,Isaac,R,Y,71.48,Duval,D,N,28.52,42.96,FALSE,Isaac
+2024,General,74,Morales,D,Y,51.68,Garza,R,N,48.32,3.36,FALSE,Morales
+2024,General,76,Lalani,D,Y,56.5,Simmons,R,N,43.5,13,FALSE,Lalani
+2024,General,80,McLaughlin,R,N,59.49,Castellano,D,N,40.51,18.98,FALSE,McLaughlin
+2024,General,82,Craddick,R,Y,82.73,Schafersman,D,N,17.27,65.46,FALSE,Craddick
+2024,General,84,Tepper,R,Y,64.1,Lopez,D,N,35.9,28.2,FALSE,Tepper
+2024,General,87,Fairly,R,N,79.23,Gassaway,D,N,20.69,58.54,FALSE,Fairly
+2024,General,89,Noble,R,Y,60.63,Evans,D,N,39.37,21.26,FALSE,Noble
+2024,General,93,Schatzline,R,Y,60.55,Bojorquez,D,N,39.45,21.1,FALSE,Schatzline
+2024,General,94,Tinderholt,R,Y,55.62,Wilkerson,D,N,44.38,11.24,FALSE,Tinderholt
+2024,General,96,Cook,R,Y,57.37,Turner,D,N,42.63,14.74,FALSE,Cook
+2024,General,97,McQueeney,R,N,58.07,Walker,D,N,41.93,16.14,FALSE,McQueeney
+2024,General,98,Capriglione,R,Y,65.7,White,D,N,34.3,31.4,FALSE,Capriglione
+2024,General,99,Geren,R,Y,62.82,Coffey,D,N,37.18,25.64,FALSE,Geren
+2024,General,101,Turner,D,Y,64.94,Burgess,R,N,35.06,29.88,FALSE,Turner
+2024,General,105,Meza,D,Y,54.69,Cannaday,R,N,45.31,9.38,FALSE,Meza
+2024,General,106,Patterson,R,Y,60.58,Johnston,D,N,39.42,21.16,FALSE,Patterson
+2024,General,108,Meyer,R,Y,57.61,Ginsberg,D,N,42.39,15.22,FALSE,Meyer
+2024,General,112,Button,R,Y,53.87,Bishop,D,N,46.13,7.74,FALSE,Button
+2024,General,113,Bowers,D,Y,56.59,Stanley,R,N,43.41,13.18,FALSE,Bowers
+2024,General,114,Bryant,D,Y,62.76,Ramsey,R,N,37.24,25.52,FALSE,Bryant
+2024,General,115,Garcia Hernandez,D,N,54.31,Jun,R,N,45.69,8.62,FALSE,Garcia Hernandez
+2024,General,116,Martinez Fischer,D,Y,66,Crain,R,N,34,32,FALSE,Martinez Fischer
+2024,General,117,Cortez,D,Y,57.99,Mostyn,R,N,42.01,15.98,FALSE,Cortez
+2024,General,118,Lujan,R,Y,51.73,Carranza,D,N,48.27,3.46,FALSE,Lujan
+2024,General,119,Campos,D,Y,63.68,Grable,R,N,36.32,27.36,FALSE,Campos
+2024,General,121,LaHood,R,N,52.53,Swift,D,N,47.47,5.06,FALSE,LaHood
+2024,General,122,Dorazio,R,Y,58.09,Geary,D,N,41.91,16.18,FALSE,Dorazio
+2024,General,124,Garcia,D,Y,61.52,Soto,R,N,38.48,23.04,FALSE,Garcia
+2024,General,126,Harless,R,Y,98.98,Smith,W,N,1.02,97.96,FALSE,Harless
+2024,General,127,Cunningham,R,Y,60.51,Lehr,D,N,39.49,21.02,FALSE,Cunningham
+2024,General,128,Cain,R,Y,68.24,Crews,D,N,28.85,39.39,FALSE,Cain
+2024,General,129,Paul,R,Y,60.83,Peterson,D,N,39.17,21.66,FALSE,Paul
+2024,General,130,Oliverson,R,Y,68.82,Robinson,D,N,31.18,37.64,FALSE,Oliverson
+2024,General,132,Schofield,R,Y,58.76,West,D,N,41.24,17.52,FALSE,Schofield
+2024,General,134,Johnson,D,Y,61.33,Douglas,R,N,38.67,22.66,FALSE,Johnson
+2024,General,136,Bucy,D,Y,62.02,Salahuddin,R,N,37.98,24.04,FALSE,Bucy
+2024,General,137,Wu,D,Y,76.31,Sharp,L,N,23.69,52.62,FALSE,Wu
+2024,General,138,Hull,R,Y,57.02,Morales,D,N,42.98,14.04,FALSE,Hull
+2024,General,146,Simmons,D,N,77.72,York,R,N,22.28,55.44,FALSE,Simmons
+2024,General,147,Jones,D,Y,74.54,Gutierrez,R,N,25.46,49.08,FALSE,Jones
+2024,General,148,Morales Shaw,D,Y,54.94,Smith,R,N,45.06,9.88,FALSE,Morales Shaw
+2024,General,149,Vo,D,Y,57.02,Truong,R,N,42.98,14.04,FALSE,Vo
+2024,General,150,Swanson,R,Y,59.86,Jimenez,D,N,40.14,19.72,FALSE,Swanson
+2024,Republican Primary,1,VanDeaver,R,Y,45.53,Spencer,R,N,43.04,2.49,TRUE,NA
+2024,Republican Primary,2,Money,R,N,56.88,Dutton,R,Y,43.12,13.76,FALSE,Money
+2024,Republican Primary,4,Bell,R,Y,75.12,Feuerstein,R,N,24.88,50.24,FALSE,Bell
+2024,Republican Primary,5,Hefner,R,Y,69.81,Fletcher,R,N,19.32,50.49,FALSE,Hefner
+2024,Republican Primary,7,Dean,R,Y,71.97,McDaniel,R,N,22.9,49.07,FALSE,Dean
+2024,Republican Primary,8,Harris,R,Y,82.84,Curtis,R,N,17.16,65.68,FALSE,Harris
+2024,Republican Primary,9,Ashby,R,Y,82.16,Carson,R,N,17.84,64.32,FALSE,Ashby
+2024,Republican Primary,11,Shofner,R,N,62.95,Clardy,R,Y,37.05,25.9,FALSE,Shofner
+2024,Republican Primary,12,Wharton,R,N,35,Bius,R,N,32.66,2.34,TRUE,NA
+2024,Republican Primary,14,Dyson,R,N,63.68,Davis,R,N,36.32,27.36,FALSE,Dyson
+2024,Republican Primary,15,Toth,R,Y,65.58,Hubert,R,N,34.42,31.16,FALSE,Toth
+2024,Republican Primary,17,Gerdes,R,Y,57.85,Glass,R,N,42.15,15.7,FALSE,Gerdes
+2024,Republican Primary,18,Holt,R,N,53.2,Bailes,R,Y,38.8,14.4,FALSE,Holt
+2024,Republican Primary,19,Troxclair,R,Y,52.12,Biedermann,R,N,43.02,9.1,FALSE,Troxclair
+2024,Republican Primary,20,Wilson,R,Y,59.4,Chapa,R,N,40.6,18.8,FALSE,Wilson
+2024,Republican Primary,21,Covey,R,N,46.28,Phelan,R,Y,43.27,3.01,TRUE,NA
+2024,Republican Primary,24,Bonnen,R,Y,83.48,Ramirez,R,N,16.52,66.96,FALSE,Bonnen
+2024,Republican Primary,26,Morgan,R,N,53.78,Jetton,R,Y,38.66,15.12,FALSE,Morgan
+2024,Republican Primary,28,Gates,R,Y,61.07,Mathews,R,N,38.93,22.14,FALSE,Gates
+2024,Republican Primary,29,Barry,R,N,48.39,Kamkar,R,N,44.05,4.34,TRUE,NA
+2024,Republican Primary,30,Bauknight,R,N,42.07,Louderback,R,N,40.45,1.62,TRUE,NA
+2024,Republican Primary,33,Pierson,R,N,39.48,Holland,R,Y,38.67,0.81,TRUE,NA
+2024,Republican Primary,44,Schoolcraft,R,N,48.09,Kuempel,R,Y,45.04,3.05,TRUE,NA
+2024,Republican Primary,53,Virdell,R,N,60.45,Smith,R,N,39.55,20.9,FALSE,Virdell
+2024,Republican Primary,55,Hickland,R,N,53.11,Shine,R,Y,39.51,13.6,FALSE,Hickland
+2024,Republican Primary,56,Curry,R,N,58.12,Duke,R,N,41.88,16.24,FALSE,Curry
+2024,Republican Primary,58,Kerwin,R,N,48.9,Burns,R,Y,41.22,7.68,TRUE,NA
+2024,Republican Primary,60,Olcott,R,N,63.41,Rogers,R,Y,36.59,26.82,FALSE,Olcott
+2024,Republican Primary,61,Richardson,R,N,39.75,Frazier,R,Y,32.09,7.66,TRUE,NA
+2024,Republican Primary,62,Luther,R,N,53.41,Smith,R,Y,46.59,6.82,FALSE,Luther
+2024,Republican Primary,63,Bumgarner,R,Y,59.26,Gallo,R,N,35.31,23.95,FALSE,Bumgarner
+2024,Republican Primary,64,Hopper,R,N,46.67,Stucky,R,Y,43.29,3.38,TRUE,NA
+2024,Republican Primary,65,Little,R,N,50.68,Thimesch,R,Y,49.32,1.36,FALSE,Little
+2024,Republican Primary,66,Shaheen,R,Y,63.75,Richard,R,N,36.25,27.5,FALSE,Shaheen
+2024,Republican Primary,67,Leach,R,Y,65.12,Meis,R,N,34.88,30.24,FALSE,Leach
+2024,Republican Primary,68,Spiller,R,Y,66.98,Kingsbery,R,N,33.02,33.96,FALSE,Spiller
+2024,Republican Primary,70,Kinard,R,N,68.11,Collins,R,N,31.89,36.22,FALSE,Kinard
+2024,Republican Primary,71,Lambert,R,Y,52.4,Case,R,N,47.6,4.8,FALSE,Lambert
+2024,Republican Primary,72,Darby,R,Y,56.96,Bradley,R,N,43.04,13.92,FALSE,Darby
+2024,Republican Primary,74,Garza,R,N,53.98,McLeon,R,N,46.02,7.96,FALSE,Garza
+2024,Republican Primary,76,Kanwal,R,N,35.64,Simmons,R,N,35.51,0.13,TRUE,NA
+2024,Republican Primary,80,McLaughlin,R,N,57.96,Ramirez,R,N,25.81,32.15,FALSE,McLaughlin
+2024,Republican Primary,83,Burrows,R,Y,68.01,Cowan,R,N,31.99,36.02,FALSE,Burrows
+2024,Republican Primary,85,Kitzman,R,Y,66.64,Greeson,R,N,33.36,33.28,FALSE,Kitzman
+2024,Republican Primary,86,Smithee,R,Y,71.55,Haynes,R,N,28.45,43.1,FALSE,Smithee
+2024,Republican Primary,87,Fairly,R,N,59.89,Bulla,R,N,23.41,36.48,FALSE,Fairly
+2024,Republican Primary,88,King,R,Y,77.6,Post,R,N,22.4,55.2,FALSE,King
+2024,Republican Primary,89,Noble,R,Y,52.6,George,R,N,47.4,5.2,FALSE,Noble
+2024,Republican Primary,91,Klick,R,Y,48.11,Lowe,R,N,46.08,2.03,TRUE,NA
+2024,Republican Primary,97,Bean,R,N,49.57,McQueeney,R,N,29.64,19.93,TRUE,NA
+2024,Republican Primary,98,Capriglione,R,Y,69.57,Schofield,R,N,30.43,39.14,FALSE,Capriglione
+2024,Republican Primary,99,Geren,R,Y,60.21,Reynolds,R,N,39.79,20.42,FALSE,Geren
+2024,Republican Primary,108,Meyer,R,Y,51.12,Wernick,R,N,48.88,2.24,FALSE,Meyer
+2024,Republican Primary,112,Button,R,Y,72.03,Carnahan,R,N,27.97,44.06,FALSE,Button
+2024,Republican Primary,119,Grable,R,N,56.11,Sawatzki,R,N,43.89,12.22,FALSE,Grable
+2024,Republican Primary,121,LaHood,R,N,53.43,Allison,R,Y,39.45,13.98,FALSE,LaHood
+2024,Republican Primary,128,Cain,R,Y,69.52,Gracia,R,N,30.48,39.04,FALSE,Cain
+2024,Republican Primary,133,DeAyala,R,Y,58.53,Perez,R,N,41.47,17.06,FALSE,DeAyala
+2024,Republican Primary,138,Hull,R,Y,61.15,Woodfill,R,N,38.85,22.3,FALSE,Hull
