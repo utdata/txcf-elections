@@ -92,8 +92,14 @@ totals_win |> head()
 
 I should export that tibble.
 
-
 ## Filter elections
+
+Peek at the list of elections:
+
+```{r}
+totals_win |> 
+  count(year, election)
+```
 
 Here we start with our Texas House project specific tasks:
 
