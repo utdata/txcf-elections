@@ -128,10 +128,9 @@ totals_prg |> count(year)
 print("Showing included elections")
 totals_prg |> count(election)
 ```
-
 ## Incumbents problem
 
-While working through this project I found that a candidate's incumbent flag can change during the same election cycle and there doesn't seem to be a pattern. Through research I found these to mostlyl be errors. If left along I would not be able to group on incumbent but that would create other problems as there are two candidates with the same last name in the same Republican Primary and incumbency is the only way to tell them apart.
+While working through this project I found that a candidate's incumbent flag can change during the same election cycle and there doesn't seem to be a pattern. Through research I found these to mostly be errors. If left along I would not be able to group on incumbent but that would create other problems as there are two candidates with the same last name in the same Republican Primary and incumbency is the only way to tell them apart.
 
 The only solution I can think of now is to make corrections to these records. We'll use the [Texas Secretary of State](https://www.sos.state.tx.us/elections/historical/elections-results-archive.shtml) results to make decisions. Here are the records in question:
 
