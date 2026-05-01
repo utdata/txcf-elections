@@ -67,13 +67,18 @@ _So there are NO results for District 3 in 2024_
 - General: Bell won the general.
 
 
+### Looking for Phelan
 
+```{r}
+totals_rep |> 
+  filter(year == 2024, str_detect(name, "Phelan"))
+```
 
+In 2024, Dade Phelan was in a [Republican Primary Runoff](https://ballotpedia.org/Texas_House_of_Representatives_elections,_2024#Primary_runoff). He was not originally reflected in the data because we were missing 2024 runoff data from both parties. That has been remedied.
 
 ## Create winners
 
 Here we'll go through each election and we'll append the race totals and add a flag if the candidate won that race (based on >50% vote.)
-
 
 ```{r}
 totals_win <- 
@@ -393,6 +398,5 @@ I think this is the best we can do for now. I'm still worried that we have only 
 ```{r}
 totals_export |> write_csv("data-export/02-house-winners.csv")
 totals_export |> write_rds("data-processed/02-house-winners.rds")
-
 ```
 

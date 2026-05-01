@@ -41,7 +41,37 @@ all_files <- list.files(
   "data-original/vdt-returns",
   pattern = ".csv",
   full.names = TRUE)
+
+# all_files
 ```
+
+### Check if we have all files
+
+This makes sure that we have the main results for the time period that we are interested in (very specific to the Texas House spending analysis.) This does not take special elections into account. At one point we were missing runoff results for 2024.
+
+```{r}
+main_races <- c(
+  "Democratic_Primary",
+  "Democratic_Runoff",
+  "Republican_Primary",
+  "Republican_Runoff",
+  "General"
+)
+
+all_files |>
+  as_tibble() |> 
+  mutate(
+    value = str_remove(value, "data-original/vdt-returns/"),
+    value = str_remove(value, "_Election_Returns.csv"),
+    year = str_sub(value, 1, 4) |> as.numeric(),
+    election = str_remove(value, "^\\d{4}_")
+  ) |> 
+  filter(year >= 2016) |> 
+  filter(election %in% main_races) |> 
+  count(year, sort = T)
+```
+
+### Combine the files
 
 ```{r}
 #| message: false
